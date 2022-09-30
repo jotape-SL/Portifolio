@@ -32,7 +32,7 @@ const NavContainer = styled.ul`
 `;
 const NavLinks = styled.li`
   border-radius: 1rem;
-  padding: 10px;
+  padding: 8px 0;
   margin-left: 1rem;
   background-color: white;
   font-weight: bold;
@@ -42,18 +42,26 @@ const NavLinks = styled.li`
   box-shadow: 0 0 6px 0px white;
   :hover {
     box-shadow: 0 0 10px 0px white;
-    animation: hologram 30s linear infinite;
+    animation: hologram 20s linear infinite;
   }
   a {
+    font-family: "Code", sans-serif;
+    font-weight: 900;
     padding: 1rem 2rem;
     color: black;
     background-color: transparent;
     cursor: pointer;
+    :hover {
+      text-shadow: 2px 2px 5px #000000, -2px -2px 5px #000000;
+      color: white;
+    }
   }
 
   @keyframes hologram {
     0% {
-      background-image: repeating-linear-gradient(#0000ff 1%, #00ffff 12%);
+      /* <------- cor holograma ---------> */
+      /* background-image: repeating-linear-gradient(#0000ff 1%, #00ffff 12%); */
+      background-image: repeating-linear-gradient(#ffffff 10%, #000000 12%);
       background-position-y: 0px;
       box-shadow: none;
     }
@@ -63,8 +71,6 @@ const NavLinks = styled.li`
     .12% {
       box-shadow: 0 0 6px 0px white;
     }
-    /* 2% {
-    } */
     100% {
       background-position-y: 200px;
     }
