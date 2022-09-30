@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styled from "styled-components";
 import blueBall from "../../public/blueBall.svg";
 
@@ -42,7 +41,7 @@ const NavLinks = styled.li`
   box-shadow: 0 0 6px 0px white;
   :hover {
     box-shadow: 0 0 10px 0px white;
-    animation: hologram 20s linear infinite;
+    animation: hologram 25s linear infinite;
   }
   a {
     font-family: "Code", sans-serif;
