@@ -1,17 +1,14 @@
 import styled from "styled-components";
-import blueBall from "../../public/blueBall.svg";
+import { BsMoonStarsFill, BsMoonStars } from "react-icons/bs";
 
 export default function Header() {
   return (
     <Nav>
       <img src="https://placekitten.com/151/100" alt="*" />
       <NavContainer>
-        <NavLinks>
-          <a>Sobre</a>
-        </NavLinks>
-        <NavLinks>
-          <a>Projetos</a>
-        </NavLinks>
+        <li>
+          <BsMoonStarsFill />
+        </li>
         <NavLinks>
           <a>Contato</a>
         </NavLinks>
@@ -26,8 +23,14 @@ const Nav = styled.nav`
   align-items: center;
 `;
 const NavContainer = styled.ul`
+  align-items: center;
   display: flex;
   flex-direction: row;
+  li svg {
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+  }
 `;
 const NavLinks = styled.li`
   border-radius: 1rem;
