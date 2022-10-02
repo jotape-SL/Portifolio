@@ -46,4 +46,3 @@ export function Model(props) {
 }
 
 useGLTF.preload("/compRosa.gltf");
-
