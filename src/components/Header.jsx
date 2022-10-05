@@ -34,7 +34,7 @@ const NavContainer = styled.ul`
   }
 `;
 const NavLinks = styled.li`
-  border-radius: 1px;
+  border-radius: 5px;
   padding: 10px 0;
   margin-left: 1rem;
   background-color: white;

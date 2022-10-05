@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Canvas } from "@react-three/fiber";
 import { Stars, useGLTF } from "@react-three/drei";
 import React, { Suspense } from "react";
@@ -58,9 +58,23 @@ const ScrollDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: scrollDown 3s ease-in-out infinite;
+  p {
+  }
   .iconScroll {
     margin-top: 19px;
     margin-left: 10px;
     font-size: 2rem;
+  }
+  @keyframes scrollDown {
+    0% {
+      transform: translatey(0px);
+    }
+    50% {
+      transform: translatey(-15px);
+    }
+    100% {
+      transform: translatey(0px);
+    }
   }
 `;
