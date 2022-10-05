@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Stars, useGLTF } from "@react-three/drei";
+import { Stars, useGLTF } from "@react-three/drei";
 import React, { Suspense } from "react";
 import { CompRosa } from "./3dModels/CompRosa";
-import { FaRegArrowAltCircleDown } from "react-icons/fa";
 import { TiArrowSortedDown } from "react-icons/ti";
 import Image from "next/image";
+import canto from "../../public/canto.svg";
 
 export default function ConteudoInicial() {
   return (
@@ -16,7 +16,6 @@ export default function ConteudoInicial() {
       </TextoAp>
       {/* <------- modelo 3d --------> */}
       <Canvas className="canvas" camera={{ position: [-10, 20, 35] }}>
-        <OrbitControls enableZoom={true} />
         <Suspense fallback={null}>
           <CompRosa />
         </Suspense>
@@ -25,7 +24,6 @@ export default function ConteudoInicial() {
         <p>Scroll down</p>
         <TiArrowSortedDown className="iconScroll" />
       </ScrollDiv>
-      <Image src={CANTO.svg} />
     </Apresentacao>
   );
 }

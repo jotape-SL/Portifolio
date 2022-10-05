@@ -34,34 +34,21 @@ const NavContainer = styled.ul`
   }
 `;
 const NavLinks = styled.li`
-  border-radius: 1rem;
-  padding: 8px 0;
+  border-radius: 1px;
+  padding: 10px 0;
   margin-left: 1rem;
   background-color: white;
   font-weight: bold;
-  font-size: 1.2rem;
-  color: white;
-  border: 1px solid white;
-  box-shadow: 0 0 6px 0px white;
+  /* box-shadow: 0 0 5px 0px #0f0; */
   :hover {
-    box-shadow: 0 0 10px 0px white;
-    animation: hologram 25s infinite;
+    box-shadow: 0 0 10px 0px #0f0;
   }
   a {
-    font-family: "Code", sans-serif;
+    font-family: "Press Start 2P", sans-serif;
     font-weight: 900;
     padding: 1rem 2rem;
     color: black;
     background-color: transparent;
     cursor: pointer;
-  }
-
-  @keyframes hologram {
-    0% {
-      box-shadow: 0 0 10px 0px white;
-    }
-    1% {
-      box-shadow: 0 0 6px 0px white;
-    }
   }
 `;
