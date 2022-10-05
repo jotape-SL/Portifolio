@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { BsMoonStarsFill, BsMoonStars } from "react-icons/bs";
+import { corFonte1st, verdeMatrix } from "../../styles/UI/variaveis";
 
 export default function Header() {
   return (
@@ -28,7 +29,7 @@ const NavContainer = styled.ul`
   display: flex;
   flex-direction: row;
   li svg {
-    color: white;
+    color: ${corFonte1st};
     font-size: 1.3rem;
     cursor: pointer;
   }
@@ -37,16 +38,15 @@ const NavLinks = styled.li`
   border-radius: 5px;
   padding: 10px 0;
   margin-left: 1rem;
-  background-color: white;
-  font-weight: bold;
-  /* box-shadow: 0 0 5px 0px #0f0; */
+  background-color: ${corFonte1st};
+  box-shadow: 0 0 10px 0px ${verdeMatrix};
   :hover {
-    box-shadow: 0 0 10px 0px #0f0;
+    box-shadow: 0 0 10px 0px ${corFonte1st};
   }
   a {
     font-family: "Press Start 2P", sans-serif;
-    font-weight: 900;
     padding: 1rem 2rem;
+    font-size: 1.1rem;
     color: black;
     background-color: transparent;
     cursor: pointer;

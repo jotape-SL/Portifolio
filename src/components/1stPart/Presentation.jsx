@@ -1,11 +1,11 @@
 import styled, { keyframes } from "styled-components";
 import { Canvas } from "@react-three/fiber";
-import { Stars, useGLTF } from "@react-three/drei";
-import React, { Suspense } from "react";
-import { CompRosa } from "./3dModels/CompRosa";
+import { useGLTF } from "@react-three/drei";
+import { Suspense } from "react";
+import { CompRosa } from "../3dModels/CompRosa";
 import { TiArrowSortedDown } from "react-icons/ti";
 import Image from "next/image";
-import canto from "../../public/canto.svg";
+import { corFonte1st } from "../../styles/UI/variaveis";
 
 export default function ConteudoInicial() {
   return (
@@ -29,7 +29,7 @@ export default function ConteudoInicial() {
 }
 
 const Apresentacao = styled.section`
-  color: white;
+  color: ${corFonte1st};
   position: relative;
   p {
     text-align: center;
@@ -41,6 +41,9 @@ const Apresentacao = styled.section`
     width: 500px !important;
     height: 450px !important;
     margin: 0 auto;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: black;
   }
 `;
 const TextoAp = styled.div`
@@ -58,6 +61,7 @@ const ScrollDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 15px;
   animation: scrollDown 3s ease-in-out infinite;
   p {
   }

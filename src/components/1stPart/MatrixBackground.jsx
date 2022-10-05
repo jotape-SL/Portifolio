@@ -2,13 +2,12 @@ import { Cloud, Sky, Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
+import { verdeMatrix } from "../../styles/UI/variaveis";
 
 export default function MatrixBackground() {
   const refMatrix = useRef(null);
-  console.log(`antes: ${refMatrix.current}`);
 
   useEffect(() => {
-    console.log(`depois: ${refMatrix.current}`);
     const context = refMatrix.current.getContext("2d");
     const canvas = refMatrix.current;
 
@@ -36,7 +35,7 @@ export default function MatrixBackground() {
       context.fillStyle = "rgba(0, 0, 0, 0.05)";
       context.fillRect(0, 0, canvas.width, canvas.height);
 
-      context.fillStyle = "#0F0";
+      context.fillStyle = `${verdeMatrix}`;
       context.font = fontSize + "px monospace";
 
       for (let i = 0; i < rainDrops.length; i++) {
@@ -58,29 +57,6 @@ export default function MatrixBackground() {
   return (
     <MatrixDiv>
       <canvas ref={refMatrix} />
-      <Canvas className="canvis">
-        {/* <Stars
-          radius={25}
-          depth={25}
-          count={5000}
-          factor={4}
-          fade
-          speed={2.5}
-        /> */}
-        {/* <Sky
-          distance={450000}
-          sunPosition={[0, 1, 0]}
-          inclination={0}
-          azimuth={1}
-        /> */}
-        <Cloud
-          opacity={0.1}
-          speed={0.4} // Rotation speed
-          width={10} // Width of the full cloud
-          depth={1.5} // Z-dir depth
-          segments={20} // Number of particles
-        />
-      </Canvas>
     </MatrixDiv>
   );
 }
