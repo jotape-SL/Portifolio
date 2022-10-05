@@ -13,7 +13,6 @@ export default function MatrixBackground() {
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    console.log(window.innerWidth);
 
     const katakana =
       "アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン";
@@ -64,6 +63,6 @@ export default function MatrixBackground() {
 const MatrixDiv = styled.div`
   position: absolute;
   height: 100%;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
 `;
