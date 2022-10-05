@@ -5,6 +5,7 @@ import React, { Suspense } from "react";
 import { CompRosa } from "./3dModels/CompRosa";
 import { FaRegArrowAltCircleDown } from "react-icons/fa";
 import { TiArrowSortedDown } from "react-icons/ti";
+import Image from "next/image";
 
 export default function ConteudoInicial() {
   return (
@@ -24,12 +25,14 @@ export default function ConteudoInicial() {
         <p>Scroll down</p>
         <TiArrowSortedDown className="iconScroll" />
       </ScrollDiv>
+      <Image src={CANTO.svg} />
     </Apresentacao>
   );
 }
 
 const Apresentacao = styled.section`
   color: white;
+  position: relative;
   p {
     text-align: center;
     font-family: "Press Start 2P", cursive;
