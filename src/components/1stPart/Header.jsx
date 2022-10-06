@@ -44,7 +44,7 @@ const NavLinks = styled.li`
     box-shadow: 0 0 10px 0px ${corFonte1st};
   }
   a {
-    font-family: "Press Start 2P", sans-serif;
+    font-family: "Press Start 2P", monospace;
     padding: 1rem 2rem;
     font-size: 1.1rem;
     color: black;

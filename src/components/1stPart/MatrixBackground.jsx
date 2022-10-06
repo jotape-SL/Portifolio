@@ -31,9 +31,10 @@ export default function MatrixBackground() {
     }
 
     const draw = () => {
-      context.fillStyle = "rgba(0, 0, 0, 0.05)";
+      
+      context.fillStyle = "rgba(0, 0, 0, 0.05 )";
       context.fillRect(0, 0, canvas.width, canvas.height);
-
+      
       context.fillStyle = `${verdeMatrix}`;
       context.font = fontSize + "px monospace";
 
@@ -61,6 +62,7 @@ export default function MatrixBackground() {
 }
 
 const MatrixDiv = styled.div`
+  background-color:black;
   position: absolute;
   height: 100%;
   width: 100%;

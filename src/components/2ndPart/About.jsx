@@ -26,15 +26,18 @@ export default function About() {
 
 const AboutSection = styled.section`
   position: relative;
-  margin-top: 26px;
-  font-family: "Dax";
+  height:100vh;
+  marign-top:26px;
+  font-family: monospace;
+  background-image:linear-gradient(rgba(0,0,0,0.9) 1%, rgb(254, 255, 222));
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 26px 20%;
+  padding:0 20%;
   img {
     width: 400px;
     height: 400px;
+    border-radius:10px;
     animation: border 3s ease-in-out;
   }
   h2 {
@@ -47,6 +50,9 @@ const ContentDiv = styled.div`
   margin: 0 5rem;
 `;
 
+
+// animações para usar futuramente
+//
 // @keyframes opacityLtR {
 //   from {
 //     opacity: 0;
