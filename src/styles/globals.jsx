@@ -1,9 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-// export const GlobalStyle = {
-
-// };
-
 const GlobalStyle = createGlobalStyle`
   breakpoints: {
     "Breakpoints.xs": 0,
@@ -11,11 +7,6 @@ const GlobalStyle = createGlobalStyle`
     "Breakpoints.md": 768,
     "Breakpoints.lg": 992,
     "Breakpoints.xl": 1200,
-  },
-  colors: {
-    primary: {
-       //yet to fill
-    },
   },
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -66,7 +57,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "Source Sans Pro", monospace;
   }
 `;
 

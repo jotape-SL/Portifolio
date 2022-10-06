@@ -6,7 +6,7 @@ export default function About() {
     <AboutSection>
       <div>
         <img
-          src="/perfil.png"
+          src="https://placekitten.com/500/500"
           alt="uma pessoa bem bonita, mas conhecida como eu "
         />
       </div>
