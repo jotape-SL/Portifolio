@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {SiHtml5, SiCss, SiJavascript, SiBootstrap, SiReact, SiNextdotjs, SiStyledcomponents, SiSass } from 'react-icons/si';
 
 export default function About() {
   return (
@@ -19,21 +20,30 @@ export default function About() {
           vida para minhas ideias mais ambiciosas, os desafios fazem parte da
           minha rotina.
         </p>
+        <h2>Ferramentas com que trabalho</h2>
+        <span>html<SiHtml5/></span>
+        <span>CSS<SiCss/></span>
+        <span>JavaScript<SiJavascript/></span>
+        <span>Boostrap<SiBootstrap/></span>
+        <span>React<SiReact/></span>
+        <span>Next<SiNextdotjs/></span>
+        <span>Styled-Components<SiStyledcomponents/></span>
+        <span>Sass<SiSass/></span>
       </ContentDiv>
     </AboutSection>
   );
 }
 
 const AboutSection = styled.section`
-  position: relative;
-  height:100vh;
-  marign-top:26px;
-  font-family: monospace;
-  background-image:linear-gradient(rgba(0,0,0,0.9) 1%, rgb(254, 255, 222));
+position: relative;
+height:100vh;
+margin-top:25px;
+font-family: monospace;
+background-image:linear-gradient(rgba(0, 255, 0, 0.1), rgb(254, 255, 222));
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding:0 20%;
+  padding:0 20% 0 10%;
   img {
     width: 400px;
     height: 400px;
@@ -41,7 +51,12 @@ const AboutSection = styled.section`
     animation: border 3s ease-in-out;
   }
   h2 {
-    font-size: 5rem;
+    font-size: 4rem;
+    margin:2rem 0;
+  }
+  h2:nth-child(3){
+    margin:5rem 0rem 2rem 0;
+    font-size:2rem;
   }
 }
 `;

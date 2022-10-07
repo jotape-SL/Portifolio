@@ -62,7 +62,7 @@ export default function MatrixBackground() {
 }
 
 const MatrixDiv = styled.div`
-  background-color:black;
+  background-color: ${verdeMatrix};
   position: absolute;
   height: 100%;
   width: 100%;
