@@ -10,7 +10,7 @@ import {
   SiStyledcomponents,
   SiSass,
 } from "react-icons/si";
-import { verdeMatrix } from "../../styles/UI/variaveis";
+import { cinzaClaro } from "../../styles/UI/variaveis";
 
 export default function About() {
   const icons = [
@@ -33,9 +33,9 @@ export default function About() {
         </div>
         <div>
           <h2>Sobre mim</h2>
-          <button>Resumida</button>
-          <button>Não tão resumido</button>
-          <button>Já somos intimos</button>
+          <BotaoResumo>Resumido</BotaoResumo>
+          <BotaoResumo>Não tão resumido</BotaoResumo>
+          <BotaoResumo>Já somos intimos</BotaoResumo>
           <br />
           <br />
           <p>
@@ -73,13 +73,15 @@ const AboutSection = styled.section`
   font-family: monospace;
   background-image: linear-gradient(
     rgba(0, 0, 0, 0.712) 1%,
-    black 2.9%,
+    black 2.6%,
     rgb(251, 255, 199)
   );
   display: flex;
   flex-direction: column;
   align-items: center;
   img {
+    padding: 5px;
+    border: 2px solid ${cinzaClaro};
     width: 400px;
     height: 400px;
     border-radius: 10px;
@@ -93,20 +95,7 @@ const AboutSection = styled.section`
     margin: 8rem 0rem 2rem 0;
     font-size: 2rem;
   }
-  svg {
-    font-size: 4rem;
-    &:hover {
-      transition: 0.1s ease-in-out;
-      color: ${verdeMatrix};
-    }
-  }
-`;
-
-const IconDiv = styled.div`
-  display: flex;
-  text-align: center;
-  gap: 1rem;
-`;
+  `;
 
 const ContentDiv = styled.div`
   display: flex;
@@ -119,6 +108,39 @@ const ContentDiv = styled.div`
     margin: 0 10rem;
   }
 `;
+
+const BotaoResumo = styled.button`
+  padding:6px;
+  margin-right: 5px;
+  font-weight: bold;
+  font-family: sans-serif;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(251, 255, 199);
+  cursor: pointer;
+  &:hover{
+    transition: .1s ease-in-out ;
+    color: black;
+    background-color: rgb(198, 201, 156);
+  }
+  `
+
+const IconDiv = styled.div`
+  display: flex;
+  text-align: center;
+  gap: 1rem;
+  svg {
+    font-size: 4rem;
+  }
+  p{
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  span:hover{
+    transition: 0.1s ease-in-out;
+    color: rgb(90, 92, 71);
+  }
+  `;
 
 // animações para usar futuramente
 //

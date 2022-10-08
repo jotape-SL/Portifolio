@@ -1,13 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-  breakpoints: {
-    "Breakpoints.xs": 0,
-    "Breakpoints.sm": 480,
-    "Breakpoints.md": 768,
-    "Breakpoints.lg": 992,
-    "Breakpoints.xl": 1200,
-  },
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
