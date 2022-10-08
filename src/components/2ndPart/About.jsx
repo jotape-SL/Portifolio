@@ -24,57 +24,61 @@ export default function About() {
   ];
   return (
     <AboutSection>
-      <div>
-        <img
-          src="https://placekitten.com/500/500"
-          alt="uma pessoa bem bonita, mas conhecida como eu "
-        />
-      </div>
       <ContentDiv>
-        <h2>Sobre mim</h2>
-        <p>
-          Meu nome é João Pedro, tenho 20 anos. Sou programador Front-end.
-          Atualmente busco uma oportunidade para adquirir experiência na área da
-          tecnologia com programação e desenvolvimento web. Adoro criar e dar
-          vida para minhas ideias mais ambiciosas, os desafios fazem parte da
-          minha rotina.
-        </p>
-        <h2>Ferramentas com que trabalho</h2>
-        <IconDiv>
-          {icons.map((Icon, i) => {
-            const names = Icon.name.slice(2);
-            if (names.charAt(0) === "N") {
-              const names = Icon.name.slice(2, -5);
-              return (
-                <span key={i}>
-                  <Icon />
-                  <p href="/">{names}</p>
-                </span>
-              );
-            }
-            return (
-              <span key={i}>
-                <Icon />
-                <p href="/">{names}</p>
-              </span>
-            );
-          })}
-        </IconDiv>
+        <div>
+          <img
+            src="https://placekitten.com/500/500"
+            alt="uma pessoa bem bonita, mas conhecida como eu "
+          />
+        </div>
+        <div>
+          <h2>Sobre mim</h2>
+          <button>Resumida</button>
+          <button>Não tão resumido</button>
+          <button>Já somos intimos</button>
+          <br />
+          <br />
+          <p>
+            Meu nome é João Pedro, tenho 20 anos. Sou programador Front-end.
+            Atualmente busco uma oportunidade para adquirir experiência na área
+            da tecnologia com programação e desenvolvimento web. Adoro criar e
+            dar vida para minhas ideias mais ambiciosas, os desafios fazem parte
+            da minha rotina.
+          </p>
+        </div>
       </ContentDiv>
+      <h2>Ferramentas com que trabalho</h2>
+      <IconDiv>
+        {icons.map((Icon, i) => {
+          let names = Icon.name.slice(2);
+          if (names.charAt(0) === "N") {
+            names = "Next.js";
+          }
+
+          return (
+            <span key={i}>
+              <Icon />
+              <p href="/">{names}</p>
+            </span>
+          );
+        })}
+      </IconDiv>
     </AboutSection>
   );
 }
 
 const AboutSection = styled.section`
   position: relative;
-  height: 100vh;
-  margin-top: 25px;
+  height: calc(100vh + 25px);
   font-family: monospace;
-  background-image: linear-gradient(rgba(0, 255, 0, 0.1), rgb(254, 255, 222));
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.712) 1%,
+    black 2.9%,
+    rgb(251, 255, 199)
+  );
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  padding: 0 20% 0 10%;
   img {
     width: 400px;
     height: 400px;
@@ -82,16 +86,15 @@ const AboutSection = styled.section`
     animation: border 3s ease-in-out;
   }
   h2 {
-    font-size: 4rem;
+    font-size: 3rem;
     margin: 2rem 0;
   }
-  h2:nth-child(3) {
-    margin: 5rem 0rem 2rem 0;
+  h2:nth-child(2) {
+    margin: 8rem 0rem 2rem 0;
     font-size: 2rem;
   }
   svg {
-    font-size: 5rem;
-    text-shadow: 2px 2px #ff0000;
+    font-size: 4rem;
     &:hover {
       transition: 0.1s ease-in-out;
       color: ${verdeMatrix};
@@ -106,7 +109,15 @@ const IconDiv = styled.div`
 `;
 
 const ContentDiv = styled.div`
-  margin: 0 5rem;
+  display: flex;
+  align-items: flex-start;
+  color: white;
+  font-size: 1.1rem;
+  margin-top: 5.5rem;
+  padding: 5% 14% 0 14%;
+  div:nth-child(2) {
+    margin: 0 10rem;
+  }
 `;
 
 // animações para usar futuramente

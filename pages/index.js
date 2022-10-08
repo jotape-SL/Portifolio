@@ -6,9 +6,9 @@ import About from "../src/components/2ndPart/About";
 export default function Home() {
   return (
     <>
-      <MatrixBackground />
-      <Header />
-      <ConteudoInicial />
+      {/* <MatrixBackground /> */}
+      {/* <Header /> */}
+      {/* <ConteudoInicial /> */}
       <About />
     </>
   );
