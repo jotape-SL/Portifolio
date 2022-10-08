@@ -1,22 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-// export const GlobalStyle = {
-
-// };
-
 const GlobalStyle = createGlobalStyle`
-  breakpoints: {
-    "Breakpoints.xs": 0,
-    "Breakpoints.sm": 480,
-    "Breakpoints.md": 768,
-    "Breakpoints.lg": 992,
-    "Breakpoints.xl": 1200,
-  },
-  colors: {
-    primary: {
-       //yet to fill
-    },
-  },
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -45,7 +29,6 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     line-height: 1;
-    background-color: #f6f6f6;
   }
   ol, ul {
     list-style: none;
@@ -66,7 +49,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family:code, sans-serif;
+    font-family: "Source Sans Pro", monospace;
   }
 `;
 

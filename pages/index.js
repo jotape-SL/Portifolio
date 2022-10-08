@@ -1,13 +1,11 @@
-import Header from "../src/components/1stPart/Header";
-import MatrixBackground from "../src/components/1stPart/MatrixBackground";
-import ConteudoInicial from "../src/components/1stPart/Presentation";
+import About from "../src/components/About";
+import Home from "../src/components/Home";
 
-export default function Home() {
+export default function PageSPA() {
   return (
     <>
-      <MatrixBackground />
-      <Header />
-      <ConteudoInicial />
+      <Home/>
+      <About/>
     </>
   );
 }

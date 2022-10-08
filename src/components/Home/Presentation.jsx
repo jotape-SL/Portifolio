@@ -1,10 +1,8 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
-import { useGLTF } from "@react-three/drei";
 import { Suspense } from "react";
 import { CompRosa } from "../3dModels/CompRosa";
 import { TiArrowSortedDown } from "react-icons/ti";
-import Image from "next/image";
 import { corFonte1st } from "../../styles/UI/variaveis";
 
 export default function ConteudoInicial() {
@@ -33,7 +31,7 @@ const Apresentacao = styled.section`
   position: relative;
   p {
     text-align: center;
-    font-family: "Press Start 2P", cursive;
+    font-family: "Press Start 2P", monospace;
     margin-top: 1rem;
     font-size: 1.5rem;
   }
@@ -51,7 +49,7 @@ const TextoAp = styled.div`
 `;
 
 const Nome = styled.h1`
-  font-family: "Press Start 2P", cursive;
+  font-family: "Press Start 2P", monospace;
   text-align: center;
   font-size: 5rem;
   font-weight: lighter;
