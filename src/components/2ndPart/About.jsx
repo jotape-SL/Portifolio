@@ -1,8 +1,27 @@
 import React from "react";
 import styled from "styled-components";
-import {SiHtml5, SiCss, SiJavascript, SiBootstrap, SiReact, SiNextdotjs, SiStyledcomponents, SiSass } from 'react-icons/si';
+import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiBootstrap,
+  SiReact,
+  SiNextdotjs,
+  SiStyledcomponents,
+  SiSass,
+} from "react-icons/si";
+import { verdeMatrix } from "../../styles/UI/variaveis";
 
 export default function About() {
+  const icons = [
+    SiHtml5,
+    SiJavascript,
+    SiReact,
+    SiNextdotjs,
+    SiBootstrap,
+    SiStyledcomponents,
+    SiSass,
+  ];
   return (
     <AboutSection>
       <div>
@@ -21,50 +40,74 @@ export default function About() {
           minha rotina.
         </p>
         <h2>Ferramentas com que trabalho</h2>
-        <span>html<SiHtml5/></span>
-        <span>CSS<SiCss/></span>
-        <span>JavaScript<SiJavascript/></span>
-        <span>Boostrap<SiBootstrap/></span>
-        <span>React<SiReact/></span>
-        <span>Next<SiNextdotjs/></span>
-        <span>Styled-Components<SiStyledcomponents/></span>
-        <span>Sass<SiSass/></span>
+        <IconDiv>
+          {icons.map((Icon, i) => {
+            const names = Icon.name.slice(2);
+            if (names.charAt(0) === "N") {
+              const names = Icon.name.slice(2, -5);
+              return (
+                <span key={i}>
+                  <Icon />
+                  <p href="/">{names}</p>
+                </span>
+              );
+            }
+            return (
+              <span key={i}>
+                <Icon />
+                <p href="/">{names}</p>
+              </span>
+            );
+          })}
+        </IconDiv>
       </ContentDiv>
     </AboutSection>
   );
 }
 
 const AboutSection = styled.section`
-position: relative;
-height:100vh;
-margin-top:25px;
-font-family: monospace;
-background-image:linear-gradient(rgba(0, 255, 0, 0.1), rgb(254, 255, 222));
+  position: relative;
+  height: 100vh;
+  margin-top: 25px;
+  font-family: monospace;
+  background-image: linear-gradient(rgba(0, 255, 0, 0.1), rgb(254, 255, 222));
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding:0 20% 0 10%;
+  padding: 0 20% 0 10%;
   img {
     width: 400px;
     height: 400px;
-    border-radius:10px;
+    border-radius: 10px;
     animation: border 3s ease-in-out;
   }
   h2 {
     font-size: 4rem;
-    margin:2rem 0;
+    margin: 2rem 0;
   }
-  h2:nth-child(3){
-    margin:5rem 0rem 2rem 0;
-    font-size:2rem;
+  h2:nth-child(3) {
+    margin: 5rem 0rem 2rem 0;
+    font-size: 2rem;
   }
-}
+  svg {
+    font-size: 5rem;
+    text-shadow: 2px 2px #ff0000;
+    &:hover {
+      transition: 0.1s ease-in-out;
+      color: ${verdeMatrix};
+    }
+  }
+`;
+
+const IconDiv = styled.div`
+  display: flex;
+  text-align: center;
+  gap: 1rem;
 `;
 
 const ContentDiv = styled.div`
   margin: 0 5rem;
 `;
-
 
 // animações para usar futuramente
 //
@@ -77,38 +120,3 @@ const ContentDiv = styled.div`
 //     opacity: 1;
 //     transform: translateX(0px);
 //   }
-// @keyframes neonFlicker {
-//   0% {
-//     filter: brightness(1);
-//   }
-//   3% {
-//     filter: brightness(0);
-//   }
-//   6% {
-//     filter: brightness(0);
-//   }
-//   7% {
-//     filter: brightness(1);
-//   }
-//   8% {
-//     filter: brightness(0);
-//   }
-//   9% {
-//     filter: brightness(1);
-//   }
-//   10% {
-//     filter: brightness(0);
-//   }
-//   /* 20% {
-//     filter: brightness(0);
-//   }
-//   50% {
-//     filter: brightness(1);
-//   }
-//   99% {
-//     filter: brightness(0);
-//   }*/
-//   100% {
-//     filter: brightness(0);
-//   }
-// }
