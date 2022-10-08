@@ -10,7 +10,7 @@ import {
   SiStyledcomponents,
   SiSass,
 } from "react-icons/si";
-import { cinzaClaro } from "../../styles/UI/variaveis";
+import { cinzaClaro, begeBG } from "../../styles/UI/variaveis";
 
 export default function About() {
   const icons = [
@@ -74,7 +74,7 @@ const AboutSection = styled.section`
   background-image: linear-gradient(
     rgba(0, 0, 0, 0.712) 1%,
     black 2.6%,
-    rgb(251, 255, 199)
+    ${begeBG} 70%
   );
   display: flex;
   flex-direction: column;
