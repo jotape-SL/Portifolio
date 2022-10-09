@@ -29,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     line-height: 1;
+    font-family: "Source Sans Pro", monospace;
   }
   ol, ul {
     list-style: none;
@@ -49,7 +50,6 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Source Sans Pro", monospace;
   }
 `;
 
