@@ -1,5 +1,3 @@
-import { Cloud, Sky, Stars } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { verdeMatrix } from "../../styles/UI/variaveis";
@@ -12,7 +10,7 @@ export default function MatrixBackground() {
     const canvas = refMatrix.current;
 
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.height = window.innerHeight + 50;
 
     const katakana =
       "アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン";
@@ -31,10 +29,13 @@ export default function MatrixBackground() {
     }
 
     const draw = () => {
-      
-      context.fillStyle = "rgba(0, 0, 0, 0.05 )";
+      const grd = context.createLinearGradient(0, 4500, 0, 0);
+      grd.addColorStop(0, "black");
+      grd.addColorStop(1, "rgba(0, 0, 0, 0.05)");
+
+      context.fillStyle = grd;
       context.fillRect(0, 0, canvas.width, canvas.height);
-      
+
       context.fillStyle = `${verdeMatrix}`;
       context.font = fontSize + "px monospace";
 
@@ -61,10 +62,12 @@ export default function MatrixBackground() {
   );
 }
 
+const ovFlowHeightVar = 50;
+
 const MatrixDiv = styled.div`
   background-color: ${verdeMatrix};
   position: absolute;
-  height: 100%;
+  height: 100% + ${ovFlowHeightVar}px;
   width: 100%;
   overflow: hidden;
 `;
