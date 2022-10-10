@@ -70,7 +70,7 @@ export default function About() {
 const AboutSection = styled.section`
   position: relative;
   margin-top: 25px;
-  height: calc(100vh + 25px);
+  min-height: calc(100vh + 25px);
   font-family: monospace;
   background-image: linear-gradient(
     rgba(0, 0, 0, 0.877) 5%,
@@ -101,6 +101,7 @@ const AboutSection = styled.section`
 const ContentDiv = styled.div`
   display: flex;
   align-items: flex-start;
+  justify-content: center;
   color: white;
   font-size: 1.1rem;
   margin-top: 5.5rem;
@@ -127,6 +128,8 @@ const BotaoResumo = styled.button`
 `;
 
 const IconDiv = styled.div`
+  align-items: center;
+  flex-wrap: wrap;
   display: flex;
   text-align: center;
   gap: 1rem;
@@ -137,9 +140,16 @@ const IconDiv = styled.div`
     font-size: 1rem;
     font-weight: bold;
   }
+  span {
+    padding: 2% 0;
+    background-color: antiquewhite;
+    border-radius: 15px;
+    min-width: 148px;
+    border: 2px solid lightgrey;
+  }
   span:hover {
     transition: 0.1s ease-in-out;
-    color: rgb(90, 92, 71);
+    background-color: white;
   }
 `;
 

@@ -10,7 +10,7 @@ export default function MatrixBackground() {
     const canvas = refMatrix.current;
 
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight + 50;
+    canvas.height = window.innerHeight + 100;
 
     const katakana =
       "アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン";
@@ -19,7 +19,7 @@ export default function MatrixBackground() {
 
     const alphabet = katakana + latin + nums;
 
-    const fontSize = 17;
+    const fontSize = 15;
     const columns = canvas.width / fontSize;
 
     const rainDrops = [];
@@ -63,7 +63,7 @@ export default function MatrixBackground() {
   );
 }
 
-const ovFlowHeightVar = 50;
+const ovFlowHeightVar = 100;
 
 const MatrixDiv = styled.div`
   background-color: ${verdeMatrix};
