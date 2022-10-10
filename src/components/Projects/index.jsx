@@ -26,6 +26,15 @@ const SectionProjetos = styled.section`
     margin-bottom: 5rem;
     font-size: 3rem;
   }
+  h2::after {
+    content: "";
+    background-color: currentColor;
+    height: 5px;
+    width: 10rem;
+    display: block;
+    margin: 10px auto;
+    border-radius: 10px;
+  }
 `;
 const DivContainer = styled.div`
   display: flex;
