@@ -1,23 +1,21 @@
 import styled from "styled-components";
 import { begeBG, cinzaClaro } from "../../styles/UI/variaveis";
 import { paddingPadrao } from "../../styles/UI/variaveis";
+import ProjectCard from "./ProjectCard";
 
 export default function Projects() {
   return (
     <SectionProjetos>
       <h2>Meus projetos</h2>
       <DivContainer>
-        <DivCard>
-          <img src="https://placekitten.com/1000/1000" alt="" />
-          <a href="https://github.com/jotape-SL"></a>
-        </DivCard>
+        <ProjectCard />
       </DivContainer>
     </SectionProjetos>
   );
 }
 
 const SectionProjetos = styled.section`
-  height: 100%;
+  min-height: 100vw;
   background-color: ${begeBG};
   text-align: center;
   display: flex;
@@ -35,27 +33,4 @@ const DivContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 1.5rem 0;
-`;
-
-const DivCard = styled.div`
-  max-height: 460px;
-  border-radius: 10px;
-  a {
-    width: 600px;
-    height: 450px;
-    border-radius: 10px;
-    padding: 5rem;
-    display: block;
-    transform: translateY(-453px);
-    &:hover {
-      transition: 0.5s ease-in-out;
-      background-color: #0000004c;
-    }
-  }
-  img {
-    object-fit: cover;
-    border-radius: 10px;
-    width: 600px;
-    height: 450px;
-  }
 `;

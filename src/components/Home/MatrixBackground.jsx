@@ -19,7 +19,7 @@ export default function MatrixBackground() {
 
     const alphabet = katakana + latin + nums;
 
-    const fontSize = 15;
+    const fontSize = 17;
     const columns = canvas.width / fontSize;
 
     const rainDrops = [];
@@ -29,11 +29,12 @@ export default function MatrixBackground() {
     }
 
     const draw = () => {
-      const grd = context.createLinearGradient(0, 4500, 0, 0);
+      const grd = context.createLinearGradient(0, 15000, 0, 0);
       grd.addColorStop(0, "black");
       grd.addColorStop(1, "rgba(0, 0, 0, 0.05)");
 
       context.fillStyle = grd;
+      // context.fillStyle = "rgba(0, 0, 0, 0.05)";
       context.fillRect(0, 0, canvas.width, canvas.height);
 
       context.fillStyle = `${verdeMatrix}`;
