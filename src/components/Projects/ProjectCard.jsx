@@ -8,7 +8,7 @@ export default function ProjectCard() {
       {projetinhos.map((card) => {
         return (
           <DivCard key={card.id}>
-            <img src={card.imagem} alt="" />
+            <img src={card.imagem} alt={card.nome} />
             <a href={card.link} rel="noreferrer noopener" target="_blank">
               <p>{card.nome}</p>
             </a>

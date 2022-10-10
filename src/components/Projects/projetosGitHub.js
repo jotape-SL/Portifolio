@@ -27,6 +27,20 @@ const projetosGitHub = [
     nome: "Aluroni",
     id: 4,
   },
+  {
+    imagem:
+      "https://user-images.githubusercontent.com/102804110/194963276-8087a0d9-38a4-4e51-8ac0-f6739d054b51.png",
+    link: "https://smart-bank-gamma.vercel.app/",
+    nome: "Smart Bank",
+    id: 5,
+  },
+  {
+    imagem:
+      "https://user-images.githubusercontent.com/102804110/194963149-9abbef20-d539-49ed-b223-e383ae63ebb1.png",
+    link: "https://smart-bank-gamma.vercel.app/",
+    nome: "Smart Bank",
+    id: 5,
+  },
 ];
 
 export default projetosGitHub;
