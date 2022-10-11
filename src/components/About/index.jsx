@@ -1,27 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  SiHtml5,
-  SiCss3,
-  SiJavascript,
-  SiBootstrap,
-  SiReact,
-  SiNextdotjs,
-  SiStyledcomponents,
-  SiSass,
-} from "react-icons/si";
 import { cinzaClaro, begeBG } from "../../styles/UI/variaveis";
+import AboutIcons from "./AboutIcons";
 
 export default function About() {
-  const icons = [
-    SiHtml5,
-    SiJavascript,
-    SiReact,
-    SiNextdotjs,
-    SiBootstrap,
-    SiStyledcomponents,
-    SiSass,
-  ];
   return (
     <AboutSection>
       <ContentDiv>
@@ -48,32 +30,19 @@ export default function About() {
         </div>
       </ContentDiv>
       <h2>Ferramentas com que trabalho</h2>
-      <IconDiv>
-        {icons.map((Icon, i) => {
-          let names = Icon.name.slice(2);
-          if (names.charAt(0) === "N") {
-            names = "Next.js";
-          }
-
-          return (
-            <span key={i}>
-              <Icon />
-              <p href="/">{names}</p>
-            </span>
-          );
-        })}
-      </IconDiv>
+      <AboutIcons />
     </AboutSection>
   );
 }
 
 const AboutSection = styled.section`
   position: relative;
-  height: calc(100vh + 25px);
+  margin-top: 25px;
+  min-height: calc(100vh + 25px);
   font-family: monospace;
   background-image: linear-gradient(
-    rgba(0, 0, 0, 0.712) 1%,
-    black 2.6%,
+    rgba(0, 0, 0, 0.877) 5%,
+    black 1%,
     ${begeBG} 70%
   );
   display: flex;
@@ -95,11 +64,12 @@ const AboutSection = styled.section`
     margin: 8rem 0rem 2rem 0;
     font-size: 2rem;
   }
-  `;
+`;
 
 const ContentDiv = styled.div`
   display: flex;
   align-items: flex-start;
+  justify-content: center;
   color: white;
   font-size: 1.1rem;
   margin-top: 5.5rem;
@@ -110,7 +80,7 @@ const ContentDiv = styled.div`
 `;
 
 const BotaoResumo = styled.button`
-  padding:6px;
+  padding: 6px;
   margin-right: 5px;
   font-weight: bold;
   font-family: sans-serif;
@@ -118,29 +88,12 @@ const BotaoResumo = styled.button`
   border-radius: 5px;
   background-color: rgb(251, 255, 199);
   cursor: pointer;
-  &:hover{
-    transition: .1s ease-in-out ;
+  &:hover {
+    transition: 0.1s ease-in-out;
     color: black;
     background-color: rgb(198, 201, 156);
   }
-  `
-
-const IconDiv = styled.div`
-  display: flex;
-  text-align: center;
-  gap: 1rem;
-  svg {
-    font-size: 4rem;
-  }
-  p{
-    font-size: 1rem;
-    font-weight: bold;
-  }
-  span:hover{
-    transition: 0.1s ease-in-out;
-    color: rgb(90, 92, 71);
-  }
-  `;
+`;
 
 // animações para usar futuramente
 //
