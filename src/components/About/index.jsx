@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { cinzaClaro, begeBG } from "../../styles/UI/variaveis";
 import AboutIcons from "./AboutIcons";
+import Resumo from "./Resumo";
 
 export default function About() {
   return (
@@ -13,13 +14,11 @@ export default function About() {
             alt="uma pessoa bem bonita, mas conhecida como eu "
           />
         </div>
-        <div>
+        {/* <div>
           <h2>Sobre mim</h2>
           <BotaoResumo>Resumido</BotaoResumo>
           <BotaoResumo>Não tão resumido</BotaoResumo>
           <BotaoResumo>Já somos intimos</BotaoResumo>
-          <br />
-          <br />
           <p>
             Meu nome é João Pedro, tenho 20 anos. Sou programador Front-end.
             Atualmente busco uma oportunidade para adquirir experiência na área
@@ -27,7 +26,8 @@ export default function About() {
             dar vida para minhas ideias mais ambiciosas, os desafios fazem parte
             da minha rotina.
           </p>
-        </div>
+        </div> */}
+        <Resumo/>
       </ContentDiv>
       <h2>Ferramentas com que trabalho</h2>
       <AboutIcons />
@@ -60,10 +60,10 @@ const AboutSection = styled.section`
     font-size: 3rem;
     margin: 2rem 0;
   }
-  h2:nth-child(2) {
+  /* h2:nth-child(2) {
     margin: 8rem 0rem 2rem 0;
     font-size: 2rem;
-  }
+  } */
 `;
 
 const ContentDiv = styled.div`
@@ -79,21 +79,21 @@ const ContentDiv = styled.div`
   }
 `;
 
-const BotaoResumo = styled.button`
-  padding: 6px;
-  margin-right: 5px;
-  font-weight: bold;
-  font-family: sans-serif;
-  border: none;
-  border-radius: 5px;
-  background-color: rgb(251, 255, 199);
-  cursor: pointer;
-  &:hover {
-    transition: 0.1s ease-in-out;
-    color: black;
-    background-color: rgb(198, 201, 156);
-  }
-`;
+// const BotaoResumo = styled.button`
+//   padding: 6px;
+//   margin-right: 5px;
+//   font-weight: bold;
+//   font-family: sans-serif;
+//   border: none;
+//   border-radius: 5px;
+//   background-color: rgb(251, 255, 199);
+//   cursor: pointer;
+//   &:hover {
+//     transition: 0.1s ease-in-out;
+//     color: black;
+//     background-color: rgb(198, 201, 156);
+//   }
+// `;
 
 // animações para usar futuramente
 //
