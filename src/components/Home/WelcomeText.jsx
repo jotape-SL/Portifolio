@@ -8,9 +8,10 @@ export default function WelcomeText() {
   useEffect(() => {
     const typed = new Typed(refAuto.current, {
       strings: ["Bem vindo ao meu portfólio. :^)"],
-      typeSpeed: 250,
-      startDelay: 1000,
+      typeSpeed: 200,
+      startDelay: 1500,
       loop: false,
+      cursorChar: "|",
     });
     return () => {
       typed.destroy();
@@ -25,12 +26,15 @@ export default function WelcomeText() {
 
 const WelcomeP = styled.p`
   font-family: "Press Start 2P", monospace !important;
-  color: ${verdeMatrix};
-  max-width: 500px;
+  color: white;
+  max-width: 450px;
   position: absolute;
   margin: 0 auto;
   left: 0;
   right: 0;
   bottom: 7rem;
   text-align: center;
+  span {
+    font-size: 1.3rem;
+  }
 `;
