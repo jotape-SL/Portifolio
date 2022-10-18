@@ -1,27 +1,52 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { ResumoM, ResumoP, ResumoI } from "./ResumoTextos";
 
 export default function Resumo() {
-    const [Mresumo,setMresumo] = useState(false)
-    const [Presumo,setPresumo] = useState(true)
-    const [Iresumo,setIresumo] = useState(false)
-    return (
-        <div>
-            <TituloDiv>
-                <h2>Sobre mim</h2>
-                <BotaoResumo onClick={()=>setMresumo(!Mresumo) & setPresumo(false) & setIresumo(false)}>Muito resumido</BotaoResumo>
-                <BotaoResumo onClick={()=>setPresumo(!Presumo) & setMresumo(false) & setIresumo(false)}>Padrão</BotaoResumo>
-                <BotaoResumo onClick={()=>setIresumo(!Iresumo) & setPresumo(false) & setMresumo(false)}>Já somos intimos</BotaoResumo>
-            </TituloDiv>
-          {Mresumo && <p>A</p> || Presumo && <p>B</p> || Iresumo && <p>C</p> }
-        </div>
-    )
+  const [Mresumo, setMresumo] = useState(false);
+  const [Presumo, setPresumo] = useState(true);
+  const [Iresumo, setIresumo] = useState(false);
+  return (
+    <TextosDiv>
+      <TituloDiv>
+        <h2>Sobre mim</h2>
+        <BotaoResumo
+          onClick={() =>
+            setMresumo(!Mresumo) & setPresumo(false) & setIresumo(false)
+          }
+        >
+          MUITO resumido
+        </BotaoResumo>
+        <BotaoResumo
+          onClick={() =>
+            setPresumo(!Presumo) & setMresumo(false) & setIresumo(false)
+          }
+        >
+          Padrão
+        </BotaoResumo>
+        <BotaoResumo
+          onClick={() =>
+            setIresumo(!Iresumo) & setPresumo(false) & setMresumo(false)
+          }
+        >
+          Já somos intimos
+        </BotaoResumo>
+      </TituloDiv>
+      {(Mresumo && <ResumoM />) ||
+        (Presumo && <ResumoP />) ||
+        (Iresumo && <ResumoI />)}
+    </TextosDiv>
+  );
 }
 
+const TextosDiv = styled.div`
+  min-width: 651px;
+`;
+
 const TituloDiv = styled.div`
-    display: flex;
-    align-items: center;
-`
+  display: flex;
+  align-items: center;
+`;
 
 const BotaoResumo = styled.button`
   padding: 6px;

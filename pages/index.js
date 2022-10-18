@@ -5,9 +5,9 @@ import Projects from "../src/components/Projects";
 export default function PageSPA() {
   return (
     <>
-      <Home />
+      {/* <Home /> */}
       <About />
-      <Projects />
+      {/* <Projects /> */}
     </>
   );
 }

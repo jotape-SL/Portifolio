@@ -14,20 +14,7 @@ export default function About() {
             alt="uma pessoa bem bonita, mas conhecida como eu "
           />
         </div>
-        {/* <div>
-          <h2>Sobre mim</h2>
-          <BotaoResumo>Resumido</BotaoResumo>
-          <BotaoResumo>Não tão resumido</BotaoResumo>
-          <BotaoResumo>Já somos intimos</BotaoResumo>
-          <p>
-            Meu nome é João Pedro, tenho 20 anos. Sou programador Front-end.
-            Atualmente busco uma oportunidade para adquirir experiência na área
-            da tecnologia com programação e desenvolvimento web. Adoro criar e
-            dar vida para minhas ideias mais ambiciosas, os desafios fazem parte
-            da minha rotina.
-          </p>
-        </div> */}
-        <Resumo/>
+        <Resumo />
       </ContentDiv>
       <h2>Ferramentas com que trabalho</h2>
       <AboutIcons />
