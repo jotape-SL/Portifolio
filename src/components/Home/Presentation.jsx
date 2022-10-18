@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { CompRosa } from "../3dModels/CompRosa";
 import { TiArrowSortedDown } from "react-icons/ti";
 import { corFonte1st } from "../../styles/UI/variaveis";
+import WelcomeText from "./WelcomeText";
 
 export default function ConteudoInicial() {
   return (
@@ -18,6 +19,7 @@ export default function ConteudoInicial() {
           <CompRosa />
         </Suspense>
       </Canvas>
+      <WelcomeText />
       <ScrollDiv>
         <p>Scroll down</p>
         <TiArrowSortedDown className="iconScroll" />

@@ -34,7 +34,6 @@ export default function MatrixBackground() {
       grd.addColorStop(1, "rgba(0, 0, 0, 0.05)");
 
       context.fillStyle = grd;
-      // context.fillStyle = "rgba(0, 0, 0, 0.05)";
       context.fillRect(0, 0, canvas.width, canvas.height);
 
       context.fillStyle = `${verdeMatrix}`;
