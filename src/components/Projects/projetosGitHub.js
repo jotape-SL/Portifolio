@@ -37,8 +37,8 @@ const projetosGitHub = [
   {
     imagem:
       "https://user-images.githubusercontent.com/102804110/194963149-9abbef20-d539-49ed-b223-e383ae63ebb1.png",
-    link: "https://smart-bank-gamma.vercel.app/",
-    nome: "Smart Bank",
+    link: "https://three-fiber-5o2y.vercel.app/",
+    nome: "Three Fiber",
     id: 6,
   },
 ];
