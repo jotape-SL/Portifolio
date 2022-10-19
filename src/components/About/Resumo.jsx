@@ -46,6 +46,7 @@ const TextosDiv = styled.div`
 const TituloDiv = styled.div`
   display: flex;
   align-items: center;
+  margin-bottom: 2rem;
 `;
 
 const BotaoResumo = styled.button`
@@ -61,5 +62,8 @@ const BotaoResumo = styled.button`
     transition: 0.1s ease-in-out;
     color: black;
     background-color: rgb(198, 201, 156);
+  }
+  &:nth-child(2) {
+    margin-left: 1.5rem;
   }
 `;

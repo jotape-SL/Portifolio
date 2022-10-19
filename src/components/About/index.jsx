@@ -16,8 +16,10 @@ export default function About() {
         </div>
         <Resumo />
       </ContentDiv>
-      <h2>Ferramentas com que trabalho</h2>
-      <AboutIcons />
+      <FerramentasDiv>
+        <h2 className="sobre__titulo">Ferramentas com que trabalho</h2>
+        <AboutIcons />
+      </FerramentasDiv>
     </AboutSection>
   );
 }
@@ -38,19 +40,16 @@ const AboutSection = styled.section`
   img {
     padding: 5px;
     border: 2px solid ${cinzaClaro};
-    width: 400px;
-    height: 400px;
+    max-width: 400px;
     border-radius: 10px;
     animation: border 3s ease-in-out;
   }
   h2 {
     font-size: 3rem;
-    margin: 2rem 0;
   }
-  /* h2:nth-child(2) {
-    margin: 8rem 0rem 2rem 0;
-    font-size: 2rem;
-  } */
+  .sobre__titulo {
+    margin-bottom: 4rem;
+  }
 `;
 
 const ContentDiv = styled.div`
@@ -59,28 +58,17 @@ const ContentDiv = styled.div`
   justify-content: center;
   color: white;
   font-size: 1.1rem;
-  margin-top: 5.5rem;
-  padding: 5% 14% 0 14%;
+  margin: 5.5rem 2rem;
+  max-width: 50vw;
   div:nth-child(2) {
-    margin: 0 10rem;
+    margin: 0 5%;
   }
 `;
 
-// const BotaoResumo = styled.button`
-//   padding: 6px;
-//   margin-right: 5px;
-//   font-weight: bold;
-//   font-family: sans-serif;
-//   border: none;
-//   border-radius: 5px;
-//   background-color: rgb(251, 255, 199);
-//   cursor: pointer;
-//   &:hover {
-//     transition: 0.1s ease-in-out;
-//     color: black;
-//     background-color: rgb(198, 201, 156);
-//   }
-// `;
+const FerramentasDiv = styled.div`
+  margin: 10rem 0 5rem 0;
+  text-align: center;
+`;
 
 // animações para usar futuramente
 //
