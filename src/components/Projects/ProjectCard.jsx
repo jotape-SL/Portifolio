@@ -20,7 +20,7 @@ export default function ProjectCard() {
 }
 
 const DivCard = styled.div`
-  max-height: 500px;
+  max-height: 450px;
   border-radius: 10px;
   &:hover a {
     opacity: 1;
