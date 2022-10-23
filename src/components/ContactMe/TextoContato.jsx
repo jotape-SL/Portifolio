@@ -1,14 +1,33 @@
 import React from "react";
+import styled from "styled-components";
 
-function TextoContato() {
+export default function TextoContato() {
   return (
-    <div>
+    <TextoDiv>
       <p>
         Gostou do meu portfólio ou de alguns dos meu projetos? Sinta-se à
         vontade para mandar um feedback!!
       </p>
-    </div>
+      <FuturaImagemDiv>
+        <img
+          src="/horse.png"
+          alt="uma pessoa bem bonita, mas conhecida como eu "
+        />
+      </FuturaImagemDiv>
+    </TextoDiv>
   );
 }
 
-export default TextoContato;
+const TextoDiv = styled.div`
+  text-align: center;
+  p {
+    font-size: 2rem;
+  }
+`;
+
+const FuturaImagemDiv = styled.div`
+  margin: 5rem 0;
+  img {
+    width: 400px;
+  }
+`;

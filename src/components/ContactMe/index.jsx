@@ -14,8 +14,9 @@ export default function ContactMe() {
 }
 
 const ContactSection = styled.section`
-  min-height: 100vh;
   background-color: ${begeBG};
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 15%;
 `;
