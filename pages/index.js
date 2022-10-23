@@ -6,10 +6,10 @@ import Projects from "../src/components/Projects";
 export default function PageSPA() {
   return (
     <>
-      {/* <Home /> */}
-      {/* <About /> */}
+      <Home />
+      <About />
       {/* <Projects /> */}
-      <ContactMe />
+      {/* <ContactMe /> */}
     </>
   );
 }

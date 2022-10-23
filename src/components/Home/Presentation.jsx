@@ -6,10 +6,10 @@ import { TiArrowSortedDown } from "react-icons/ti";
 import { corFonte1st } from "../../styles/UI/variaveis";
 import WelcomeText from "./WelcomeText";
 
-export default function ConteudoInicial() {
+export default function ConteudoInicial({ scrollPosition }) {
   return (
     <Apresentacao>
-      <TextoAp>
+      <TextoAp className={scrollPosition > 1 ? "fix" : ""}>
         <Nome>João Pedro</Nome>
         <p>Desenvolvedor Front-End</p>
       </TextoAp>
@@ -47,7 +47,10 @@ const Apresentacao = styled.section`
   }
 `;
 const TextoAp = styled.div`
-  margin: 7rem 0 4rem 0;
+  padding: 7rem 0 4rem 0;
+  &.fix {
+    padding: 13.25rem 0 4rem 0;
+  }
 `;
 
 const Nome = styled.h1`
