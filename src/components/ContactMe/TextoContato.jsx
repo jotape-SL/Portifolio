@@ -8,12 +8,12 @@ export default function TextoContato() {
         Gostou do meu portfólio ou de alguns dos meu projetos? Sinta-se à
         vontade para mandar um feedback!!
       </p>
-      <FuturaImagemDiv>
+      {/* <FuturaImagemDiv>
         <img
           src="/horse.png"
           alt="uma pessoa bem bonita, mas conhecida como eu "
         />
-      </FuturaImagemDiv>
+      </FuturaImagemDiv> */}
     </TextoDiv>
   );
 }

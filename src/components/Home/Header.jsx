@@ -9,7 +9,7 @@ export default function Header({ scrollPosition }) {
       <img src="https://placekitten.com/151/100" alt="*" />
       <NavContainer>
         <NavLinks>
-          <a>Contato</a>
+          <a href="#contato">Contato</a>
         </NavLinks>
       </NavContainer>
     </Nav>
@@ -26,6 +26,7 @@ const Nav = styled.nav`
   }
   &.fix {
     background-color: #00000096;
+    border-bottom: 1px solid white;
     backdrop-filter: blur(10px);
     position: fixed;
     width: 100%;

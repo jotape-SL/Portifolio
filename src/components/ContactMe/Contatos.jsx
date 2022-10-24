@@ -1,7 +1,6 @@
 import React from "react";
 
-import { FiGithub, FiLinkedin } from "react-icons/fi";
-import { VscGithubAlt, VscGithubInverted } from "react-icons/vsc";
+import { VscGithubInverted } from "react-icons/vsc";
 import { FaLinkedinIn } from "react-icons/fa";
 import styled from "styled-components";
 
@@ -34,15 +33,15 @@ export default function Contatos() {
 
 const IconDiv = styled.div`
   display: flex;
-  flex-flow: column;
-  justify-content: space-around;
   text-align: center;
+  flex-wrap: wrap;
+  gap: 1rem;
   a {
-    border: 2px solid black;
-    border-radius: 100%;
+    border: 4px solid black;
+    border-radius: 50%;
     overflow: hidden;
-    min-width: 130px;
-    min-height: 130px;
+    width: 132px;
+    height: 131px;
     &:hover {
       color: white;
       background-color: black;
@@ -50,10 +49,12 @@ const IconDiv = styled.div`
   }
   a:nth-child(2) {
     svg {
-      font-size: 5rem;
+      margin-top: 10%;
+      font-size: 6rem;
     }
   }
-  span svg {
+  a svg {
+    margin-top: 5%;
     font-size: 7rem;
   }
 `;

@@ -6,7 +6,7 @@ import TextoContato from "./TextoContato";
 
 export default function ContactMe() {
   return (
-    <ContactSection>
+    <ContactSection id="contato">
       <TextoContato />
       <Contatos />
     </ContactSection>
@@ -16,7 +16,8 @@ export default function ContactMe() {
 const ContactSection = styled.section`
   background-color: ${begeBG};
   display: flex;
+  gap: 1rem;
   align-items: center;
-  min-height: 100vh;
-  padding: 0 15%;
+  min-height: 50vh;
+  padding: 0 20%;
 `;
