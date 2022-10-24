@@ -1,17 +1,15 @@
 import styled from "styled-components";
 import { BsMoonStarsFill, BsMoonStars } from "react-icons/bs";
 import { corFonte1st, verdeMatrix } from "../../styles/UI/variaveis";
+import { useEffect, useState } from "react";
 
-export default function Header() {
+export default function Header({ scrollPosition }) {
   return (
-    <Nav>
+    <Nav className={scrollPosition > 1 ? "fix" : "rel"}>
       <img src="https://placekitten.com/151/100" alt="*" />
       <NavContainer>
-        <li>
-          <BsMoonStarsFill />
-        </li>
         <NavLinks>
-          <a>Contato</a>
+          <a href="#contato">Contato</a>
         </NavLinks>
       </NavContainer>
     </Nav>
@@ -22,17 +20,24 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  position: relative;
+  &.rel {
+    position: relative;
+    background-color: transparent;
+  }
+  &.fix {
+    background-color: #00000096;
+    border-bottom: 1px solid white;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+  }
 `;
 const NavContainer = styled.ul`
   align-items: center;
   display: flex;
   flex-direction: row;
-  li svg {
-    color: ${corFonte1st};
-    font-size: 1.3rem;
-    cursor: pointer;
-  }
 `;
 const NavLinks = styled.li`
   border-radius: 5px;
