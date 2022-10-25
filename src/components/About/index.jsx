@@ -26,7 +26,7 @@ export default function About() {
 
 const AboutSection = styled.section`
   position: relative;
-  margin-top: 25px;
+  padding-top: 15rem;
   min-height: calc(100vh + 25px);
   font-family: monospace;
   background-image: linear-gradient(

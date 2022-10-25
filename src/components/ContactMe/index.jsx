@@ -19,5 +19,5 @@ const ContactSection = styled.section`
   gap: 1rem;
   align-items: center;
   min-height: 50vh;
-  padding: 0 20%;
+  padding: 15rem 20% 5rem 20%;
 `;
