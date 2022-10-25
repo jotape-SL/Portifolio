@@ -12,21 +12,21 @@ export default function Resumo() {
         <h2>Sobre mim</h2>
         <BotaoResumo
           onClick={() =>
-            setMresumo(!Mresumo) & setPresumo(false) & setIresumo(false)
+            setMresumo(true) & setPresumo(false) & setIresumo(false)
           }
         >
           MUITO resumido
         </BotaoResumo>
         <BotaoResumo
           onClick={() =>
-            setPresumo(!Presumo) & setMresumo(false) & setIresumo(false)
+            setPresumo(true) & setMresumo(false) & setIresumo(false)
           }
         >
           Padrão
         </BotaoResumo>
         <BotaoResumo
           onClick={() =>
-            setIresumo(!Iresumo) & setPresumo(false) & setMresumo(false)
+            setIresumo(true) & setPresumo(false) & setMresumo(false)
           }
         >
           Já somos intimos
