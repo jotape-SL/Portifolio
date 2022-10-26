@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import styled from "styled-components";
+import styled, { withTheme } from "styled-components";
 import { verdeMatrix } from "../../styles/UI/variaveis";
 
 export default function MatrixBackground() {
@@ -10,7 +10,7 @@ export default function MatrixBackground() {
     const canvas = refMatrix.current;
 
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight + 100;
+    canvas.height = window.innerHeight + 300;
 
     const katakana =
       "アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン";
@@ -33,11 +33,30 @@ export default function MatrixBackground() {
       grd.addColorStop(0, "black");
       grd.addColorStop(1, "rgba(0, 0, 0, 0.05)");
 
-      context.fillStyle = grd;
-      context.fillRect(0, 0, canvas.width, canvas.height);
+      //  ------------------------antigo----------------------------
 
+      // context.fillStyle = grd;
+      // context.fillRect(0, 0, canvas.width, canvas.height);
+
+      // context.fillStyle = `${verdeMatrix}`;
+      // context.font = fontSize + "px monospace";
+
+      // -----------------------------------------------------------
+
+      //  -------------------------novo------------------------------
+
+      context.fillStyle = grd;
+      context.moveTo(0, 0);
+      context.lineTo(canvas.width, 0);
+      context.lineTo(canvas.width, canvas.height - 20);
+      context.lineTo(0, canvas.height - 200);
+      context.fill();
+      context.closePath();
+      context.stroke();
       context.fillStyle = `${verdeMatrix}`;
       context.font = fontSize + "px monospace";
+
+      //  -----------------------------------------------------------
 
       for (let i = 0; i < rainDrops.length; i++) {
         const text = alphabet.charAt(
@@ -52,7 +71,7 @@ export default function MatrixBackground() {
       }
     };
 
-    setInterval(draw, 40);
+    setInterval(draw, 100);
   }, [refMatrix]);
 
   return (
@@ -65,9 +84,7 @@ export default function MatrixBackground() {
 const ovFlowHeightVar = 100;
 
 const MatrixDiv = styled.div`
-  background-color: ${verdeMatrix};
   position: absolute;
-  height: 100% + ${ovFlowHeightVar}px;
+  height: 100%;
   width: 100%;
-  overflow: hidden;
 `;
