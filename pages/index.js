@@ -9,9 +9,9 @@ export default function PageSPA() {
     <>
       <Home />
       <About />
-      {/* <Projects /> */}
-      {/* <ContactMe /> */}
-      {/* <Footer /> */}
+      <Projects />
+      <ContactMe />
+      <Footer />
     </>
   );
 }

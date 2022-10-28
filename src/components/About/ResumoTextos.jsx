@@ -30,8 +30,7 @@ function ResumoI() {
       <br />
       <br />
       No meu tempo livre adoro jogar um videogame, ver uns filminhos, ler
-      quadrinhos e de vez em quando pra me sentir um pouco mais intelectual leio
-      uns livros.
+      quadrinhos ou algum livro, principalmente de ficção científica.
     </PTextos>
   );
 }
