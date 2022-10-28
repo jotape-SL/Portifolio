@@ -6,7 +6,7 @@ export default function FotoMinha() {
   return (
     <div>
       <ProfilePic
-        src="https://placekitten.com/1000/1000"
+        src="./perfil.png"
         alt="uma pessoa bem bonita, mas conhecida como eu "
       />
     </div>
@@ -16,7 +16,7 @@ export default function FotoMinha() {
 const ProfilePic = styled.img`
   padding: 5px;
   border: 2px solid ${cinzaClaro};
-  max-width: 400px;
+  max-width: 500px;
   border-radius: 10px;
   animation: border 3s ease-in-out;
 `;

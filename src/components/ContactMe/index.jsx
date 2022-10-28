@@ -14,7 +14,7 @@ export default function ContactMe() {
 }
 
 const ContactSection = styled.section`
-  background-color: ${begeBG};
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   line-height: 40px;
