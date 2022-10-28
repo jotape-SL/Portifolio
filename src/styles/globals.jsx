@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { begeBG } from "./UI/variaveis";
 
 const GlobalStyle = createGlobalStyle`
   html, body, div, span, applet, object, iframe,
@@ -30,6 +31,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     line-height: 1;
     font-family: "Source Sans Pro", monospace;
+    background-color: ${begeBG};
   }
   ol, ul {
     list-style: none;

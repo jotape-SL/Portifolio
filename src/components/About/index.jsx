@@ -59,6 +59,6 @@ const ContentDiv = styled.div`
 `;
 
 const FerramentasDiv = styled.div`
-  margin: 10rem 0 5rem 0;
+  margin: 8rem 0 5rem 0;
   text-align: center;
 `;
