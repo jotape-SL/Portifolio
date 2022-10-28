@@ -34,14 +34,21 @@ const AboutSection = styled.section`
   }
   &::before {
     position: absolute;
-    height: 15%;
     width: 100%;
+    height: 15%;
     left: 0;
     top: -6rem;
     content: "";
     background: ${begeBG};
     transform: skewY(356deg);
     display: block;
+    @media (max-width: 768px) {
+      height: 10%;
+    }
+  }
+  @media (max-width: 768px) {
+    margin-top: 8rem;
+    padding: 0;
   }
 `;
 
@@ -49,12 +56,20 @@ const ContentDiv = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  flex-direction: row;
   color: black;
   font-size: 1.1rem;
   margin: 5.5rem 2rem;
   max-width: 50vw;
   div:nth-child(2) {
-    margin: 0 5%;
+    margin: 40px 5%;
+  }
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 8rem;
+    align-content: center;
   }
 `;
 

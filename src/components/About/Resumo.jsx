@@ -41,6 +41,9 @@ export default function Resumo() {
 
 const TextosDiv = styled.div`
   min-width: 651px;
+  @media (max-width: 768px) {
+    min-height: 280px;
+  }
 `;
 
 const TituloDiv = styled.div`

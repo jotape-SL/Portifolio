@@ -65,7 +65,7 @@ export default function MatrixBackground() {
 const ovFlowHeightVar = 100;
 
 const MatrixDiv = styled.div`
-  min-height: 100vw;
+  min-height: 150vh;
   overflow: hidden;
   position: absolute;
   height: 100%;
