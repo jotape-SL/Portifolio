@@ -15,13 +15,13 @@ export default function Projects() {
 }
 
 const SectionProjetos = styled.section`
-  min-height: 100vw;
   background-color: ${begeBG};
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: ${paddingPadrao};
+  margin-top: 3rem;
+  padding: 10%;
   h2 {
     margin-bottom: 5rem;
     font-size: 3rem;

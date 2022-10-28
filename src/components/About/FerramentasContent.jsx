@@ -21,24 +21,30 @@ export default function AboutIcons() {
     SiSass,
   ];
   return (
-    <IconDiv>
-      {icons.map((Icon, i) => {
-        let names = Icon.name.slice(2);
-        if (names.charAt(0) === "N") {
-          names = "Next.js";
-        }
+    <>
+      <FerramentaH2>Ferramentas com que trabalho</FerramentaH2>
+      <IconDiv>
+        {icons.map((Icon, i) => {
+          let names = Icon.name.slice(2);
+          if (names.charAt(0) === "N") {
+            names = "Next.js";
+          }
 
-        return (
-          <span key={i}>
-            <Icon />
-            <p href="/">{names}</p>
-          </span>
-        );
-      })}
-    </IconDiv>
+          return (
+            <span key={i}>
+              <Icon />
+              <p href="/">{names}</p>
+            </span>
+          );
+        })}
+      </IconDiv>
+    </>
   );
 }
 
+const FerramentaH2 = styled.h2`
+  margin-bottom: 4rem;
+`;
 const IconDiv = styled.div`
   align-items: center;
   flex-wrap: wrap;

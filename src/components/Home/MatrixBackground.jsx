@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import styled from "styled-components";
+import styled, { withTheme } from "styled-components";
 import { verdeMatrix } from "../../styles/UI/variaveis";
 
 export default function MatrixBackground() {
@@ -10,7 +10,7 @@ export default function MatrixBackground() {
     const canvas = refMatrix.current;
 
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight + 100;
+    canvas.height = window.innerHeight + 300;
 
     const katakana =
       "アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン";
@@ -19,7 +19,7 @@ export default function MatrixBackground() {
 
     const alphabet = katakana + latin + nums;
 
-    const fontSize = 15;
+    const fontSize = 20;
     const columns = canvas.width / fontSize;
 
     const rainDrops = [];
@@ -65,9 +65,9 @@ export default function MatrixBackground() {
 const ovFlowHeightVar = 100;
 
 const MatrixDiv = styled.div`
-  background-color: ${verdeMatrix};
-  position: absolute;
-  height: 100% + ${ovFlowHeightVar}px;
-  width: 100%;
+  min-height: 100vw;
   overflow: hidden;
+  position: absolute;
+  height: 100%;
+  width: 100%;
 `;

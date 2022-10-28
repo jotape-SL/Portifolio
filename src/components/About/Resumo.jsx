@@ -54,7 +54,7 @@ const BotaoResumo = styled.button`
   margin: 0 5px;
   font-weight: bold;
   font-family: sans-serif;
-  border: none;
+  border: 1px solid black;
   border-radius: 5px;
   background-color: rgb(251, 255, 199);
   cursor: pointer;

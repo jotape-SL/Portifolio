@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import styled from "styled-components";
 import Header from "./Header";
 import MatrixBackground from "./MatrixBackground";
 import ConteudoInicial from "./Presentation";
@@ -18,10 +19,15 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <HomeSection>
       <MatrixBackground />
       <Header scrollPosition={scrollPosition} />
       <ConteudoInicial scrollPosition={scrollPosition} />
-    </>
+    </HomeSection>
   );
 }
+
+const HomeSection = styled.section`
+  background-color: black;
+  max-height: fit-content;
+`;
