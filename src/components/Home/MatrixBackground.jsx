@@ -19,7 +19,7 @@ export default function MatrixBackground() {
 
     const alphabet = katakana + latin + nums;
 
-    const fontSize = 15;
+    const fontSize = 20;
     const columns = canvas.width / fontSize;
 
     const rainDrops = [];
@@ -33,30 +33,11 @@ export default function MatrixBackground() {
       grd.addColorStop(0, "black");
       grd.addColorStop(1, "rgba(0, 0, 0, 0.05)");
 
-      //  ------------------------antigo----------------------------
-
-      // context.fillStyle = grd;
-      // context.fillRect(0, 0, canvas.width, canvas.height);
-
-      // context.fillStyle = `${verdeMatrix}`;
-      // context.font = fontSize + "px monospace";
-
-      // -----------------------------------------------------------
-
-      //  -------------------------novo------------------------------
-
       context.fillStyle = grd;
-      context.moveTo(0, 0);
-      context.lineTo(canvas.width, 0);
-      context.lineTo(canvas.width, canvas.height - 20);
-      context.lineTo(0, canvas.height - 200);
-      context.fill();
-      context.closePath();
-      context.stroke();
+      context.fillRect(0, 0, canvas.width, canvas.height);
+
       context.fillStyle = `${verdeMatrix}`;
       context.font = fontSize + "px monospace";
-
-      //  -----------------------------------------------------------
 
       for (let i = 0; i < rainDrops.length; i++) {
         const text = alphabet.charAt(
@@ -71,7 +52,7 @@ export default function MatrixBackground() {
       }
     };
 
-    setInterval(draw, 100);
+    setInterval(draw, 40);
   }, [refMatrix]);
 
   return (
@@ -84,6 +65,8 @@ export default function MatrixBackground() {
 const ovFlowHeightVar = 100;
 
 const MatrixDiv = styled.div`
+  min-height: 100vw;
+  overflow: hidden;
   position: absolute;
   height: 100%;
   width: 100%;

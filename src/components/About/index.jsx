@@ -26,14 +26,10 @@ export default function About() {
 
 const AboutSection = styled.section`
   position: relative;
-  padding-top: 15rem;
-  min-height: calc(100vh + 25px);
+  margin-top: 15rem;
+  padding-top: 3rem;
   font-family: monospace;
-  background-image: linear-gradient(
-    rgba(0, 0, 0, 0.877) 5%,
-    black 1%,
-    ${begeBG} 70%
-  );
+  background-color: ${begeBG};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,13 +46,24 @@ const AboutSection = styled.section`
   .sobre__titulo {
     margin-bottom: 4rem;
   }
+  &::before {
+    position: absolute;
+    height: 15%;
+    width: 100%;
+    left: 0;
+    top: -6rem;
+    content: "";
+    background: ${begeBG};
+    transform: skewY(356deg);
+    display: block;
+  }
 `;
 
 const ContentDiv = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  color: white;
+  color: black;
   font-size: 1.1rem;
   margin: 5.5rem 2rem;
   max-width: 50vw;
@@ -69,15 +76,3 @@ const FerramentasDiv = styled.div`
   margin: 10rem 0 5rem 0;
   text-align: center;
 `;
-
-// animações para usar futuramente
-//
-// @keyframes opacityLtR {
-//   from {
-//     opacity: 0;
-//     transform: translateX(-1000px);
-//   }
-//   to {
-//     opacity: 1;
-//     transform: translateX(0px);
-//   }
