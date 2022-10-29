@@ -50,6 +50,9 @@ const TituloDiv = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 2rem;
+  @media (max-width: 320px) {
+    flex-direction: column;
+  }
 `;
 
 const BotaoResumo = styled.button`
