@@ -58,7 +58,6 @@ const TituloDiv = styled.div`
   text-align: center;
   display: flex;
   align-items: center;
-  margin-bottom: 2rem;
   @media (max-width: 320px) {
     flex-direction: column;
     margin: 40px 0;

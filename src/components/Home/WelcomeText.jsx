@@ -34,7 +34,14 @@ const WelcomeP = styled.p`
   right: 0;
   bottom: 7rem;
   text-align: center;
+  @media (max-width: 655px) {
+    bottom: 6rem;
+    max-width: 300px;
+  }
   span {
     font-size: 1.3rem;
+    @media (max-width: 655px) {
+      font-size: 1rem;
+    }
   }
 `;
