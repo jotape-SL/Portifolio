@@ -23,7 +23,7 @@ export default function About() {
 const AboutSection = styled.section`
   position: relative;
   margin-top: 15rem;
-  padding-top: 3rem;
+  padding-top: 9rem;
   font-family: monospace;
   background-color: ${begeBG};
   display: flex;
