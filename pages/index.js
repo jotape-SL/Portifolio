@@ -7,9 +7,9 @@ export default function PageSPA() {
   return (
     <>
       {/* <Home /> */}
-      {/* <About /> */}
+      <About />
       {/* <Projects /> */}
-      <ContactMe />
+      {/* <ContactMe /> */}
     </>
   );
 }

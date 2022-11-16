@@ -35,16 +35,13 @@ const AboutSection = styled.section`
   &::before {
     position: absolute;
     width: 100%;
-    height: 15%;
+    height: 20vh;
     left: 0;
     top: -6rem;
     content: "";
     background: ${begeBG};
     transform: skewY(356deg);
     display: block;
-    @media (max-width: 768px) {
-      height: 10%;
-    }
   }
   @media (max-width: 768px) {
     margin-top: 8rem;
@@ -58,13 +55,11 @@ const ContentDiv = styled.div`
   justify-content: center;
   flex-direction: row;
   color: black;
-  font-size: 1.1rem;
-  margin: 5.5rem 2rem;
   max-width: 50vw;
   div:nth-child(2) {
-    margin: 40px 5%;
+    margin: 0 4%;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 1216px) {
     flex-wrap: wrap;
     align-items: center;
     flex-direction: column;
@@ -74,6 +69,6 @@ const ContentDiv = styled.div`
 `;
 
 const FerramentasDiv = styled.div`
-  margin: 8rem 0 5rem 0;
+  margin-bottom: 2rem;
   text-align: center;
 `;

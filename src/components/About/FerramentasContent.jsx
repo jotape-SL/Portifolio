@@ -44,14 +44,14 @@ export default function AboutIcons() {
 
 const FerramentaH2 = styled.h2`
   margin-bottom: 4rem;
-  padding: 0 10%;
 `;
 const IconDiv = styled.div`
   align-items: center;
   flex-wrap: wrap;
   display: flex;
-  text-align: center;
   gap: 1rem;
+  justify-content: center;
+  padding: 0 10%;
   svg {
     font-size: 4rem;
   }
@@ -69,9 +69,5 @@ const IconDiv = styled.div`
   span:hover {
     transition: 0.1s ease-in-out;
     background-color: white;
-  }
-  @media (max-width: 768px) {
-    justify-content: center;
-    padding: 0 10%;
   }
 `;

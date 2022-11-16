@@ -36,6 +36,8 @@ function ResumoI() {
 }
 
 const PTextos = styled.p`
+  font-size: 1.5rem;
   line-height: 20px;
+  min-height: 540px;
 `;
 export { ResumoM, ResumoP, ResumoI };
