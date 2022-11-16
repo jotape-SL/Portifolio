@@ -8,8 +8,8 @@ export default function PageSPA() {
     <>
       <Home />
       <About />
-      <Projects />
-      <ContactMe />
+      {/* <Projects /> */}
+      {/* <ContactMe /> */}
     </>
   );
 }

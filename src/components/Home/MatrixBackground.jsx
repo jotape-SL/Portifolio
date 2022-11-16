@@ -12,12 +12,13 @@ export default function MatrixBackground() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight + 300;
 
-    const katakana =
-      "アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン";
-    const latin = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const nums = "0123456789";
+    window.addEventListener("resize", function () {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
 
-    const alphabet = katakana + latin + nums;
+    const alphabet =
+      "アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッンABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
     const fontSize = 20;
     const columns = canvas.width / fontSize;
@@ -65,9 +66,8 @@ export default function MatrixBackground() {
 const ovFlowHeightVar = 100;
 
 const MatrixDiv = styled.div`
-  min-height: 100vw;
+  min-height: 150vh;
   overflow: hidden;
   position: absolute;
-  height: 100%;
   width: 100%;
 `;

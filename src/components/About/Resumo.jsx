@@ -10,27 +10,29 @@ export default function Resumo() {
     <TextosDiv>
       <TituloDiv>
         <h2>Sobre mim</h2>
-        <BotaoResumo
-          onClick={() =>
-            setMresumo(true) & setPresumo(false) & setIresumo(false)
-          }
-        >
-          MUITO resumido
-        </BotaoResumo>
-        <BotaoResumo
-          onClick={() =>
-            setPresumo(true) & setMresumo(false) & setIresumo(false)
-          }
-        >
-          Padrão
-        </BotaoResumo>
-        <BotaoResumo
-          onClick={() =>
-            setIresumo(true) & setPresumo(false) & setMresumo(false)
-          }
-        >
-          Já somos intimos
-        </BotaoResumo>
+        <div>
+          <BotaoResumo
+            onClick={() =>
+              setMresumo(true) & setPresumo(false) & setIresumo(false)
+            }
+          >
+            MUITO resumido
+          </BotaoResumo>
+          <BotaoResumo
+            onClick={() =>
+              setPresumo(true) & setMresumo(false) & setIresumo(false)
+            }
+          >
+            Padrão
+          </BotaoResumo>
+          <BotaoResumo
+            onClick={() =>
+              setIresumo(true) & setPresumo(false) & setMresumo(false)
+            }
+          >
+            Já somos intimos
+          </BotaoResumo>
+        </div>
       </TituloDiv>
       {(Mresumo && <ResumoM />) ||
         (Presumo && <ResumoP />) ||
@@ -41,12 +43,25 @@ export default function Resumo() {
 
 const TextosDiv = styled.div`
   min-width: 651px;
+  @media (max-width: 655px) {
+    min-width: 400px;
+    div {
+      display: block;
+    }
+  }
+  @media (max-width: 399px) {
+    min-width: 310px;
+  }
 `;
 
 const TituloDiv = styled.div`
+  text-align: center;
   display: flex;
   align-items: center;
-  margin-bottom: 2rem;
+  @media (max-width: 320px) {
+    flex-direction: column;
+    margin: 40px 0;
+  }
 `;
 
 const BotaoResumo = styled.button`
@@ -58,12 +73,19 @@ const BotaoResumo = styled.button`
   border-radius: 5px;
   background-color: rgb(251, 255, 199);
   cursor: pointer;
+  @media (max-width: 399px) {
+    padding: 2px;
+    margin: 0.5px;
+  }
   &:hover {
     transition: 0.1s ease-in-out;
     color: black;
     background-color: rgb(198, 201, 156);
   }
-  &:nth-child(2) {
+  &:nth-child(1) {
     margin-left: 1.5rem;
+    @media (max-width: 768px) {
+      margin-left: 0;
+    }
   }
 `;

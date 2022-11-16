@@ -19,4 +19,7 @@ const ProfilePic = styled.img`
   max-width: 500px;
   border-radius: 10px;
   animation: border 3s ease-in-out;
+  @media (max-width: 655px) {
+    max-width: 95vw;
+  }
 `;

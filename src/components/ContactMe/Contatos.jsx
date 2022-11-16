@@ -35,6 +35,7 @@ const IconDiv = styled.div`
   display: flex;
   text-align: center;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   a {
     border: 4px solid black;

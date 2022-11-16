@@ -23,7 +23,7 @@ export default function About() {
 const AboutSection = styled.section`
   position: relative;
   margin-top: 15rem;
-  padding-top: 3rem;
+  padding-top: 9rem;
   font-family: monospace;
   background-color: ${begeBG};
   display: flex;
@@ -34,8 +34,8 @@ const AboutSection = styled.section`
   }
   &::before {
     position: absolute;
-    height: 15%;
     width: 100%;
+    height: 20vh;
     left: 0;
     top: -6rem;
     content: "";
@@ -43,22 +43,32 @@ const AboutSection = styled.section`
     transform: skewY(356deg);
     display: block;
   }
+  @media (max-width: 768px) {
+    margin-top: 8rem;
+    padding: 0;
+  }
 `;
 
 const ContentDiv = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  flex-direction: row;
   color: black;
-  font-size: 1.1rem;
-  margin: 5.5rem 2rem;
   max-width: 50vw;
   div:nth-child(2) {
-    margin: 0 5%;
+    margin: 0 4%;
+  }
+  @media (max-width: 1216px) {
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 8rem;
+    align-content: center;
   }
 `;
 
 const FerramentasDiv = styled.div`
-  margin: 8rem 0 5rem 0;
+  margin-bottom: 2rem;
   text-align: center;
 `;

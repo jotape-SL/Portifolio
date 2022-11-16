@@ -44,6 +44,10 @@ const Apresentacao = styled.section`
     border: 1px solid white;
     border-radius: 5px;
     background-color: black;
+    @media (max-width: 655px) {
+      width: 300px !important;
+      height: 250px !important;
+    }
   }
 `;
 const TextoAp = styled.div`
@@ -58,6 +62,9 @@ const Nome = styled.h1`
   text-align: center;
   font-size: 5rem;
   font-weight: lighter;
+  @media (max-width: 655px) {
+    font-size: 3rem;
+  }
 `;
 
 const ScrollDiv = styled.div`

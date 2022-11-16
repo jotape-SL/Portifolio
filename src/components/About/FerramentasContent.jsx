@@ -49,8 +49,9 @@ const IconDiv = styled.div`
   align-items: center;
   flex-wrap: wrap;
   display: flex;
-  text-align: center;
   gap: 1rem;
+  justify-content: center;
+  padding: 0 10%;
   svg {
     font-size: 4rem;
   }
