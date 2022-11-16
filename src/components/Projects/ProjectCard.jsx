@@ -22,19 +22,18 @@ export default function ProjectCard() {
 const DivCard = styled.div`
   max-height: 450px;
   border-radius: 10px;
-  &:hover a {
-    opacity: 1;
-  }
+
   a {
-    width: 650px;
-    height: 450px;
+    @media (max-width: 650px) {
+      width: 100%;
+    }
+    max-height: 450px;
     border-radius: 10px;
-    padding: 5rem;
     display: block;
-    opacity: 0;
     transform: translateY(-453px);
-    background-color: #0000007d;
+    overflow: hidden;
     &:hover {
+      background-color: #0000007d;
       transition: 0.5s ease-in-out;
     }
     p {
@@ -48,6 +47,10 @@ const DivCard = styled.div`
     }
   }
   img {
+    @media (max-width: 650px) {
+      width: 100%;
+      height: 400px;
+    }
     object-fit: cover;
     border-radius: 10px;
     width: 650px;
