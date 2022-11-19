@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { cinzaClaro, begeBG } from "../../styles/UI/variaveis";
+import { begeBG } from "../../styles/UI/variaveis";
 import FerramentasContent from "./FerramentasContent";
 import Resumo from "./Resumo";
-import profilePic from "../../../public/perfil.png";
 import FotoMinha from "./FotoMinha";
 
 export default function About() {
@@ -24,7 +23,7 @@ const AboutSection = styled.section`
   position: relative;
   margin-top: 15rem;
   padding-top: 9rem;
-  font-family: monospace;
+  font-family: "Sono",monospace;
   background-color: ${begeBG};
   display: flex;
   flex-direction: column;

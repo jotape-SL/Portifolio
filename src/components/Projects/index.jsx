@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { begeBG, cinzaClaro } from "../../styles/UI/variaveis";
-import { paddingPadrao } from "../../styles/UI/variaveis";
+import { begeBG } from "../../styles/UI/variaveis";
 import ProjectCard from "./ProjectCard";
 
 export default function Projects() {
