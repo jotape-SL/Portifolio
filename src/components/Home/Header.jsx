@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 export default function Header({ scrollPosition }) {
   return (
     <Nav className={scrollPosition > 1 ? "fix" : "rel"}>
-      <img src="https://placekitten.com/150/100" alt="*" />
+      <a href="#home">{` JP `}</a>
       <NavContainer>
         <NavLinks>
           <a href="#contato">Contato</a>
@@ -20,11 +20,13 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  @media (max-width: 375px) {
-    img {
-      width: 140px;
-      height: 90px;
-    }
+  a {
+    font-size: 4rem;
+    font-family: "Kenia", monospace;
+    /* color: inherit; */
+    mix-blend-mode: revert;
+    text-shadow: 1px 1px 2px black, 0 0 1em white, 0 0 0.2em white;
+    padding: 1rem;
   }
   &.rel {
     position: relative;

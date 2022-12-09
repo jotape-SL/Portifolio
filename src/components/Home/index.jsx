@@ -19,7 +19,7 @@ export default function Home() {
   }, []);
 
   return (
-    <HomeSection>
+    <HomeSection id="home">
       <MatrixBackground />
       <Header scrollPosition={scrollPosition} />
       <ConteudoInicial scrollPosition={scrollPosition} />
