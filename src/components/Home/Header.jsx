@@ -6,11 +6,19 @@ import { useEffect, useState } from "react";
 export default function Header({ scrollPosition }) {
   return (
     <Nav className={scrollPosition > 1 ? "fix" : "rel"}>
-      <a href="#home">{` JP `}</a>
+      <IconeA href="#home">{` JP `}</IconeA>
       <NavContainer>
         <NavLinks>
           <a href="#contato">Contato</a>
         </NavLinks>
+        <LangDiv>
+          <a href="#">
+            <svg></svg>
+          </a>
+          <a href="#">
+            <svg></svg>
+          </a>
+        </LangDiv>
       </NavContainer>
     </Nav>
   );
@@ -20,27 +28,28 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  a {
-    font-size: 4rem;
-    font-family: "Kenia", monospace;
-    /* color: inherit; */
-    mix-blend-mode: revert;
-    text-shadow: 1px 1px 2px black, 0 0 1em white, 0 0 0.2em white;
-    padding: 1rem;
-  }
   &.rel {
     position: relative;
     background-color: transparent;
   }
   &.fix {
-    background-color: #00000096;
+    /* background-color: #ffebcd99; */
     border-bottom: 1px solid white;
+    border-radius: 15px;
     backdrop-filter: blur(10px);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 999;
   }
+`;
+
+const IconeA = styled.a`
+  font-size: 4rem;
+  font-family: "Kenia", monospace;
+  mix-blend-mode: revert;
+  text-shadow: 1px 1px 2px black, 0 0 1em white, 0 0 0.2em white;
+  padding: 1rem;
 `;
 const NavContainer = styled.ul`
   align-items: center;
@@ -65,6 +74,26 @@ const NavLinks = styled.li`
     cursor: pointer;
     @media (max-width: 375px) {
       padding: 1.5rem;
+    }
+  }
+`;
+
+const LangDiv = styled.div`
+  svg {
+    margin-left: 1rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 45px;
+    height: 30px;
+  }
+  a:nth-child(1) {
+    svg {
+      background-image: url("./images/brazilian-flag.png");
+    }
+  }
+  a:nth-child(2) {
+    svg {
+      background-image: url("./images/american-flag.png");
     }
   }
 `;
