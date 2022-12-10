@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { BsMoonStarsFill, BsMoonStars } from "react-icons/bs";
 import { corFonte1st, verdeMatrix } from "../../styles/UI/variaveis";
-import { useEffect, useState } from "react";
+import { useGlobalContext } from "../Context";
 
 export default function Header({ scrollPosition }) {
+  const { toggleLang } = useGlobalContext();
   return (
     <Nav className={scrollPosition > 1 ? "fix" : "rel"}>
       <IconeA href="#home">{` JP `}</IconeA>
@@ -12,10 +12,10 @@ export default function Header({ scrollPosition }) {
           <a href="#contato">Contato</a>
         </NavLinks>
         <LangDiv>
-          <a href="#">
+          <a onClick={() => toggleLang(true)}>
             <svg></svg>
           </a>
-          <a href="#">
+          <a onClick={() => toggleLang(false)}>
             <svg></svg>
           </a>
         </LangDiv>
@@ -79,6 +79,9 @@ const NavLinks = styled.li`
 `;
 
 const LangDiv = styled.div`
+  a {
+    cursor: pointer;
+  }
   svg {
     margin-left: 1rem;
     background-repeat: no-repeat;

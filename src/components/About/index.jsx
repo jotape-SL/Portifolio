@@ -23,7 +23,7 @@ const AboutSection = styled.section`
   position: relative;
   margin-top: 15rem;
   padding-top: 9rem;
-  font-family: "Sono",monospace;
+  font-family: "Sono", monospace;
   background-color: ${begeBG};
   display: flex;
   flex-direction: column;

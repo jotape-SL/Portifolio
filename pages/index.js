@@ -8,7 +8,7 @@ export default function PageSPA() {
   return (
     <>
       <Head>
-        <title>Portfolio</title>
+        <title>Portfolio | Jotape</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
