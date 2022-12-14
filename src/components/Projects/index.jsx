@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import { begeBG } from "../../styles/UI/variaveis";
+import { useGlobalContext } from "../Context";
 import ProjectCard from "./ProjectCard";
 
 export default function Projects() {
+  const { isPtbr } = useGlobalContext();
   return (
     <SectionProjetos>
-      <h2>Meus projetos</h2>
+      <h2>{isPtbr ? "Meus projetos" : "My Projects"}</h2>
       <DivContainer>
         <ProjectCard />
       </DivContainer>
