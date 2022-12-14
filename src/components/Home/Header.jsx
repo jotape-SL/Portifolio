@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { corFonte1st, verdeMatrix } from "../../styles/UI/variaveis";
 import { useGlobalContext } from "../Context";
-import { textos } from "./textos";
+import { textos } from "./textosHome";
 
 export default function Header({ scrollPosition }) {
   const { toggleLang, isPtbr } = useGlobalContext();

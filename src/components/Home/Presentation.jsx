@@ -5,7 +5,7 @@ import { CompRosa } from "../3dModels/CompRosa";
 import { TiArrowSortedDown } from "react-icons/ti";
 import { corFonte1st } from "../../styles/UI/variaveis";
 import WelcomeText from "./WelcomeText";
-import { textos } from "./textos";
+import { textos } from "./textosHome";
 import { useGlobalContext } from "../Context";
 
 export default function ConteudoInicial({ scrollPosition }) {

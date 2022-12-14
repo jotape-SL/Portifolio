@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Typed from "typed.js";
 import { useGlobalContext } from "../Context";
-import { textos } from "./textos";
+import { textos } from "./textosHome";
 
 export default function WelcomeText() {
   const { isPtbr } = useGlobalContext();
