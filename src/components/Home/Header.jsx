@@ -3,13 +3,13 @@ import { corFonte1st, verdeMatrix } from "../../styles/UI/variaveis";
 import { useGlobalContext } from "../Context";
 
 export default function Header({ scrollPosition }) {
-  const { toggleLang } = useGlobalContext();
+  const { toggleLang, isPtbr } = useGlobalContext();
   return (
     <Nav className={scrollPosition > 1 ? "fix" : "rel"}>
       <IconeA href="#home">{` JP `}</IconeA>
       <NavContainer>
         <NavLinks>
-          <a href="#contato">Contato</a>
+          <a href="#contato">{isPtbr ? "Contato" : "Contact"}</a>
         </NavLinks>
         <LangDiv>
           <a onClick={() => toggleLang(true)}>
