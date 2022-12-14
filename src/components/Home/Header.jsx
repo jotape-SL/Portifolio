@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { corFonte1st, verdeMatrix } from "../../styles/UI/variaveis";
 import { useGlobalContext } from "../Context";
+import { textos } from "./textos";
 
 export default function Header({ scrollPosition }) {
   const { toggleLang, isPtbr } = useGlobalContext();
@@ -9,7 +10,7 @@ export default function Header({ scrollPosition }) {
       <IconeA href="#home">{` JP `}</IconeA>
       <NavContainer>
         <NavLinks>
-          <a href="#contato">{isPtbr ? "Contato" : "Contact"}</a>
+          <a href="#contato">{isPtbr ? textos.contatoPT : textos.contatoEN}</a>
         </NavLinks>
         <LangDiv>
           <a onClick={() => toggleLang(true)}>
