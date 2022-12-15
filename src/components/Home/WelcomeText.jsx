@@ -1,13 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Typed from "typed.js";
-import { verdeMatrix } from "../../styles/UI/variaveis";
+import { useGlobalContext } from "../Context";
+import { textos } from "./textosHome";
 
 export default function WelcomeText() {
+  const { isPtbr } = useGlobalContext();
   const refAuto = useRef(null);
   useEffect(() => {
     const typed = new Typed(refAuto.current, {
-      strings: ["Bem vindo ao meu portfólio. :^)"],
+      strings: [isPtbr ? textos.greetingPT : textos.greetingEN],
       typeSpeed: 200,
       startDelay: 1500,
       loop: false,
@@ -16,7 +18,7 @@ export default function WelcomeText() {
     return () => {
       typed.destroy();
     };
-  }, []);
+  }, [isPtbr]);
   return (
     <WelcomeP>
       <span ref={refAuto}></span>

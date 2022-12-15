@@ -9,8 +9,10 @@ import {
   SiStyledcomponents,
   SiSass,
 } from "react-icons/si";
+import { useGlobalContext } from "../Context";
 
 export default function AboutIcons() {
+  const { isPtbr } = useGlobalContext();
   const icons = [
     SiHtml5,
     SiJavascript,
@@ -22,7 +24,9 @@ export default function AboutIcons() {
   ];
   return (
     <>
-      <FerramentaH2>Ferramentas com que trabalho</FerramentaH2>
+      <FerramentaH2>
+        {isPtbr ? "Ferramentas com que trabalho " : "Technologies I work with"}
+      </FerramentaH2>
       <IconDiv>
         {icons.map((Icon, i) => {
           let names = Icon.name.slice(2);

@@ -1,36 +1,38 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { useGlobalContext } from "../Context";
 import { ResumoM, ResumoP, ResumoI } from "./ResumoTextos";
 
 export default function Resumo() {
+  const { isPtbr } = useGlobalContext();
   const [Mresumo, setMresumo] = useState(false);
   const [Presumo, setPresumo] = useState(true);
   const [Iresumo, setIresumo] = useState(false);
   return (
     <TextosDiv>
       <TituloDiv>
-        <h2>Sobre mim</h2>
+        <h2>{isPtbr ? "Sobre mim" : "About me"}</h2>
         <div>
           <BotaoResumo
             onClick={() =>
               setMresumo(true) & setPresumo(false) & setIresumo(false)
             }
           >
-            MUITO resumido
+            {isPtbr ? "MUITO resumido" : "Summed up"}
           </BotaoResumo>
           <BotaoResumo
             onClick={() =>
               setPresumo(true) & setMresumo(false) & setIresumo(false)
             }
           >
-            Padrão
+            {isPtbr ? "Padrão" : "default"}
           </BotaoResumo>
           <BotaoResumo
             onClick={() =>
               setIresumo(true) & setPresumo(false) & setMresumo(false)
             }
           >
-            Já somos intimos
+            {isPtbr ? "Já somos intimos" : "We're already intimmate"}
           </BotaoResumo>
         </div>
       </TituloDiv>

@@ -5,13 +5,16 @@ import { CompRosa } from "../3dModels/CompRosa";
 import { TiArrowSortedDown } from "react-icons/ti";
 import { corFonte1st } from "../../styles/UI/variaveis";
 import WelcomeText from "./WelcomeText";
+import { textos } from "./textosHome";
+import { useGlobalContext } from "../Context";
 
 export default function ConteudoInicial({ scrollPosition }) {
+  const { isPtbr } = useGlobalContext();
   return (
     <Apresentacao>
       <TextoAp className={scrollPosition > 1 ? "fix" : ""}>
         <Nome>João Pedro</Nome>
-        <p>Desenvolvedor Front-End</p>
+        <p>{isPtbr ? textos.subtituloPT : textos.subtituloEN}</p>
       </TextoAp>
       {/* <------- modelo 3d --------> */}
       <Canvas className="canvas" camera={{ position: [-10, 20, 35] }}>
