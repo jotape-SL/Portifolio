@@ -29,6 +29,9 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  @media (max-width: 375px) {
+    justify-content: flex-end;
+  }
   &.rel {
     position: relative;
     background-color: transparent;
