@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Header from "./Header";
-import MatrixBackground from "./MatrixBackground";
 import ConteudoInicial from "./Presentation";
 
 export default function Home() {
@@ -20,7 +19,6 @@ export default function Home() {
 
   return (
     <HomeSection id="home">
-      <MatrixBackground />
       <Header scrollPosition={scrollPosition} />
       <ConteudoInicial scrollPosition={scrollPosition} />
     </HomeSection>
@@ -28,6 +26,6 @@ export default function Home() {
 }
 
 const HomeSection = styled.section`
-  background-color: black;
+  background-color: aliceblue;
   max-height: fit-content;
 `;

@@ -10,16 +10,21 @@ export default function Header({ scrollPosition }) {
       <IconeA href="#home">{` JP `}</IconeA>
       <NavContainer>
         <NavLinks>
+          <a href="#contato">{isPtbr ? textos.sobrePT : textos.sobreEN}</a>
+          <a href="#contato">
+            {isPtbr ? textos.projetosPT : textos.projetosEN}
+          </a>
           <a href="#contato">{isPtbr ? textos.contatoPT : textos.contatoEN}</a>
+          <a href="#contato">{isPtbr ? textos.linguaPT : textos.contatoEN}</a>
         </NavLinks>
-        <LangDiv>
+        {/* <LangDiv>
           <a onClick={() => toggleLang(true)}>
             <svg></svg>
           </a>
           <a onClick={() => toggleLang(false)}>
             <svg></svg>
           </a>
-        </LangDiv>
+        </LangDiv> */}
       </NavContainer>
     </Nav>
   );
@@ -37,10 +42,8 @@ const Nav = styled.nav`
     background-color: transparent;
   }
   &.fix {
-    /* background-color: #ffebcd99; */
+    background-color: #000000f0;
     border-bottom: 1px solid white;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
     position: fixed;
     width: 100%;
     top: 0;
@@ -49,7 +52,7 @@ const Nav = styled.nav`
 `;
 
 const IconeA = styled.a`
-  font-size: 4rem;
+  font-size: 2.5rem;
   font-family: "Kenia", monospace;
   mix-blend-mode: revert;
   text-shadow: 1px 1px 2px black, 0 0 1em white, 0 0 0.2em white;
@@ -61,24 +64,13 @@ const NavContainer = styled.ul`
   flex-direction: row;
 `;
 const NavLinks = styled.li`
-  border-radius: 5px;
   padding: 10px 0;
   margin-left: 1rem;
-  background-color: ${corFonte1st};
-  box-shadow: 0 0 10px 0px ${verdeMatrix};
-  :hover {
-    box-shadow: 0 0 10px 0px ${corFonte1st};
-  }
   a {
-    font-family: "Press Start 2P", monospace;
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    color: black;
-    background-color: transparent;
+    font-family: "Azeret Mono", monospace;
+    font-size: 12px;
+    color: #f5f5f5;
     cursor: pointer;
-    @media (max-width: 375px) {
-      padding: 1.5rem;
-    }
   }
 `;
 
