@@ -10,12 +10,12 @@ export default function Header({ scrollPosition }) {
       <IconeA href="#home">{` JP `}</IconeA>
       <NavContainer>
         <NavLinks>
-          <a href="#contato">{isPtbr ? textos.sobrePT : textos.sobreEN}</a>
-          <a href="#contato">
+          <a href="#sobre">{isPtbr ? textos.sobrePT : textos.sobreEN}</a>
+          <a href="#projetos">
             {isPtbr ? textos.projetosPT : textos.projetosEN}
           </a>
           <a href="#contato">{isPtbr ? textos.contatoPT : textos.contatoEN}</a>
-          <a href="#contato">{isPtbr ? textos.linguaPT : textos.contatoEN}</a>
+          <a>{isPtbr ? textos.linguaPT : textos.linguaEN}</a>
         </NavLinks>
         {/* <LangDiv>
           <a onClick={() => toggleLang(true)}>
@@ -34,9 +34,7 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  @media (max-width: 375px) {
-    justify-content: flex-end;
-  }
+  justify-content: flex-end;
   &.rel {
     position: relative;
     background-color: transparent;
@@ -64,13 +62,17 @@ const NavContainer = styled.ul`
   flex-direction: row;
 `;
 const NavLinks = styled.li`
-  padding: 10px 0;
-  margin-left: 1rem;
+  margin-right: 2rem;
   a {
     font-family: "Azeret Mono", monospace;
     font-size: 12px;
     color: #f5f5f5;
     cursor: pointer;
+    margin-left: 16px;
+    opacity: 0.6;
+    &:hover {
+      opacity: 1;
+    }
   }
 `;
 
