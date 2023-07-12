@@ -29,12 +29,12 @@ export default function Header({ scrollPosition }) {
     </Nav>
   );
 }
-
+/*Braekpoint to make a hamburber menu so it wont break on smaller phones: 391px*/
 const Nav = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   &.rel {
     position: relative;
     background-color: transparent;
@@ -78,7 +78,7 @@ const NavLinks = styled.li`
 `;
 
 const LangDiv = styled.div`
-  a {
+  /* a {
     cursor: pointer;
   }
   svg {
@@ -97,5 +97,5 @@ const LangDiv = styled.div`
     svg {
       background-image: url("./images/american-flag.png");
     }
-  }
+  } */
 `;

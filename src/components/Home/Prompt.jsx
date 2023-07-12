@@ -33,7 +33,7 @@ export default function ConteudoInicial({ scrollPosition }) {
             </div>
           </div>
         </div>
-        <p className="msg-prompt">{"C:Usersporfolio>help"}</p>
+        <p>{"C:Usersporfolio>help"}</p>
         <p>{isPtbr ? textos.subtituloPT : textos.subtituloEN}</p>
         <WelcomeText />
       </TextoAp>
@@ -78,10 +78,8 @@ const TextoAp = styled.div`
   background-color: #101010;
   border: 1px solid #6f6f6f;
   max-width: 75vw;
+  min-height: 70vh;
   margin: 0 auto;
-  .msg-prompt {
-    padding: 0 1rem;
-  }
   p {
     text-align: start;
   }

@@ -13,7 +13,7 @@ export default function WelcomeText() {
       typeSpeed: 0,
       startDelay: 1500,
       loop: false,
-      cursorChar: "_",
+      cursorChar: "&#x2582",
     });
     return () => {
       typed.destroy();
@@ -29,5 +29,5 @@ export default function WelcomeText() {
 const WelcomeP = styled.p`
   font-family: "Azeret Mono", monospace !important;
   color: white;
-  padding: 0 1rem;
+  white-space: pre-wrap;
 `;
