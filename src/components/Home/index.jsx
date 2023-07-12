@@ -26,6 +26,6 @@ export default function Home() {
 }
 
 const HomeSection = styled.section`
-  background-color: aliceblue;
+  background-color: black;
   max-height: fit-content;
 `;
