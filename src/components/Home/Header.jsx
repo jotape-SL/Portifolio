@@ -55,6 +55,7 @@ const IconeA = styled.a`
   mix-blend-mode: revert;
   text-shadow: 1px 1px 2px black, 0 0 1em white, 0 0 0.2em white;
   padding: 1rem;
+  margin-right: 1rem;
 `;
 const NavContainer = styled.ul`
   align-items: center;

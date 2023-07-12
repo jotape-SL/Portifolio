@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Header from "./Header";
-import ConteudoInicial from "./Presentation";
+import ConteudoInicial from "./Prompt";
 
 export default function Home() {
   // <-------- funcao para pegar o valor do Scroll -------->
