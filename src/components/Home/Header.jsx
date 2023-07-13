@@ -15,16 +15,14 @@ export default function Header({ scrollPosition }) {
             {isPtbr ? textos.projetosPT : textos.projetosEN}
           </a>
           <a href="#contato">{isPtbr ? textos.contatoPT : textos.contatoEN}</a>
-          <a>{isPtbr ? textos.linguaPT : textos.linguaEN}</a>
+          <DropDown>
+            <button>{isPtbr ? textos.linguaPT : textos.linguaEN}</button>
+            <DropDownContent className="dropdown-content">
+              <a onClick={() => toggleLang(true)}>pt/br</a>
+              <a onClick={() => toggleLang(false)}>en</a>
+            </DropDownContent>
+          </DropDown>
         </NavLinks>
-        {/* <LangDiv>
-          <a onClick={() => toggleLang(true)}>
-            <svg></svg>
-          </a>
-          <a onClick={() => toggleLang(false)}>
-            <svg></svg>
-          </a>
-        </LangDiv> */}
       </NavContainer>
     </Nav>
   );
@@ -64,38 +62,45 @@ const NavContainer = styled.ul`
 `;
 const NavLinks = styled.li`
   margin-right: 2rem;
-  a {
+  display: flex;
+  align-items: center;
+  a,
+  button {
     font-family: "Azeret Mono", monospace;
     font-size: 12px;
     color: #f5f5f5;
     cursor: pointer;
     margin-left: 16px;
     opacity: 0.6;
+    background: none;
+    border: none;
     &:hover {
       opacity: 1;
     }
   }
 `;
-
-const LangDiv = styled.div`
-  /* a {
-    cursor: pointer;
+const DropDown = styled.div`
+  position: relative;
+  display: inline-block;
+  &:hover div {
+    display: block;
   }
-  svg {
-    margin-left: 1rem;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 45px;
-    height: 30px;
+`;
+const DropDownContent = styled.div`
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  text-align: start;
+  z-index: 1;
+  padding: 10px;
+  a {
+    font-size: 15px;
+    color: black;
+    text-decoration: none;
+    display: block;
+    margin: 0;
   }
-  a:nth-child(1) {
-    svg {
-      background-image: url("./images/brazilian-flag.png");
-    }
+  a:hover {
+    background-color: #f5f5f5;
   }
-  a:nth-child(2) {
-    svg {
-      background-image: url("./images/american-flag.png");
-    }
-  } */
 `;
