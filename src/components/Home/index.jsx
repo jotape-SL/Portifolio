@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Header from "./Header";
-import MatrixBackground from "./MatrixBackground";
-import ConteudoInicial from "./Presentation";
+import NoiseVideo from "./NoiseVideo";
+import Prompt from "./Prompt";
+import dynamic from "next/dynamic";
 
 export default function Home() {
   // <-------- funcao para pegar o valor do Scroll -------->
@@ -17,13 +18,27 @@ export default function Home() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
+  const [isVideo, setIsVideo] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVideo(true);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
   return (
-    <HomeSection id="home">
-      <MatrixBackground />
-      <Header scrollPosition={scrollPosition} />
-      <ConteudoInicial scrollPosition={scrollPosition} />
-    </HomeSection>
+    <>
+      <div>
+        {isVideo ? (
+          <NoiseVideo src={"/video/textureNoise.mp4"} type={"video/mp4"} />
+        ) : (
+          ""
+        )}
+      </div>
+      <HomeSection id="home">
+        <Header scrollPosition={scrollPosition} />
+        <Prompt />
+      </HomeSection>
+    </>
   );
 }
 

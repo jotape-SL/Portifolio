@@ -10,37 +10,36 @@ export default function Header({ scrollPosition }) {
       <IconeA href="#home">{` JP `}</IconeA>
       <NavContainer>
         <NavLinks>
+          <a href="#sobre">{isPtbr ? textos.sobrePT : textos.sobreEN}</a>
+          <a href="#projetos">
+            {isPtbr ? textos.projetosPT : textos.projetosEN}
+          </a>
           <a href="#contato">{isPtbr ? textos.contatoPT : textos.contatoEN}</a>
+          <DropDown>
+            <button>{isPtbr ? textos.linguaPT : textos.linguaEN}</button>
+            <DropDownContent className="dropdown-content">
+              <a onClick={() => toggleLang(true)}>pt/br</a>
+              <a onClick={() => toggleLang(false)}>en</a>
+            </DropDownContent>
+          </DropDown>
         </NavLinks>
-        <LangDiv>
-          <a onClick={() => toggleLang(true)}>
-            <svg></svg>
-          </a>
-          <a onClick={() => toggleLang(false)}>
-            <svg></svg>
-          </a>
-        </LangDiv>
       </NavContainer>
     </Nav>
   );
 }
-
+/*Braekpoint to make a hamburber menu so it wont break on smaller phones: 391px*/
 const Nav = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  @media (max-width: 375px) {
-    justify-content: flex-end;
-  }
+  justify-content: space-between;
   &.rel {
     position: relative;
     background-color: transparent;
   }
   &.fix {
-    /* background-color: #ffebcd99; */
+    background-color: #000000f0;
     border-bottom: 1px solid white;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
     position: fixed;
     width: 100%;
     top: 0;
@@ -49,11 +48,12 @@ const Nav = styled.nav`
 `;
 
 const IconeA = styled.a`
-  font-size: 4rem;
+  font-size: 2.5rem;
   font-family: "Kenia", monospace;
   mix-blend-mode: revert;
   text-shadow: 1px 1px 2px black, 0 0 1em white, 0 0 0.2em white;
   padding: 1rem;
+  margin-right: 1rem;
 `;
 const NavContainer = styled.ul`
   align-items: center;
@@ -61,46 +61,46 @@ const NavContainer = styled.ul`
   flex-direction: row;
 `;
 const NavLinks = styled.li`
-  border-radius: 5px;
-  padding: 10px 0;
-  margin-left: 1rem;
-  background-color: ${corFonte1st};
-  box-shadow: 0 0 10px 0px ${verdeMatrix};
-  :hover {
-    box-shadow: 0 0 10px 0px ${corFonte1st};
-  }
-  a {
-    font-family: "Press Start 2P", monospace;
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    color: black;
-    background-color: transparent;
+  margin-right: 2rem;
+  display: flex;
+  align-items: center;
+  a,
+  button {
+    font-family: "Azeret Mono", monospace;
+    font-size: 12px;
+    color: #f5f5f5;
     cursor: pointer;
-    @media (max-width: 375px) {
-      padding: 1.5rem;
+    margin-left: 16px;
+    opacity: 0.6;
+    background: none;
+    border: none;
+    &:hover {
+      opacity: 1;
     }
   }
 `;
-
-const LangDiv = styled.div`
+const DropDown = styled.div`
+  position: relative;
+  display: inline-block;
+  &:hover div {
+    display: block;
+  }
+`;
+const DropDownContent = styled.div`
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  text-align: start;
+  z-index: 1;
+  padding: 10px;
   a {
-    cursor: pointer;
+    font-size: 15px;
+    color: black;
+    text-decoration: none;
+    display: block;
+    margin: 0;
   }
-  svg {
-    margin-left: 1rem;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 45px;
-    height: 30px;
-  }
-  a:nth-child(1) {
-    svg {
-      background-image: url("./images/brazilian-flag.png");
-    }
-  }
-  a:nth-child(2) {
-    svg {
-      background-image: url("./images/american-flag.png");
-    }
+  a:hover {
+    background-color: #f5f5f5;
   }
 `;

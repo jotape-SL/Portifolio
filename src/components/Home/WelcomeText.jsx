@@ -10,10 +10,10 @@ export default function WelcomeText() {
   useEffect(() => {
     const typed = new Typed(refAuto.current, {
       strings: [isPtbr ? textos.greetingPT : textos.greetingEN],
-      typeSpeed: 200,
+      typeSpeed: 0,
       startDelay: 1500,
       loop: false,
-      cursorChar: "|",
+      cursorChar: "&#x2582",
     });
     return () => {
       typed.destroy();
@@ -27,23 +27,7 @@ export default function WelcomeText() {
 }
 
 const WelcomeP = styled.p`
-  font-family: "Press Start 2P", monospace !important;
+  font-family: "Azeret Mono", monospace !important;
   color: white;
-  max-width: 450px;
-  position: absolute;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  bottom: 7rem;
-  text-align: center;
-  @media (max-width: 655px) {
-    bottom: 6rem;
-    max-width: 300px;
-  }
-  span {
-    font-size: 1.3rem;
-    @media (max-width: 655px) {
-      font-size: 1rem;
-    }
-  }
+  white-space: pre-wrap;
 `;
