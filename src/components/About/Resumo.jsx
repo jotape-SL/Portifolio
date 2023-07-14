@@ -1,13 +1,13 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { useGlobalContext } from "../Context";
-import { ResumoM, ResumoP, ResumoI } from "./ResumoTextos";
+import { ResumoPess, ResumoProf } from "./ResumoTextos";
 
 export default function Resumo() {
   const { isPtbr } = useGlobalContext();
-  const [Mresumo, setMresumo] = useState(false);
-  const [Presumo, setPresumo] = useState(true);
-  const [Iresumo, setIresumo] = useState(false);
+  const [PessResumo, setPessResumo] = useState(false);
+  const [Presumo, setPresumo] = useState(false);
+  const [ProfResumo, setProfResumo] = useState(true);
   return (
     <TextosDiv>
       <TituloDiv>
@@ -15,30 +15,30 @@ export default function Resumo() {
         <div>
           <BotaoResumo
             onClick={() =>
-              setMresumo(true) & setPresumo(false) & setIresumo(false)
+              setPessResumo(true) & setPresumo(false) & setProfResumo(false)
             }
           >
-            {isPtbr ? "MUITO resumido" : "Summed up"}
+            {isPtbr ? "Pessoal" : "Personal"}
           </BotaoResumo>
           <BotaoResumo
             onClick={() =>
-              setPresumo(true) & setMresumo(false) & setIresumo(false)
+              setPresumo(true) & setPessResumo(false) & setProfResumo(false)
             }
           >
-            {isPtbr ? "Padrão" : "default"}
+            {isPtbr ? "Confidencial" : "Confidential"}
           </BotaoResumo>
           <BotaoResumo
             onClick={() =>
-              setIresumo(true) & setPresumo(false) & setMresumo(false)
+              setProfResumo(true) & setPresumo(false) & setPessResumo(false)
             }
           >
-            {isPtbr ? "Já somos intimos" : "We're already intimmate"}
+            {isPtbr ? "Profissional" : "Professional"}
           </BotaoResumo>
         </div>
       </TituloDiv>
-      {(Mresumo && <ResumoM />) ||
-        (Presumo && <ResumoP />) ||
-        (Iresumo && <ResumoI />)}
+      {(PessResumo && <ResumoPess />) ||
+        // (Presumo && <ResumoP />) ||
+        (ProfResumo && <ResumoProf />)}
     </TextosDiv>
   );
 }

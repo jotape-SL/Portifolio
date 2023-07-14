@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { begeBG } from "../../styles/UI/variaveis";
+import { cinzaBGBG, verdeBG } from "../../styles/UI/variaveis";
 import FerramentasContent from "./FerramentasContent";
 import Resumo from "./Resumo";
 import FotoMinha from "./FotoMinha";
@@ -24,7 +24,7 @@ const AboutSection = styled.section`
   margin-top: 15rem;
   padding-top: 9rem;
   font-family: "Sono", monospace;
-  background-color: ${begeBG};
+  background-color: ${verdeBG};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,7 +38,7 @@ const AboutSection = styled.section`
     left: 0;
     top: -6rem;
     content: "";
-    background: ${begeBG};
+    background: ${verdeBG};
     transform: skewY(356deg);
     display: block;
   }
