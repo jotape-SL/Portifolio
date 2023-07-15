@@ -55,7 +55,6 @@ const IconDiv = styled.div`
   display: flex;
   gap: 1rem;
   justify-content: center;
-  padding: 0 10%;
   svg {
     font-size: 4rem;
   }

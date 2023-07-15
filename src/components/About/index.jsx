@@ -22,19 +22,19 @@ export default function About() {
 const AboutSection = styled.section`
   position: relative;
   margin-top: 15rem;
-  padding-top: 9rem;
   font-family: "Sono", monospace;
   background-color: ${verdeBG};
   display: flex;
   flex-direction: column;
   align-items: center;
   h2 {
-    font-size: 3rem;
+    font-size: 1.875rem;
+    margin: 30px 0;
   }
   &::before {
     position: absolute;
     width: 100%;
-    height: 20vh;
+    height: 17.4vh;
     left: 0;
     top: -6rem;
     content: "";
@@ -42,10 +42,10 @@ const AboutSection = styled.section`
     transform: skewY(356deg);
     display: block;
   }
-  @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
     margin-top: 8rem;
     padding: 0;
-  }
+  } */
 `;
 
 const ContentDiv = styled.div`
@@ -54,10 +54,7 @@ const ContentDiv = styled.div`
   justify-content: center;
   flex-direction: row;
   color: black;
-  max-width: 50vw;
-  div:nth-child(2) {
-    margin: 0 4%;
-  }
+  padding: 0 32px;
   @media (max-width: 1216px) {
     flex-wrap: wrap;
     align-items: center;

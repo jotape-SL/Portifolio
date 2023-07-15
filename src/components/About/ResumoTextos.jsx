@@ -13,9 +13,9 @@ function ResumoProf() {
 }
 
 const PTextos = styled.p`
-  font-size: 1.5rem;
+  /* font-size: 15px;
   line-height: 20px;
   margin-bottom: 2rem;
-  min-height: 540px;
+  min-height: 540px; */
 `;
 export { ResumoPess, ResumoProf };

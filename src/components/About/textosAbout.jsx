@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 const PTextos = styled.p`
-  font-size: 1.5rem;
-  /* line-height: 30px; */
+  font-size: 1.125rem;
   margin-bottom: 2rem;
   min-height: 540px;
 `;

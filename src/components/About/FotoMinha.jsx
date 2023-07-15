@@ -4,22 +4,21 @@ import { cinzaClaro } from "../../styles/UI/variaveis";
 
 export default function FotoMinha() {
   return (
-    <div>
-      <ProfilePic
+    <ProfileDiv>
+      <img
         src="./perfil.png"
         alt="uma pessoa bem bonita, mas conhecida como eu!"
       />
-    </div>
+    </ProfileDiv>
   );
 }
 
-const ProfilePic = styled.img`
-  padding: 5px;
-  border: 2px solid ${cinzaClaro};
-  max-width: 100%;
-  border-radius: 10px;
-  animation: border 3s ease-in-out;
-  @media (max-width: 655px) {
-    max-width: 95vw;
+const ProfileDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    max-width: 50vw;
+    border-radius: 10px;
   }
 `;
