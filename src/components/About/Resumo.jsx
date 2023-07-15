@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { useGlobalContext } from "../Context";
 import { ResumoPess, ResumoProf } from "./ResumoTextos";
+import { cinzaClaro } from "../../styles/UI/variaveis";
 
 export default function Resumo() {
   const { isPtbr } = useGlobalContext();
@@ -43,18 +44,7 @@ export default function Resumo() {
   );
 }
 
-const TextosDiv = styled.div`
-  /* min-width: 651px;
-  @media (max-width: 655px) {
-    min-width: 400px;
-    div {
-      display: block;
-    }
-  }
-  @media (max-width: 399px) {
-    min-width: 310px;
-  } */
-`;
+const TextosDiv = styled.div``;
 
 const TituloDiv = styled.div`
   text-align: center;
@@ -62,15 +52,26 @@ const TituloDiv = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 1rem;
-  font-size: 15px;
+  font-size: 12px;
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: -webkit-fill-available;
+  }
+  button:nth-child(2) {
+    background-color: #bd000089;
+    border: 1px solid #bd0000;
+  }
 `;
 
 const BotaoResumo = styled.button`
-  padding: 6px;
-  font-weight: bold;
-  font-family: sans-serif;
-  border: 1px solid black;
-  border-radius: 5px;
-  background-color: rgb(251, 255, 199);
+  color: white;
+  padding: 6px 0;
+  font-family: "Azeret Mono", monospace;
+  border: 1px solid #52525b;
+  border-radius: 16px;
+  min-width: 103px;
+  background-color: #52525b7b;
   cursor: pointer;
 `;

@@ -18,7 +18,6 @@ const ProfileDiv = styled.div`
   justify-content: center;
   align-items: center;
   img {
-    max-width: 50vw;
-    border-radius: 10px;
+    max-width: 100%;
   }
 `;
