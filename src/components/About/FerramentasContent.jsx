@@ -24,53 +24,73 @@ export default function AboutIcons() {
   ];
   return (
     <>
-      <FerramentaH2>
-        {isPtbr ? "Ferramentas com que trabalho " : "Technologies I work with"}
-      </FerramentaH2>
-      <IconDiv>
-        {icons.map((Icon, i) => {
-          let names = Icon.name.slice(2);
-          if (names.charAt(0) === "N") {
-            names = "Next.js";
-          }
-
-          return (
-            <span key={i}>
-              <Icon />
-              <p href="/">{names}</p>
-            </span>
-          );
-        })}
-      </IconDiv>
+      <h2>Skills</h2>
+      <LogosDiv>
+        <LogosSlideDiv>
+          {icons.map((Icon, i) => {
+            let names = Icon.name.slice(2);
+            if (names.charAt(0) === "N") {
+              names = "Next.js";
+            }
+            return (
+              <span key={i}>
+                <Icon />
+              </span>
+            );
+          })}
+        </LogosSlideDiv>
+      </LogosDiv>
     </>
   );
 }
 
-const FerramentaH2 = styled.h2`
-  margin-bottom: 4rem;
-`;
-const IconDiv = styled.div`
-  align-items: center;
-  flex-wrap: wrap;
+const LogosDiv = styled.div`
+  overflow: hidden;
+  width: 100%;
+  padding: 60px 0;
+  white-space: nowrap;
+  position: relative;
   display: flex;
-  gap: 1rem;
-  justify-content: center;
-  svg {
-    font-size: 4rem;
+  flex-direction: row;
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
   }
-  p {
-    font-size: 1rem;
-    font-weight: bold;
+  &::before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0));
   }
-  span {
-    padding: 2% 0;
-    background-color: antiquewhite;
-    border-radius: 15px;
-    min-width: 148px;
-    border: 2px solid lightgrey;
+  &::after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0));
   }
-  span:hover {
-    transition: 0.1s ease-in-out;
-    background-color: white;
+  &:hover div {
+    animation-play-state: paused;
+  }
+`;
+
+const LogosSlideDiv = styled.div`
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  display: inline-block;
+  animation: 2s slide infinite linear;
+  img {
+    height: 50px;
+    margin: 0 40px;
+  }
+  span svg {
+    font-size: 5rem;
+    margin-left: 1rem;
   }
 `;

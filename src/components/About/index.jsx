@@ -12,9 +12,7 @@ export default function About() {
         <FotoMinha />
         <Resumo />
       </ContentDiv>
-      <FerramentasDiv>
-        <FerramentasContent />
-      </FerramentasDiv>
+      <FerramentasContent />
     </AboutSection>
   );
 }
@@ -62,9 +60,4 @@ const ContentDiv = styled.div`
     margin-top: 8rem;
     align-content: center;
   }
-`;
-
-const FerramentasDiv = styled.div`
-  margin-bottom: 2rem;
-  text-align: center;
 `;
