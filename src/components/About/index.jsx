@@ -18,6 +18,7 @@ export default function About() {
 }
 
 const AboutSection = styled.section`
+  overflow: hidden !important;
   position: relative;
   margin-top: 15rem;
   font-family: "Sono", monospace;
