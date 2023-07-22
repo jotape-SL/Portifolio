@@ -59,52 +59,52 @@ export default function AboutIcons() {
             );
           })}
         </LogosSlideDiv>
+        <LogosSlideDiv className="slide3">
+          {icons.map((Icon, i) => {
+            let names = Icon.name.slice(2);
+            if (names.charAt(0) === "N") {
+              names = "Next.js";
+            }
+            return (
+              <span key={i}>
+                <Icon />
+              </span>
+            );
+          })}
+        </LogosSlideDiv>
       </LogosDiv>
     </>
   );
 }
 
 const LogosDiv = styled.div`
+  overflow: hidden;
   display: flex;
-  width: -webkit-fill-available;
+  width: fit-content;
   padding: 0 0 80px 0;
   margin-bottom: 2rem;
   flex-direction: row;
-  /* &::before,
-  &::after {
-    position: absolute;
-    top: 0;
-    width: 100px;
-    height: 100%;
-    content: "";
-    z-index: 2;
-  }
-  &::before {
-    left: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0), ${verdeBG});
-  }
-  &::after {
-    right: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), ${verdeBG});
-  } */
   &:hover div {
     animation-play-state: paused;
   }
   .slide1 {
-    flex-wrap: wrap;
     animation: 5s slide1 infinite linear;
   }
   .slide2 {
-    flex-wrap: wrap;
+    overflow: hidden;
     animation: 5s slide2 infinite linear;
+  }
+  .slide3 {
+    overflow: hidden;
+    animation: 5s slide3 infinite linear;
   }
 `;
 
 const LogosSlideDiv = styled.div`
-  width: 100vw;
+  height: 83px;
+  overflow-y: hidden;
   display: flex;
   justify-content: space-around;
-
   position: absolute;
   left: 0;
   span svg {
@@ -117,15 +117,23 @@ const LogosSlideDiv = styled.div`
       left: 0%;
     }
     100% {
-      left: -100%;
+      left: -1008px;
     }
   }
   @keyframes slide2 {
     0% {
-      left: 100%;
+      left: 1008px;
     }
     100% {
-      left: 0;
+      left: 0%;
+    }
+  }
+  @keyframes slide3 {
+    0% {
+      left: 2016px;
+    }
+    100% {
+      left: 1008px;
     }
   }
 `;

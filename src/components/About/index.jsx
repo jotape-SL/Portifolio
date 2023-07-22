@@ -41,10 +41,6 @@ const AboutSection = styled.section`
     transform: skewY(356deg);
     display: block;
   }
-  /* @media (max-width: 768px) {
-    margin-top: 8rem;
-    padding: 0;
-  } */
 `;
 
 const ContentDiv = styled.div`
