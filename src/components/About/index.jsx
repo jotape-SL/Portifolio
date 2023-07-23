@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { cinzaBGBG, verdeBG } from "../../styles/UI/variaveis";
-import FerramentasContent from "./FerramentasContent";
 import Resumo from "./Resumo";
 import FotoMinha from "./FotoMinha";
 
@@ -12,16 +11,14 @@ export default function About() {
         <FotoMinha />
         <Resumo />
       </ContentDiv>
-      <FerramentasContent />
     </AboutSection>
   );
 }
 
 const AboutSection = styled.section`
-  overflow: hidden !important;
   position: relative;
-  margin-top: 15rem;
-  font-family: "Sono", monospace;
+  margin-top: 10rem;
+  font-family: "Azeret Mono", monospace;
   background-color: ${verdeBG};
   display: flex;
   flex-direction: column;
@@ -30,12 +27,12 @@ const AboutSection = styled.section`
     font-size: 1.875rem;
     margin: 30px 0;
   }
-  &::before {
+  &::after {
     position: absolute;
     width: 100%;
-    height: 17.4vh;
+    height: 15.4vh;
     left: 0;
-    top: -6rem;
+    bottom: -8rem;
     content: "";
     background: ${verdeBG};
     transform: skewY(356deg);
@@ -48,7 +45,7 @@ const ContentDiv = styled.div`
   align-items: flex-start;
   justify-content: center;
   flex-direction: row;
-  color: black;
+  color: white;
   padding: 0 32px;
   @media (max-width: 1216px) {
     flex-wrap: wrap;

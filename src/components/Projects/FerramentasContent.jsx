@@ -78,12 +78,9 @@ export default function AboutIcons() {
 }
 
 const LogosDiv = styled.div`
-  overflow: hidden;
   display: flex;
-  width: fit-content;
   padding: 0 0 80px 0;
   margin-bottom: 2rem;
-  flex-direction: row;
   &:hover div {
     animation-play-state: paused;
   }
@@ -102,9 +99,7 @@ const LogosDiv = styled.div`
 
 const LogosSlideDiv = styled.div`
   height: 83px;
-  overflow-y: hidden;
   display: flex;
-  justify-content: space-around;
   position: absolute;
   left: 0;
   span svg {
