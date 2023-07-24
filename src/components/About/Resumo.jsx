@@ -5,9 +5,8 @@ import { ResumoPess, ResumoProf } from "./ResumoTextos";
 import { cinzaClaro } from "../../styles/UI/variaveis";
 
 export default function Resumo() {
-  const { isPtbr } = useGlobalContext();
+  const { isPtbr, confidencial, setConfidencial } = useGlobalContext();
   const [PessResumo, setPessResumo] = useState(false);
-  const [confidencial, setConfidencial] = useState(false);
   const [ProfResumo, setProfResumo] = useState(true);
   return (
     <TextosDiv>
@@ -23,7 +22,7 @@ export default function Resumo() {
           >
             {isPtbr ? "Pessoal" : "Personal"}
           </BotaoResumo>
-          <BotaoResumo onClick={() => setConfidencial(true)}>
+          <BotaoResumo onClick={() => setConfidencial(!confidencial)}>
             {isPtbr ? "Confidencial" : "Confidential"}
           </BotaoResumo>
           <BotaoResumo
@@ -60,7 +59,7 @@ const TituloDiv = styled.div`
     width: -webkit-fill-available;
   }
   button:nth-child(2) {
-    background-color: #bd000089;
+    background-color: #bd0000a2;
     border: 1px solid #bd0000;
   }
 `;
@@ -72,6 +71,6 @@ const BotaoResumo = styled.button`
   border: 1px solid #52525b;
   border-radius: 16px;
   min-width: 103px;
-  background-color: #52525b7b;
+  background-color: #52525bbe;
   cursor: pointer;
 `;

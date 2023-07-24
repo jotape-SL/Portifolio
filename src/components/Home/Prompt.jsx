@@ -15,7 +15,7 @@ export default function ConteudoInicial({ scrollPosition }) {
   const { isPtbr } = useGlobalContext();
   return (
     <Apresentacao>
-      <TextoAp className={scrollPosition > 1 ? "fix" : ""}>
+      <TextoAp className={scrollPosition > 1 ? "fixPrompt" : ""}>
         <div className="prompt-header">
           <div className="prompt-header__ds">
             <TbPrompt />
@@ -51,6 +51,9 @@ const Apresentacao = styled.section`
   p {
     text-align: center;
     font-family: "Azeret Mono", monospace;
+  }
+  .fixPrompt {
+    margin-top: 77px;
   }
   .prompt-header {
     display: flex;

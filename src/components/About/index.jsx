@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { cinzaBGBG, verdeBG } from "../../styles/UI/variaveis";
 import Resumo from "./Resumo";
 import FotoMinha from "./FotoMinha";
+import ModalConfidencial from "./ModalConfidencial";
+import { useGlobalContext } from "../Context";
 
 export default function About() {
+  const { confidencial } = useGlobalContext();
   return (
     <AboutSection>
       <ContentDiv>
+        {confidencial ? <ModalConfidencial /> : console.log("Ui silvio")}
         <FotoMinha />
         <Resumo />
       </ContentDiv>

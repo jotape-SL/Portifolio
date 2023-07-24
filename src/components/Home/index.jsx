@@ -37,7 +37,7 @@ export default function Home() {
       </div>
       <HomeSection id="home">
         <Header scrollPosition={scrollPosition} />
-        <Prompt />
+        <Prompt scrollPosition={scrollPosition} />
       </HomeSection>
     </>
   );
