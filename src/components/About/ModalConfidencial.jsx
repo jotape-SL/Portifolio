@@ -1,34 +1,48 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import { FaRegLightbulb } from "react-icons/fa";
 
 export default function ModalConfidencial() {
+  const senhaRef = useRef(null);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(senhaRef.current.value);
+  };
   return (
     <ConfidentialDiv>
-      <IconConf>
-        <FaRegLightbulb />
-      </IconConf>
-      <p>
-        Informação confidencial, digite a senha super confidendial para
-        acessá-la.
-      </p>
-      <InputDiv>
+      <TxtDiv>
+        <IconConf>
+          <FaRegLightbulb />
+        </IconConf>
+        <p>
+          Informação confidencial, digite a senha super confidendial para
+          acessá-la.
+        </p>
+      </TxtDiv>
+      <InputForm onSubmit={handleSubmit}>
         <label className="visually-hidden" for="senha">
           Digite sua senha
         </label>
         <input
+          ref={senhaRef}
           id="senha"
           type="password"
+          maxLength={4}
+          inputMode="numeric"
           placeholder="▪▪▪▪"
-          aria-label="Email"
+          aria-label="Senha"
           aria-describedby="Senha"
         />
-      </InputDiv>
+        <button type="submit" className="visually-hidden">
+          submit
+        </button>
+      </InputForm>
     </ConfidentialDiv>
   );
 }
 
 const ConfidentialDiv = styled.div`
+  position: absolute;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -40,6 +54,13 @@ const ConfidentialDiv = styled.div`
   padding: 32px;
   color: white;
   animation: pulse 2s linear infinite;
+  svg {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  p {
+    margin-bottom: 1rem;
+  }
   .visually-hidden {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
@@ -61,11 +82,16 @@ const ConfidentialDiv = styled.div`
     }
   }
 `;
+
+const TxtDiv = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+`;
 const IconConf = styled.div`
   color: #fff854;
   text-align: end;
 `;
-const InputDiv = styled.div`
+const InputForm = styled.form`
   input {
     border-radius: 5px;
     width: 100%;
