@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
+  const [isAutenticado, setIsAutenticado] = useState(false);
   const [isPtbr, setIsPtbr] = useState(true);
   const [confidencial, setConfidencial] = useState(false);
   const toggleLang = (is) => {
@@ -11,7 +12,14 @@ const AppProvider = ({ children }) => {
   };
   return (
     <AppContext.Provider
-      value={{ isPtbr, toggleLang, confidencial, setConfidencial }}
+      value={{
+        isPtbr,
+        toggleLang,
+        confidencial,
+        setConfidencial,
+        isAutenticado,
+        setIsAutenticado,
+      }}
     >
       {children}
     </AppContext.Provider>

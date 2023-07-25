@@ -1,52 +1,76 @@
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import { FaRegLightbulb } from "react-icons/fa";
+import { useGlobalContext } from "../Context";
 
 export default function ModalConfidencial() {
   const senhaRef = useRef(null);
+  const { isAutenticado, setIsAutenticado, setConfidencial } =
+    useGlobalContext();
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(senhaRef.current.value);
+    const senha = senhaRef.current.value;
+    if (senha === "1234") {
+      console.log("senha correta");
+      setIsAutenticado(true);
+      console.log(isAutenticado);
+    } else {
+      console.log("senha incorreta");
+    }
   };
   return (
-    <ConfidentialDiv>
-      <TxtDiv>
-        <IconConf>
-          <FaRegLightbulb />
-        </IconConf>
-        <p>
-          Informação confidencial, digite a senha super confidendial para
-          acessá-la.
-        </p>
-      </TxtDiv>
-      <InputForm onSubmit={handleSubmit}>
-        <label className="visually-hidden" for="senha">
-          Digite sua senha
-        </label>
-        <input
-          ref={senhaRef}
-          id="senha"
-          type="password"
-          maxLength={4}
-          inputMode="numeric"
-          placeholder="▪▪▪▪"
-          aria-label="Senha"
-          aria-describedby="Senha"
-        />
-        <button type="submit" className="visually-hidden">
-          submit
-        </button>
-      </InputForm>
-    </ConfidentialDiv>
+    <>
+      <MainDiv onClick={() => setConfidencial(false)}></MainDiv>
+      <ConfidentialDiv>
+        <TxtDiv>
+          <IconConf>
+            <FaRegLightbulb />
+          </IconConf>
+          <p>
+            Informação confidencial, digite a senha super confidendial para
+            acessá-la.
+          </p>
+        </TxtDiv>
+        <InputForm onSubmit={handleSubmit}>
+          <label className="visually-hidden" for="senha">
+            Digite sua senha
+          </label>
+          <input
+            ref={senhaRef}
+            id="senha"
+            type="password"
+            maxLength={4}
+            inputMode="numeric"
+            placeholder="▪▪▪▪"
+            aria-label="Senha"
+            aria-describedby="Senha"
+          />
+          <button type="submit" className="visually-hidden">
+            submit
+          </button>
+        </InputForm>
+      </ConfidentialDiv>
+    </>
   );
 }
 
+const MainDiv = styled.div`
+  z-index: 902;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #7575755c;
+`;
 const ConfidentialDiv = styled.div`
   position: absolute;
-  overflow: hidden;
+  z-index: 903;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
   width: 75%;
   background-color: #27272a;
   border: 2px solid #757575;

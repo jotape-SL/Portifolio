@@ -5,7 +5,8 @@ import { ResumoPess, ResumoProf } from "./ResumoTextos";
 import { cinzaClaro } from "../../styles/UI/variaveis";
 
 export default function Resumo() {
-  const { isPtbr, confidencial, setConfidencial } = useGlobalContext();
+  const { isPtbr, confidencial, setConfidencial, isAutenticado } =
+    useGlobalContext();
   const [PessResumo, setPessResumo] = useState(false);
   const [ProfResumo, setProfResumo] = useState(true);
   return (
@@ -22,7 +23,7 @@ export default function Resumo() {
           >
             {isPtbr ? "Pessoal" : "Personal"}
           </BotaoResumo>
-          <BotaoResumo onClick={() => setConfidencial(!confidencial)}>
+          <BotaoResumo onClick={() => setConfidencial(true)}>
             {isPtbr ? "Confidencial" : "Confidential"}
           </BotaoResumo>
           <BotaoResumo
@@ -37,7 +38,7 @@ export default function Resumo() {
         </div>
       </TituloDiv>
       {(PessResumo && <ResumoPess />) ||
-        // (confidencial && <ConfidencialModal />) ||
+        // (isAutenticado && <ResumoConfidencial />) ||
         (ProfResumo && <ResumoProf />)}
     </TextosDiv>
   );
