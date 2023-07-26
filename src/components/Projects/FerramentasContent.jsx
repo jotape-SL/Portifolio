@@ -39,14 +39,15 @@ export default function AboutIcons() {
             }
             return (
               <>
-                <span key={i}>
+                <LogosSpan key={i}>
                   <Icon />
-                </span>
+                  <span className="texte">{names}</span>
+                </LogosSpan>
               </>
             );
           })}
         </LogosSlideDiv>
-        <LogosSlideDiv className="slide2">
+        {/* <LogosSlideDiv className="slide2">
           {icons.map((Icon, i) => {
             let names = Icon.name.slice(2);
             if (names.charAt(0) === "N") {
@@ -71,7 +72,7 @@ export default function AboutIcons() {
               </span>
             );
           })}
-        </LogosSlideDiv>
+        </LogosSlideDiv> */}
       </LogosDiv>
     </>
   );
@@ -98,15 +99,11 @@ const LogosDiv = styled.div`
 `;
 
 const LogosSlideDiv = styled.div`
+  width: 1008px;
   height: 83px;
   display: flex;
   position: absolute;
   left: 0;
-  span svg {
-    margin: 0 1rem;
-    height: 80px;
-    font-size: 5rem;
-  }
   @keyframes slide1 {
     0% {
       left: 0%;
@@ -130,5 +127,20 @@ const LogosSlideDiv = styled.div`
     100% {
       left: 1008px;
     }
+  }
+`;
+
+const LogosSpan = styled.span`
+  svg {
+    margin: 0 1rem;
+    height: 90px;
+    font-size: 5rem;
+  }
+  span {
+    opacity: 0;
+  }
+  svg:hover {
+    opacity: 1;
+    color: thistle;
   }
 `;

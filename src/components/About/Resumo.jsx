@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useGlobalContext } from "../Context";
 import { ResumoPess, ResumoProf, ResumoConfidencial } from "./ResumoTextos";
@@ -52,7 +52,12 @@ export default function Resumo() {
   );
 }
 
-const TextosDiv = styled.div``;
+const TextosDiv = styled.div`
+  .no-scroll {
+    height: 100%;
+    overflow-y: hidden;
+  }
+`;
 
 const TituloDiv = styled.div`
   text-align: center;
