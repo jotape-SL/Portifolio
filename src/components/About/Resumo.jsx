@@ -1,14 +1,14 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { useGlobalContext } from "../Context";
-import { ResumoPess, ResumoProf } from "./ResumoTextos";
+import { ResumoPess, ResumoProf, ResumoConfidencial } from "./ResumoTextos";
 import { cinzaClaro } from "../../styles/UI/variaveis";
 
 export default function Resumo() {
-  const { isPtbr, confidencial, setConfidencial, isAutenticado } =
-    useGlobalContext();
+  const { isPtbr, setConfidencialModal, isAutenticado } = useGlobalContext();
   const [PessResumo, setPessResumo] = useState(false);
   const [ProfResumo, setProfResumo] = useState(true);
+  const [ConfidencialTxt, setConfidencialTxt] = useState(false);
   return (
     <TextosDiv>
       <TituloDiv>
@@ -17,19 +17,27 @@ export default function Resumo() {
           <BotaoResumo
             onClick={() =>
               setPessResumo(true) &
-              setConfidencial(false) &
+              setConfidencialTxt(false) &
               setProfResumo(false)
             }
           >
             {isPtbr ? "Pessoal" : "Personal"}
           </BotaoResumo>
-          <BotaoResumo onClick={() => setConfidencial(true)}>
+          <BotaoResumo
+            onClick={() =>
+              !isAutenticado
+                ? setConfidencialModal(true)
+                : setConfidencialTxt(true) &
+                  setPessResumo(false) &
+                  setProfResumo(false)
+            }
+          >
             {isPtbr ? "Confidencial" : "Confidential"}
           </BotaoResumo>
           <BotaoResumo
             onClick={() =>
               setProfResumo(true) &
-              setConfidencial(false) &
+              setConfidencialTxt(false) &
               setPessResumo(false)
             }
           >
@@ -38,7 +46,7 @@ export default function Resumo() {
         </div>
       </TituloDiv>
       {(PessResumo && <ResumoPess />) ||
-        // (isAutenticado && <ResumoConfidencial />) ||
+        (ConfidencialTxt && <ResumoConfidencial />) ||
         (ProfResumo && <ResumoProf />)}
     </TextosDiv>
   );

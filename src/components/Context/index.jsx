@@ -3,9 +3,9 @@ import React, { useContext, useState } from "react";
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
+  const [confidencialModal, setConfidencialModal] = useState(false);
   const [isAutenticado, setIsAutenticado] = useState(false);
   const [isPtbr, setIsPtbr] = useState(true);
-  const [confidencial, setConfidencial] = useState(false);
   const toggleLang = (is) => {
     setIsPtbr(is);
     console.log(isPtbr ? "Português brasileiro" : "English");
@@ -15,8 +15,8 @@ const AppProvider = ({ children }) => {
       value={{
         isPtbr,
         toggleLang,
-        confidencial,
-        setConfidencial,
+        confidencialModal,
+        setConfidencialModal,
         isAutenticado,
         setIsAutenticado,
       }}

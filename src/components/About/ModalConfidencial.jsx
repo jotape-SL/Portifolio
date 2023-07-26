@@ -5,7 +5,7 @@ import { useGlobalContext } from "../Context";
 
 export default function ModalConfidencial() {
   const senhaRef = useRef(null);
-  const { isAutenticado, setIsAutenticado, setConfidencial } =
+  const { isAutenticado, setIsAutenticado, setConfidencialModal } =
     useGlobalContext();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,14 +14,13 @@ export default function ModalConfidencial() {
     if (senha === "1234") {
       console.log("senha correta");
       setIsAutenticado(true);
-      console.log(isAutenticado);
     } else {
       console.log("senha incorreta");
     }
   };
   return (
     <>
-      <MainDiv onClick={() => setConfidencial(false)}></MainDiv>
+      <MainDiv onClick={() => setConfidencialModal(false)}></MainDiv>
       <ConfidentialDiv>
         <TxtDiv>
           <IconConf>
@@ -56,15 +55,27 @@ export default function ModalConfidencial() {
 }
 
 const MainDiv = styled.div`
+  --s: 500px;
+  --c: #1803091d;
+
+  --_g: #0000 52%, var(--c) 54% 57%, #0000 59%;
+  background: radial-gradient(farthest-side at -33.33% 50%, var(--_g)) 0
+      calc(var(--s) / 2),
+    radial-gradient(farthest-side at 50% 133.33%, var(--_g)) calc(var(--s) / 2)
+      0,
+    radial-gradient(farthest-side at 133.33% 50%, var(--_g)),
+    radial-gradient(farthest-side at 50% -33.33%, var(--_g)), #000000;
+  background-size: calc(var(--s) / 4.667) var(--s),
+    var(--s) calc(var(--s) / 4.667);
   z-index: 902;
-  position: absolute;
+  position: fixed;
   top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
-  background-color: #7575755c;
+  background-color: #75757573;
 `;
 const ConfidentialDiv = styled.div`
   position: absolute;

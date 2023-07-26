@@ -74,4 +74,20 @@ export const textos = {
       opinions of others while contributing my own perspective.
     </PTextos>
   ),
+  resumoConfidencial: (
+    <PTextos>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, sapiente
+      architecto? Quos minus veritatis ex nisi! Eum, fuga suscipit placeat
+      inventore accusantium ut libero expedita asperiores debitis officiis
+      magnam adipisci?
+    </PTextos>
+  ),
+  resumoConfidencialEn: (
+    <PTextos>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, sapiente
+      architecto? Quos minus veritatis ex nisi! Eum, fuga suscipit placeat
+      inventore accusantium ut libero expedita asperiores debitis officiis
+      magnam adipisci?
+    </PTextos>
+  ),
 };

@@ -12,10 +12,9 @@ function ResumoProf() {
   return isPtbr ? textos.resumoProf : textos.resumoProfEn;
 }
 
-const PTextos = styled.p`
-  /* font-size: 15px;
-  line-height: 20px;
-  margin-bottom: 2rem;
-  min-height: 540px; */
-`;
-export { ResumoPess, ResumoProf };
+function ResumoConfidencial() {
+  const { isPtbr } = useGlobalContext();
+  return isPtbr ? textos.resumoConfidencial : textos.resumoConfidencialEn;
+}
+
+export { ResumoPess, ResumoProf, ResumoConfidencial };

@@ -7,11 +7,11 @@ import ModalConfidencial from "./ModalConfidencial";
 import { useGlobalContext } from "../Context";
 
 export default function About() {
-  const { confidencial, isAutenticado } = useGlobalContext();
+  const { confidencialModal, isAutenticado } = useGlobalContext();
   return (
     <AboutSection>
       <ContentDiv>
-        {confidencial ? <ModalConfidencial /> : ""}
+        {confidencialModal && !isAutenticado ? <ModalConfidencial /> : ""}
         <FotoMinha />
         <Resumo />
       </ContentDiv>
