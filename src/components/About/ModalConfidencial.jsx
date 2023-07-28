@@ -4,6 +4,7 @@ import { FaRegLightbulb } from "react-icons/fa";
 import { useGlobalContext } from "../Context";
 
 export default function ModalConfidencial() {
+  const [senhaErrada, setSenhaErrada] = useState(false);
   const senhaRef = useRef(null);
   const { isAutenticado, setIsAutenticado, setConfidencialModal } =
     useGlobalContext();
@@ -15,6 +16,7 @@ export default function ModalConfidencial() {
       console.log("senha correta");
       setIsAutenticado(true);
     } else {
+      setSenhaErrada(true);
       console.log("senha incorreta");
     }
   };
@@ -31,7 +33,10 @@ export default function ModalConfidencial() {
             acessá-la.
           </p>
         </TxtDiv>
-        <InputForm onSubmit={handleSubmit}>
+        <InputForm
+          onSubmit={handleSubmit}
+          className={senhaErrada ? "wrong-senha" : ""}
+        >
           <label className="visually-hidden" for="senha">
             Digite sua senha
           </label>
@@ -96,15 +101,6 @@ const ConfidentialDiv = styled.div`
   p {
     margin-bottom: 1rem;
   }
-  .visually-hidden {
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-  }
   @keyframes pulse {
     0% {
       box-shadow: none;
@@ -114,6 +110,23 @@ const ConfidentialDiv = styled.div`
     }
     100% {
       box-shadow: none;
+    }
+  }
+
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+  .wrong-senha input {
+    &:focus {
+      outline: 10px;
+      outline: none !important;
+      box-shadow: 0 0 10px 2px red;
     }
   }
 `;

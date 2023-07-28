@@ -139,7 +139,7 @@ const LogosSpan = styled.span`
   span {
     opacity: 0;
   }
-  svg:hover {
+  &:hover svg{
     opacity: 1;
     color: thistle;
   }
