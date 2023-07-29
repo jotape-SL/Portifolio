@@ -5,10 +5,17 @@ import { ResumoPess, ResumoProf, ResumoConfidencial } from "./ResumoTextos";
 import { cinzaClaro } from "../../styles/UI/variaveis";
 
 export default function Resumo() {
-  const { isPtbr, setConfidencialModal, isAutenticado } = useGlobalContext();
-  const [PessResumo, setPessResumo] = useState(false);
-  const [ProfResumo, setProfResumo] = useState(true);
-  const [ConfidencialTxt, setConfidencialTxt] = useState(false);
+  const {
+    isPtbr,
+    setConfidencialModal,
+    isAutenticado,
+    pessResumo,
+    setPessResumo,
+    profResumo,
+    setProfResumo,
+    ConfidencialTxt,
+    setConfidencialTxt,
+  } = useGlobalContext();
   return (
     <TextosDiv>
       <TituloDiv>
@@ -45,9 +52,9 @@ export default function Resumo() {
           </BotaoResumo>
         </div>
       </TituloDiv>
-      {(PessResumo && <ResumoPess />) ||
+      {(pessResumo && <ResumoPess />) ||
         (ConfidencialTxt && <ResumoConfidencial />) ||
-        (ProfResumo && <ResumoProf />)}
+        (profResumo && <ResumoProf />)}
     </TextosDiv>
   );
 }

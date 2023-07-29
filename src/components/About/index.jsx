@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { cinzaBGBG, verdeBG } from "../../styles/UI/variaveis";
 import Resumo from "./Resumo";
@@ -7,6 +7,9 @@ import ModalConfidencial from "./ModalConfidencial";
 import { useGlobalContext } from "../Context";
 
 export default function About() {
+  const [pessResumo, setPessResumo] = useState(false);
+  const [profResumo, setProfResumo] = useState(true);
+  const [ConfidencialTxt, setConfidencialTxt] = useState(false);
   const { confidencialModal, isAutenticado } = useGlobalContext();
   return (
     <AboutSection>

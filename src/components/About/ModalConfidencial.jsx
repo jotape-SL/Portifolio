@@ -4,6 +4,8 @@ import { FaRegLightbulb } from "react-icons/fa";
 import { useGlobalContext } from "../Context";
 
 export default function ModalConfidencial() {
+  const { setPessResumo, setProfResumo, setConfidencialTxt } =
+    useGlobalContext();
   const [senhaErrada, setSenhaErrada] = useState(false);
   const senhaRef = useRef(null);
   const { isAutenticado, setIsAutenticado, setConfidencialModal } =
@@ -14,6 +16,9 @@ export default function ModalConfidencial() {
     const senha = senhaRef.current.value;
     if (senha === "1234") {
       console.log("senha correta");
+      setPessResumo(false);
+      setProfResumo(false);
+      setConfidencialTxt(true);
       setIsAutenticado(true);
     } else {
       setSenhaErrada(true);
