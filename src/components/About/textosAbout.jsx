@@ -76,18 +76,42 @@ export const textos = {
   ),
   resumoConfidencial: (
     <PTextos>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, sapiente
-      architecto? Quos minus veritatis ex nisi! Eum, fuga suscipit placeat
-      inventore accusantium ut libero expedita asperiores debitis officiis
-      magnam adipisci?
+      Será que nossas vidas são mera soma de ações desconexas, ou será que há um
+      fio invisível que tece o sentido último de tudo o que fazemos?
+      <br />
+      <br />
+      Ao longo da existência, nós, seres efêmeros e inquietos, percorremos a
+      trilha da busca incessante por algum sentido. Talvez a busca por sentido
+      seja ela mesma uma miragem, um horizonte inalcançável que nos impulsiona a
+      avançar sem rumo certo. Por vezes, nos perdemos nos labirintos da rotina e
+      da monotonia, e é somente ao enfrentar o deserto árido do vazio que
+      podemos encontrar uma fonte de significado mais profunda.
+      <br />
+      <br />
+      Portanto, que esta mensagem confidencial seja uma luz em meio à escuridão,
+      um convite para mergulhar nas profundezas do eu e das circunstâncias.
+      Desapega-te do véu da ilusão, da noção pré-estabelecida do que é válido, e
+      lança um olhar contemplativo para além das aparências.
     </PTextos>
   ),
   resumoConfidencialEn: (
     <PTextos>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, sapiente
-      architecto? Quos minus veritatis ex nisi! Eum, fuga suscipit placeat
-      inventore accusantium ut libero expedita asperiores debitis officiis
-      magnam adipisci?
+      Will our lives be a mere sum of disconnected actions, or is there an
+      invisible thread weaving the ultimate meaning of everything we do?
+      <br />
+      <br />
+      Throughout existence, we, ephemeral and restless beings, tread the path of
+      relentless search for meaning. Perhaps the search for meaning itself is a
+      mirage, an unreachable horizon that propels us forward without a definite
+      direction. At times, we get lost in the mazes of routine and monotony, and
+      it is only when we confront the arid desert of emptiness that we can find
+      a deeper source of meaning.
+      <br />
+      <br />
+      Therefore, may this confidential message be a light in the darkness, an
+      invitation to dive into the depths of the self and circumstances. Detach
+      yourself from the veil of illusion, from pre-established notions of what
+      is valid, and cast a contemplative gaze beyond appearances.
     </PTextos>
   ),
 };
