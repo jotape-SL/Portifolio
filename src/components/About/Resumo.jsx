@@ -36,7 +36,8 @@ export default function Resumo() {
                 ? setConfidencialModal(true)
                 : setConfidencialTxt(true) &
                   setPessResumo(false) &
-                  setProfResumo(false)
+                  setProfResumo(false) &
+                  setConfidencialModal(false)
             }
           >
             {isPtbr ? "Confidencial" : "Confidential"}
@@ -59,12 +60,7 @@ export default function Resumo() {
   );
 }
 
-const TextosDiv = styled.div`
-  .no-scroll {
-    height: 100%;
-    overflow-y: hidden;
-  }
-`;
+const TextosDiv = styled.div``;
 
 const TituloDiv = styled.div`
   text-align: center;

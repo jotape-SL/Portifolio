@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { cinzaClaro } from "./UI/variaveis";
+import { cinzaClaro, verdeBG } from "./UI/variaveis";
 import { useGlobalContext } from "../components/Context";
 
 const GlobalStyle = createGlobalStyle`
@@ -32,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     line-height: 1;
     font-family: "Source Sans Pro", monospace;
-    background-color: ${cinzaClaro};
+    background-color: ${verdeBG};
   }
   ol, ul {
     list-style: none;
@@ -60,7 +60,8 @@ const GlobalStyle = createGlobalStyle`
 }
 
 .no-scroll{
-  
+  overflow-y: hidden;
+  padding-right: 1rem;
 }
 
 .sr-only {

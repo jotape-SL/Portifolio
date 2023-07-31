@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { cinzaBGBG, verdeBG } from "../../styles/UI/variaveis";
 import Resumo from "./Resumo";
@@ -11,6 +11,13 @@ export default function About() {
   const [profResumo, setProfResumo] = useState(true);
   const [ConfidencialTxt, setConfidencialTxt] = useState(false);
   const { confidencialModal, isAutenticado } = useGlobalContext();
+  useEffect(() => {
+    if (confidencialModal) {
+      document.body.classList.add("no-scroll");
+    } else if (!confidencialModal) {
+      document.body.classList.remove("no-scroll");
+    }
+  }, [confidencialModal]);
   return (
     <AboutSection>
       <ContentDiv>

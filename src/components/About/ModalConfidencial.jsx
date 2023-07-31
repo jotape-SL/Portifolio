@@ -12,22 +12,23 @@ export default function ModalConfidencial() {
     useGlobalContext();
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(senhaRef.current.value);
     const senha = senhaRef.current.value;
     if (senha === "1234") {
-      console.log("senha correta");
       setPessResumo(false);
       setProfResumo(false);
       setConfidencialTxt(true);
       setIsAutenticado(true);
     } else {
       setSenhaErrada(true);
-      console.log("senha incorreta");
     }
   };
   return (
     <>
-      <MainDiv onClick={() => setConfidencialModal(false)}></MainDiv>
+      <MainDiv
+        onClick={() => {
+          setConfidencialModal(false);
+        }}
+      ></MainDiv>
       <ConfidentialDiv>
         <TxtDiv>
           <IconConf>
@@ -86,6 +87,7 @@ const MainDiv = styled.div`
   width: 100%;
   height: 100%;
   background-color: #75757573;
+  margin-left: 1rem;
 `;
 const ConfidentialDiv = styled.div`
   position: absolute;
