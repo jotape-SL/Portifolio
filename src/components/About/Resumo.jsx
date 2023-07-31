@@ -36,8 +36,7 @@ export default function Resumo() {
                 ? setConfidencialModal(true)
                 : setConfidencialTxt(true) &
                   setPessResumo(false) &
-                  setProfResumo(false) &
-                  setConfidencialModal(false)
+                  setProfResumo(false)
             }
           >
             {isPtbr ? "Confidencial" : "Confidential"}

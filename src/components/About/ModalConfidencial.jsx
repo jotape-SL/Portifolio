@@ -18,6 +18,7 @@ export default function ModalConfidencial() {
       setProfResumo(false);
       setConfidencialTxt(true);
       setIsAutenticado(true);
+      setConfidencialModal(false);
     } else {
       setSenhaErrada(true);
     }
