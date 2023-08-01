@@ -40,23 +40,24 @@ export default function AboutIcons() {
             return (
               <>
                 <LogosSpan key={i}>
-                  <Icon />
+                  <Icon title={names} />
                   <span className="texte">{names}</span>
                 </LogosSpan>
               </>
             );
           })}
         </LogosSlideDiv>
-        {/* <LogosSlideDiv className="slide2">
+        <LogosSlideDiv className="slide2">
           {icons.map((Icon, i) => {
             let names = Icon.name.slice(2);
             if (names.charAt(0) === "N") {
               names = "Next.js";
             }
             return (
-              <span key={i}>
-                <Icon />
-              </span>
+              <LogosSpan key={i}>
+                <Icon title={names} />
+                <span className="texte">{names}</span>
+              </LogosSpan>
             );
           })}
         </LogosSlideDiv>
@@ -67,12 +68,13 @@ export default function AboutIcons() {
               names = "Next.js";
             }
             return (
-              <span key={i}>
-                <Icon />
-              </span>
+              <LogosSpan key={i}>
+                <Icon title={names} />
+                <span className="texte">{names}</span>
+              </LogosSpan>
             );
           })}
-        </LogosSlideDiv> */}
+        </LogosSlideDiv>
       </LogosDiv>
     </>
   );
@@ -100,7 +102,6 @@ const LogosDiv = styled.div`
 
 const LogosSlideDiv = styled.div`
   width: 1008px;
-  height: 83px;
   display: flex;
   position: absolute;
   left: 0;
@@ -133,14 +134,13 @@ const LogosSlideDiv = styled.div`
 const LogosSpan = styled.span`
   svg {
     margin: 0 1rem;
-    height: 90px;
     font-size: 5rem;
   }
   span {
     opacity: 0;
   }
-  &:hover svg{
+  &:hover svg {
     opacity: 1;
-    color: thistle;
+    color: blueviolet;
   }
 `;
