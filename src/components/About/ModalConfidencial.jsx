@@ -32,7 +32,7 @@ export default function ModalConfidencial() {
       ></MainDiv>
       <ConfidentialDiv>
         <TxtDiv>
-          <IconConf>
+          <IconConf onClick={() => alert("Talvez me fazer um cafuné ajude")}>
             <FaRegLightbulb />
           </IconConf>
           <p>
@@ -91,16 +91,16 @@ const MainDiv = styled.div`
   margin-left: 1rem;
 `;
 const ConfidentialDiv = styled.div`
-  position: absolute;
   z-index: 903;
-  display: flex;
-  flex-direction: column;
   width: 75%;
+  position: fixed;
+  flex-direction: column;
   background-color: #27272a;
   border: 2px solid #757575;
   border-radius: 5px;
   padding: 32px;
   color: white;
+  top: 50%;
   animation: pulse 2s linear infinite;
   svg {
     font-size: 1.5rem;
@@ -146,6 +146,7 @@ const TxtDiv = styled.div`
 const IconConf = styled.div`
   color: #fff854;
   text-align: end;
+  cursor: pointer;
 `;
 const InputForm = styled.form`
   input {
