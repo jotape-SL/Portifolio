@@ -2,25 +2,19 @@ import styled from "styled-components";
 import { textos } from "./textosAbout";
 import { useGlobalContext } from "../Context";
 
-function ResumoM() {
+function ResumoPess() {
   const { isPtbr } = useGlobalContext();
-  return isPtbr ? textos.resumoMPT : textos.resumoMEN;
+  return isPtbr ? textos.resumoPess : textos.resumoPessEn;
 }
 
-function ResumoP() {
+function ResumoProf() {
   const { isPtbr } = useGlobalContext();
-  return isPtbr ? textos.resumoPPT : textos.resumoPEN;
+  return isPtbr ? textos.resumoProf : textos.resumoProfEn;
 }
 
-function ResumoI() {
+function ResumoConfidencial() {
   const { isPtbr } = useGlobalContext();
-  return isPtbr ? textos.resumoIPT : textos.resumoIEN;
+  return isPtbr ? textos.resumoConfidencial : textos.resumoConfidencialEn;
 }
 
-const PTextos = styled.p`
-  font-size: 1.5rem;
-  line-height: 20px;
-  margin-bottom: 2rem;
-  min-height: 540px;
-`;
-export { ResumoM, ResumoP, ResumoI };
+export { ResumoPess, ResumoProf, ResumoConfidencial };

@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import { begeBG } from "./UI/variaveis";
+import { cinzaClaro, verdeBG } from "./UI/variaveis";
+import { useGlobalContext } from "../components/Context";
 
 const GlobalStyle = createGlobalStyle`
   html, body, div, span, applet, object, iframe,
@@ -31,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     line-height: 1;
     font-family: "Source Sans Pro", monospace;
-    background-color: ${begeBG};
+    background-color: ${verdeBG};
   }
   ol, ul {
     list-style: none;
@@ -56,6 +57,11 @@ const GlobalStyle = createGlobalStyle`
   a {
 	color: inherit;
 	text-decoration: none;
+}
+
+.no-scroll{
+  overflow-y: hidden;
+  padding-right: 1rem;
 }
 
 .sr-only {

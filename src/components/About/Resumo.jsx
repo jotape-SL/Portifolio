@@ -1,13 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useGlobalContext } from "../Context";
-import { ResumoM, ResumoP, ResumoI } from "./ResumoTextos";
+import { ResumoPess, ResumoProf, ResumoConfidencial } from "./ResumoTextos";
+import { cinzaClaro } from "../../styles/UI/variaveis";
 
 export default function Resumo() {
-  const { isPtbr } = useGlobalContext();
-  const [Mresumo, setMresumo] = useState(false);
-  const [Presumo, setPresumo] = useState(true);
-  const [Iresumo, setIresumo] = useState(false);
+  const {
+    isPtbr,
+    setConfidencialModal,
+    isAutenticado,
+    pessResumo,
+    setPessResumo,
+    profResumo,
+    setProfResumo,
+    ConfidencialTxt,
+    setConfidencialTxt,
+  } = useGlobalContext();
   return (
     <TextosDiv>
       <TituloDiv>
@@ -15,80 +23,70 @@ export default function Resumo() {
         <div>
           <BotaoResumo
             onClick={() =>
-              setMresumo(true) & setPresumo(false) & setIresumo(false)
+              setPessResumo(true) &
+              setConfidencialTxt(false) &
+              setProfResumo(false)
             }
           >
-            {isPtbr ? "MUITO resumido" : "Summed up"}
+            {isPtbr ? "Pessoal" : "Personal"}
           </BotaoResumo>
           <BotaoResumo
             onClick={() =>
-              setPresumo(true) & setMresumo(false) & setIresumo(false)
+              !isAutenticado
+                ? setConfidencialModal(true)
+                : setConfidencialTxt(true) &
+                  setPessResumo(false) &
+                  setProfResumo(false)
             }
           >
-            {isPtbr ? "Padrão" : "default"}
+            {isPtbr ? "Confidencial" : "Confidential"}
           </BotaoResumo>
           <BotaoResumo
             onClick={() =>
-              setIresumo(true) & setPresumo(false) & setMresumo(false)
+              setProfResumo(true) &
+              setConfidencialTxt(false) &
+              setPessResumo(false)
             }
           >
-            {isPtbr ? "Já somos intimos" : "We're already intimmate"}
+            {isPtbr ? "Profissional" : "Professional"}
           </BotaoResumo>
         </div>
       </TituloDiv>
-      {(Mresumo && <ResumoM />) ||
-        (Presumo && <ResumoP />) ||
-        (Iresumo && <ResumoI />)}
+      {(pessResumo && <ResumoPess />) ||
+        (ConfidencialTxt && <ResumoConfidencial />) ||
+        (profResumo && <ResumoProf />)}
     </TextosDiv>
   );
 }
 
-const TextosDiv = styled.div`
-  min-width: 651px;
-  @media (max-width: 655px) {
-    min-width: 400px;
-    div {
-      display: block;
-    }
-  }
-  @media (max-width: 399px) {
-    min-width: 310px;
-  }
-`;
+const TextosDiv = styled.div``;
 
 const TituloDiv = styled.div`
   text-align: center;
   display: flex;
+  flex-direction: column;
   align-items: center;
   margin-bottom: 1rem;
-  @media (max-width: 320px) {
-    flex-direction: column;
-    margin: 40px 0;
+  font-size: 12px;
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: -webkit-fill-available;
+  }
+  button:nth-child(2) {
+    background-color: #bd0000a2;
+    border: 1px solid #bd0000;
   }
 `;
 
 const BotaoResumo = styled.button`
-  padding: 6px;
-  margin: 0 5px;
-  font-weight: bold;
-  font-family: sans-serif;
-  border: 1px solid black;
-  border-radius: 5px;
-  background-color: rgb(251, 255, 199);
+  color: white;
+  padding: 6px 0;
+  font-family: "Azeret Mono", monospace;
+  border: 1px solid #52525b;
+  border-radius: 16px;
+  min-width: 103px;
+  background-color: #52525bbe;
   cursor: pointer;
-  @media (max-width: 399px) {
-    padding: 2px;
-    margin: 0.5px;
-  }
-  &:hover {
-    transition: 0.1s ease-in-out;
-    color: black;
-    background-color: rgb(198, 201, 156);
-  }
-  &:nth-child(1) {
-    margin-left: 1.5rem;
-    @media (max-width: 768px) {
-      margin-left: 0;
-    }
-  }
 `;

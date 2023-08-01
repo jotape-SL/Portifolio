@@ -1,50 +1,56 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { begeBG } from "../../styles/UI/variaveis";
-import FerramentasContent from "./FerramentasContent";
+import { cinzaBGBG, verdeBG } from "../../styles/UI/variaveis";
 import Resumo from "./Resumo";
 import FotoMinha from "./FotoMinha";
+import ModalConfidencial from "./ModalConfidencial";
+import { useGlobalContext } from "../Context";
 
 export default function About() {
+  const [pessResumo, setPessResumo] = useState(false);
+  const [profResumo, setProfResumo] = useState(true);
+  const [ConfidencialTxt, setConfidencialTxt] = useState(false);
+  const { confidencialModal, isAutenticado } = useGlobalContext();
+  useEffect(() => {
+    if (confidencialModal) {
+      document.body.classList.add("no-scroll");
+    } else if (!confidencialModal) {
+      document.body.classList.remove("no-scroll");
+    }
+  }, [confidencialModal]);
   return (
     <AboutSection>
       <ContentDiv>
+        {confidencialModal && !isAutenticado ? <ModalConfidencial /> : ""}
         <FotoMinha />
         <Resumo />
       </ContentDiv>
-      <FerramentasDiv>
-        <FerramentasContent />
-      </FerramentasDiv>
     </AboutSection>
   );
 }
 
 const AboutSection = styled.section`
   position: relative;
-  margin-top: 15rem;
-  padding-top: 9rem;
-  font-family: "Sono", monospace;
-  background-color: ${begeBG};
+  margin-top: 10rem;
+  font-family: "Azeret Mono", monospace;
+  background-color: ${verdeBG};
   display: flex;
   flex-direction: column;
   align-items: center;
   h2 {
-    font-size: 3rem;
+    font-size: 1.875rem;
+    margin: 30px 0;
   }
-  &::before {
+  &::after {
     position: absolute;
     width: 100%;
-    height: 20vh;
+    height: 15.4vh;
     left: 0;
-    top: -6rem;
+    bottom: -8rem;
     content: "";
-    background: ${begeBG};
+    background: ${verdeBG};
     transform: skewY(356deg);
     display: block;
-  }
-  @media (max-width: 768px) {
-    margin-top: 8rem;
-    padding: 0;
   }
 `;
 
@@ -53,11 +59,8 @@ const ContentDiv = styled.div`
   align-items: flex-start;
   justify-content: center;
   flex-direction: row;
-  color: black;
-  max-width: 50vw;
-  div:nth-child(2) {
-    margin: 0 4%;
-  }
+  color: white;
+  padding: 0 32px;
   @media (max-width: 1216px) {
     flex-wrap: wrap;
     align-items: center;
@@ -65,9 +68,4 @@ const ContentDiv = styled.div`
     margin-top: 8rem;
     align-content: center;
   }
-`;
-
-const FerramentasDiv = styled.div`
-  margin-bottom: 2rem;
-  text-align: center;
 `;

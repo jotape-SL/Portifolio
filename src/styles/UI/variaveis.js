@@ -1,4 +1,4 @@
-export const verdeMatrix = "#0F0";
+export const verdeBG = "#64A400";
 export const corFonte1st = "white";
-export const cinzaClaro = "rgb(198, 201, 156)";
-export const begeBG = "blanchedalmond";
+export const cinzaClaro = "#52525B";
+export const cinzaBG = "#27272A";
