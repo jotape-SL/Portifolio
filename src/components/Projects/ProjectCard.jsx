@@ -9,14 +9,18 @@ export default function ProjectCard() {
       {projetinhos.map((card) => {
         return (
           <DivCard key={card.id}>
-            <ImgCard src={card.imagem} alt={card.nome} className="imagis" />
-            <LinkCard
-              href={card.link}
-              rel="noreferrer noopener"
-              target="_blank"
-            >
-              <TitleCard className="titulus">{card.nome} </TitleCard>
-            </LinkCard>
+            <ImgCard src={card.imagem} alt={card.nome} />
+            <ContentCard>
+              <TitleCard>{card.nome} </TitleCard>
+              <LinksCard>
+                <a href={card.linkGH} rel="noreferrer noopener" target="_blank">
+                  <AiFillGithub />
+                </a>
+                <a href={card.linkDR} rel="noreferrer noopener" target="_blank">
+                  <AiOutlineLink />
+                </a>
+              </LinksCard>
+            </ContentCard>
           </DivCard>
         );
       })}
@@ -31,36 +35,63 @@ const DivCard = styled.div`
   width: 22.5rem;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
+  z-index: 1;
+  &:hover {
+    img {
+      /* filter: grayscale(20%); */
+      filter: blur(1.5px);
+    }
+    > div {
+      background-color: #ffffff5a;
+    }
+    p {
+      opacity: 1;
+    }
+    svg {
+      opacity: 1;
+      &:hover {
+        color: #ba7af7;
+      }
+    }
+  }
 `;
 
 const ImgCard = styled.img`
   position: absolute;
   object-fit: cover;
   border-radius: 10px;
-  width: 360px;
-  height: 200px;
+  width: 22.5rem;
+  height: 12.5rem;
+  z-index: 2;
 `;
 const TitleCard = styled.p`
   margin: 0 auto;
   margin-top: 1rem;
   width: fit-content;
-  background-color: ${cinzaBG};
+  /* background-color: ${cinzaBG}; */
+  background-color: #ba7af7;
   color: white;
   font-size: 1.5rem;
   padding: 1rem;
   border-radius: 10px;
   opacity: 0;
+  z-index: 4;
 `;
-const LinkCard = styled.a`
+const ContentCard = styled.div`
   border-radius: 10px;
   height: 12.5rem;
-  width: 19.875rem;
-  z-index: 5;
+  width: 22.5rem;
+  z-index: 3;
   position: absolute;
-  &:hover {
-    background-color: #0000005a;
-    p {
-      opacity: 1;
-    }
+`;
+
+const LinksCard = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  svg {
+    color: ${cinzaBG};
+    opacity: 0;
+    font-size: 7.5rem;
   }
 `;
