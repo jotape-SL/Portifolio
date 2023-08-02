@@ -1,6 +1,7 @@
 import projetinhos from "./projetosGitHub";
 import styled from "styled-components";
-import { begeBG } from "../../styles/UI/variaveis";
+import { begeBG, cinzaBG } from "../../styles/UI/variaveis";
+import { AiOutlineLink, AiFillGithub } from "react-icons/ai";
 
 export default function ProjectCard() {
   return (
@@ -8,10 +9,14 @@ export default function ProjectCard() {
       {projetinhos.map((card) => {
         return (
           <DivCard key={card.id}>
-            <img src={card.imagem} alt={card.nome} />
-            <a href={card.link} rel="noreferrer noopener" target="_blank">
-              <p>{card.nome}</p>
-            </a>
+            <ImgCard src={card.imagem} alt={card.nome} className="imagis" />
+            <LinkCard
+              href={card.link}
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              <TitleCard className="titulus">{card.nome} </TitleCard>
+            </LinkCard>
           </DivCard>
         );
       })}
@@ -20,40 +25,42 @@ export default function ProjectCard() {
 }
 
 const DivCard = styled.div`
-  max-height: 450px;
+  position: relative;
   border-radius: 10px;
+  height: 12.5rem;
+  width: 22.5rem;
+  overflow: hidden;
+  display: flex;
+`;
 
-  a {
-    @media (max-width: 650px) {
-      width: 100%;
-    }
-    max-height: 450px;
-    border-radius: 10px;
-    display: block;
-    transform: translateY(-453px);
-    overflow: hidden;
-    &:hover {
-      background-color: #0000007d;
-      transition: 0.5s ease-in-out;
-    }
+const ImgCard = styled.img`
+  position: absolute;
+  object-fit: cover;
+  border-radius: 10px;
+  width: 360px;
+  height: 200px;
+`;
+const TitleCard = styled.p`
+  margin: 0 auto;
+  margin-top: 1rem;
+  width: fit-content;
+  background-color: ${cinzaBG};
+  color: white;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 10px;
+  opacity: 0;
+`;
+const LinkCard = styled.a`
+  border-radius: 10px;
+  height: 12.5rem;
+  width: 19.875rem;
+  z-index: 5;
+  position: absolute;
+  &:hover {
+    background-color: #0000005a;
     p {
-      margin: 50% auto;
-      width: fit-content;
-      padding: 1rem;
-      border-radius: 10px;
-      color: black;
-      font-size: 2rem;
-      background-color: ${begeBG};
+      opacity: 1;
     }
-  }
-  img {
-    @media (max-width: 650px) {
-      width: 100%;
-      height: 400px;
-    }
-    object-fit: cover;
-    border-radius: 10px;
-    width: 650px;
-    height: 450px;
   }
 `;
