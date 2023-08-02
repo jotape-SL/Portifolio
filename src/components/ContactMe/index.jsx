@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { begeBG } from "../../styles/UI/variaveis";
+import { begeBG, cinzaBG } from "../../styles/UI/variaveis";
 import Contatos from "./Contatos";
 import TextoContato from "./TextoContato";
 
@@ -14,6 +14,7 @@ export default function ContactMe() {
 }
 
 const ContactSection = styled.section`
+  background-color: ${cinzaBG} !important;
   background-color: transparent;
   display: flex;
   flex-direction: column;

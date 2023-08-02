@@ -12,7 +12,7 @@ import {
   SiBlender,
 } from "react-icons/si";
 import { useGlobalContext } from "../Context";
-import { cinzaClaro, verdeBG } from "../../styles/UI/variaveis";
+import { cinzaClaro, roxinhoIcones, verdeBG } from "../../styles/UI/variaveis";
 
 export default function AboutIcons() {
   const { isPtbr } = useGlobalContext();
@@ -134,7 +134,7 @@ const LogosSlideDiv = styled.div`
 
 const LogosSpan = styled.span`
   svg {
-    color: #ba7af7;
+    color: ${roxinhoIcones};
     opacity: 0.8;
     margin: 0 1rem;
     font-size: 5rem;
@@ -144,6 +144,5 @@ const LogosSpan = styled.span`
   }
   &:hover svg {
     opacity: 1;
-    /* color: blueviolet; */
   }
 `;

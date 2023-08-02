@@ -1,6 +1,6 @@
 import projetinhos from "./projetosGitHub";
 import styled from "styled-components";
-import { begeBG, cinzaBG } from "../../styles/UI/variaveis";
+import { begeBG, cinzaBG, roxinhoIcones } from "../../styles/UI/variaveis";
 import { AiOutlineLink, AiFillGithub } from "react-icons/ai";
 
 export default function ProjectCard() {
@@ -39,7 +39,6 @@ const DivCard = styled.div`
   z-index: 1;
   &:hover {
     img {
-      /* filter: grayscale(20%); */
       filter: blur(1.5px);
     }
     > div {
@@ -51,7 +50,7 @@ const DivCard = styled.div`
     svg {
       opacity: 1;
       &:hover {
-        color: #ba7af7;
+        color: ${roxinhoIcones};
       }
     }
   }
@@ -69,9 +68,8 @@ const TitleCard = styled.p`
   margin: 0 auto;
   margin-top: 1rem;
   width: fit-content;
-  /* background-color: ${cinzaBG}; */
-  background-color: #ba7af7;
-  color: white;
+  background-color: ${roxinhoIcones};
+  color: ${cinzaBG};
   font-size: 1.5rem;
   padding: 1rem;
   border-radius: 10px;
