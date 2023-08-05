@@ -12,7 +12,7 @@ import {
   SiBlender,
 } from "react-icons/si";
 import { useGlobalContext } from "../Context";
-import { verdeBG } from "../../styles/UI/variaveis";
+import { cinzaClaro, roxinhoIcones, verdeBG } from "../../styles/UI/variaveis";
 
 export default function AboutIcons() {
   const { isPtbr } = useGlobalContext();
@@ -82,8 +82,7 @@ export default function AboutIcons() {
 
 const LogosDiv = styled.div`
   display: flex;
-  padding: 0 0 80px 0;
-  margin-bottom: 2rem;
+  margin-bottom: 8rem;
   &:hover div {
     animation-play-state: paused;
   }
@@ -101,21 +100,23 @@ const LogosDiv = styled.div`
 `;
 
 const LogosSlideDiv = styled.div`
-  width: 1008px;
+  --logosWidth: 1100px;
+  width: var(--logosWidth);
   display: flex;
   position: absolute;
+  margin-left: 2rem;
   left: 0;
   @keyframes slide1 {
     0% {
       left: 0%;
     }
     100% {
-      left: -1008px;
+      left: calc(var(--logosWidth) * -1);
     }
   }
   @keyframes slide2 {
     0% {
-      left: 1008px;
+      left: var(--logosWidth);
     }
     100% {
       left: 0%;
@@ -123,16 +124,18 @@ const LogosSlideDiv = styled.div`
   }
   @keyframes slide3 {
     0% {
-      left: 2016px;
+      left: calc(var(--logosWidth) * 2);
     }
     100% {
-      left: 1008px;
+      left: var(--logosWidth);
     }
   }
 `;
 
 const LogosSpan = styled.span`
   svg {
+    color: ${roxinhoIcones};
+    opacity: 0.8;
     margin: 0 1rem;
     font-size: 5rem;
   }
@@ -141,6 +144,5 @@ const LogosSpan = styled.span`
   }
   &:hover svg {
     opacity: 1;
-    color: blueviolet;
   }
 `;

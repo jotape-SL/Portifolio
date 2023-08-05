@@ -1,6 +1,7 @@
 import projetinhos from "./projetosGitHub";
 import styled from "styled-components";
-import { begeBG } from "../../styles/UI/variaveis";
+import { begeBG, cinzaBG, roxinhoIcones } from "../../styles/UI/variaveis";
+import { AiOutlineLink, AiFillGithub } from "react-icons/ai";
 
 export default function ProjectCard() {
   return (
@@ -8,10 +9,18 @@ export default function ProjectCard() {
       {projetinhos.map((card) => {
         return (
           <DivCard key={card.id}>
-            <img src={card.imagem} alt={card.nome} />
-            <a href={card.link} rel="noreferrer noopener" target="_blank">
-              <p>{card.nome}</p>
-            </a>
+            <ImgCard src={card.imagem} alt={card.nome} />
+            <ContentCard>
+              <TitleCard>{card.nome} </TitleCard>
+              <LinksCard>
+                <a href={card.linkGH} rel="noreferrer noopener" target="_blank">
+                  <AiFillGithub />
+                </a>
+                <a href={card.linkDR} rel="noreferrer noopener" target="_blank">
+                  <AiOutlineLink />
+                </a>
+              </LinksCard>
+            </ContentCard>
           </DivCard>
         );
       })}
@@ -20,40 +29,67 @@ export default function ProjectCard() {
 }
 
 const DivCard = styled.div`
-  max-height: 450px;
+  position: relative;
   border-radius: 10px;
-
-  a {
-    @media (max-width: 650px) {
-      width: 100%;
+  height: 12.5rem;
+  width: 22.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  &:hover {
+    img {
+      filter: blur(1.5px);
     }
-    max-height: 450px;
-    border-radius: 10px;
-    display: block;
-    transform: translateY(-453px);
-    overflow: hidden;
-    &:hover {
-      background-color: #0000007d;
-      transition: 0.5s ease-in-out;
+    > div {
+      background-color: #ffffff5a;
     }
     p {
-      margin: 50% auto;
-      width: fit-content;
-      padding: 1rem;
-      border-radius: 10px;
-      color: black;
-      font-size: 2rem;
-      background-color: ${begeBG};
+      opacity: 1;
+    }
+    svg {
+      opacity: 1;
+      &:hover {
+        color: ${roxinhoIcones};
+      }
     }
   }
-  img {
-    @media (max-width: 650px) {
-      width: 100%;
-      height: 400px;
-    }
-    object-fit: cover;
-    border-radius: 10px;
-    width: 650px;
-    height: 450px;
+`;
+
+const ImgCard = styled.img`
+  position: absolute;
+  object-fit: cover;
+  border-radius: 10px;
+  width: 22.5rem;
+  height: 12.5rem;
+  z-index: 2;
+`;
+const TitleCard = styled.p`
+  margin: 0 auto;
+  margin-top: 1rem;
+  width: fit-content;
+  background-color: ${roxinhoIcones};
+  color: ${cinzaBG};
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 10px;
+  opacity: 0;
+  z-index: 4;
+`;
+const ContentCard = styled.div`
+  border-radius: 10px;
+  height: 12.5rem;
+  width: 22.5rem;
+  z-index: 3;
+  position: absolute;
+`;
+
+const LinksCard = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  svg {
+    color: ${cinzaBG};
+    opacity: 0;
+    font-size: 7.5rem;
   }
 `;

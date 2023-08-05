@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { begeBG, verdeBG } from "../../styles/UI/variaveis";
+import { begeBG, cinzaBG, verdeBG } from "../../styles/UI/variaveis";
 import { useGlobalContext } from "../Context";
 import ProjectCard from "./ProjectCard";
 import FerramentasContent from "./FerramentasContent";
@@ -7,7 +7,7 @@ import FerramentasContent from "./FerramentasContent";
 export default function Projects() {
   const { isPtbr } = useGlobalContext();
   return (
-    <SectionProjetos>
+    <SectionProjetos id="projetos">
       <FerramentasDiv>
         <FerramentasContent />
       </FerramentasDiv>
@@ -20,13 +20,13 @@ export default function Projects() {
 }
 
 const SectionProjetos = styled.section`
+  color: white;
   overflow: hidden !important;
-  background-color: tomato;
+  background-color: ${cinzaBG};
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem;
   div > h2 {
     margin-top: 10rem;
     margin-bottom: 3rem;
@@ -37,15 +37,6 @@ const SectionProjetos = styled.section`
     margin-bottom: 5rem;
     font-size: 3rem;
   }
-  /* h2::after {
-    content: "";
-    background-color: currentColor;
-    height: 5px;
-    width: 10rem;
-    display: block;
-    margin: 10px auto;
-    border-radius: 10px;
-  } */
 `;
 const FerramentasDiv = styled.div`
   position: relative;
@@ -55,5 +46,6 @@ const DivContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding: 0 2rem;
   gap: 1.5rem 0;
 `;
