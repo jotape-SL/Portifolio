@@ -19,7 +19,7 @@ export default function About() {
     }
   }, [confidencialModal]);
   return (
-    <AboutSection>
+    <AboutSection id="sobre">
       <ContentDiv>
         {confidencialModal && !isAutenticado ? <ModalConfidencial /> : ""}
         <FotoMinha />

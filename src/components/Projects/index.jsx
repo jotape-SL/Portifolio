@@ -7,7 +7,7 @@ import FerramentasContent from "./FerramentasContent";
 export default function Projects() {
   const { isPtbr } = useGlobalContext();
   return (
-    <SectionProjetos>
+    <SectionProjetos id="projetos">
       <FerramentasDiv>
         <FerramentasContent />
       </FerramentasDiv>
