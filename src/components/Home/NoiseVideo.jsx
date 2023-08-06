@@ -11,8 +11,8 @@ const BgVideo = styled.video`
   position: absolute;
   right: 0;
   bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
+  min-width: 120vw;
+  height: 120vh;
   width: auto;
   height: auto;
   background-size: cover;

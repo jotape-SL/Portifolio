@@ -31,7 +31,7 @@ export default function About() {
 
 const AboutSection = styled.section`
   position: relative;
-  margin-top: 10rem;
+  /* margin-top: 10rem; */
   font-family: "Azeret Mono", monospace;
   background-color: ${verdeBG};
   display: flex;
@@ -43,10 +43,24 @@ const AboutSection = styled.section`
   }
   &::after {
     position: absolute;
+    z-index: 3;
     width: 100%;
-    height: 15.4vh;
+    height: 100vh;
     left: 0;
     bottom: -8rem;
+    content: "";
+    background: ${verdeBG};
+    transform: skewY(356deg);
+    display: block;
+  }
+  &::before {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: -3rem;
+    z-index: 3;
     content: "";
     background: ${verdeBG};
     transform: skewY(356deg);
@@ -55,6 +69,7 @@ const AboutSection = styled.section`
 `;
 
 const ContentDiv = styled.div`
+  z-index: 4;
   width: 100%;
   display: flex;
   align-items: flex-start;

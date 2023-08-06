@@ -46,15 +46,5 @@ export default function Home() {
 const HomeSection = styled.section`
   background-color: black;
   max-height: fit-content;
-  &::after {
-    position: absolute;
-    width: 100%;
-    height: 17.4vh;
-    left: 0;
-    bottom: -3rem;
-    content: "";
-    background: ${verdeBG};
-    transform: skewY(356deg);
-    display: block;
-  }
+  padding-bottom: 3rem;
 `;
