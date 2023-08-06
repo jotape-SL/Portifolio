@@ -27,9 +27,10 @@ export default function Header({ scrollPosition }) {
     </Nav>
   );
 }
-/*Braekpoint to make a hamburber menu so it wont break on smaller phones: 391px*/
+
 const Nav = styled.nav`
   display: flex;
+  text-align: center;
   justify-content: space-around;
   align-items: center;
   justify-content: space-between;
@@ -52,8 +53,7 @@ const IconeA = styled.a`
   font-family: "Kenia", monospace;
   mix-blend-mode: revert;
   text-shadow: 1px 1px 2px black, 0 0 1em white, 0 0 0.2em white;
-  padding: 1rem;
-  margin-right: 1rem;
+  margin: 1rem;
 `;
 const NavContainer = styled.ul`
   align-items: center;
@@ -61,8 +61,8 @@ const NavContainer = styled.ul`
   flex-direction: row;
 `;
 const NavLinks = styled.li`
-  margin-right: 2rem;
   display: flex;
+  padding-right: 1rem;
   align-items: center;
   a,
   button {

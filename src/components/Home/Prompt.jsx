@@ -46,6 +46,7 @@ export default function ConteudoInicial({ scrollPosition }) {
 }
 
 const Apresentacao = styled.section`
+  z-index: 6;
   color: ${corFonte1st};
   position: relative;
   p {
