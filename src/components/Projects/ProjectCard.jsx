@@ -35,6 +35,7 @@ const DivCard = styled.div`
   width: 22.5rem;
   overflow: hidden;
   display: flex;
+  align-items: center;
   flex-direction: column;
   z-index: 1;
   &:hover {

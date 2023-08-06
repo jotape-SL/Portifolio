@@ -55,12 +55,13 @@ const AboutSection = styled.section`
 `;
 
 const ContentDiv = styled.div`
+  width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: row;
   color: white;
-  padding: 0 32px;
+  padding: 0 2rem;
   @media (max-width: 1216px) {
     flex-wrap: wrap;
     align-items: center;
