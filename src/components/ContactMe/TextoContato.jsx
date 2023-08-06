@@ -8,8 +8,8 @@ export default function TextoContato() {
     <TextoDiv>
       <p>
         {isPtbr
-          ? "Gostou do meu portfólio ou de alguns dos meu projetos? Sinta-se à vontade para mandar um feedback!!"
-          : "Liked my portfolio or any of my projects? Feel free to give me any feedback!"}
+          ? "Gostou de alguns dos meu projetos? Sinta-se à vontade para dar um feedback! :)"
+          : "Liked any of my works, fell free to give me a feedback! :)"}
       </p>
     </TextoDiv>
   );

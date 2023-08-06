@@ -1,8 +1,12 @@
 import React from "react";
-
-import { VscGithubInverted } from "react-icons/vsc";
-import { FaLinkedinIn } from "react-icons/fa";
 import styled from "styled-components";
+import {
+  AiOutlineLinkedin,
+  AiOutlineInstagram,
+  AiOutlineGithub,
+  AiOutlineMail,
+} from "react-icons/ai";
+import { cinzaCont, roxinhoIcones } from "../../styles/UI/variaveis";
 
 export default function Contatos() {
   return (
@@ -13,7 +17,7 @@ export default function Contatos() {
         href="https://github.com/jotape-SL"
       >
         <span>
-          <VscGithubInverted />
+          <AiOutlineGithub />
           <p className="sr-only">Github</p>
         </span>
       </a>
@@ -23,8 +27,24 @@ export default function Contatos() {
         href="https://www.linkedin.com/in/jo%C3%A3o-pedro-sl-programador/"
       >
         <span>
-          <FaLinkedinIn />
+          <AiOutlineLinkedin />
           <p className="sr-only">Linkedin</p>
+        </span>
+      </a>
+      <a
+        rel="noreferrer noopener"
+        target="_blank"
+        href="https://www.instagram.com/jotape_sl/"
+      >
+        <span>
+          <AiOutlineInstagram />
+          <p className="sr-only">Instagram</p>
+        </span>
+      </a>
+      <a href="#email">
+        <span>
+          <AiOutlineMail />
+          <p className="sr-only">Gmail</p>
         </span>
       </a>
     </IconDiv>
@@ -36,26 +56,15 @@ const IconDiv = styled.div`
   text-align: center;
   flex-wrap: wrap;
   justify-content: center;
+  background-color: ${cinzaCont};
   gap: 1rem;
-  a {
-    border: 4px solid black;
-    border-radius: 50%;
-    overflow: hidden;
-    width: 132px;
-    height: 131px;
-    &:hover {
-      color: white;
-      background-color: black;
-    }
-  }
-  a:nth-child(2) {
-    svg {
-      margin-top: 10%;
-      font-size: 6rem;
-    }
-  }
+  border-radius: 60px;
+  padding: 5px 30px;
   a svg {
     margin-top: 5%;
-    font-size: 7rem;
+    font-size: 5rem;
+    &:hover {
+      color: ${roxinhoIcones};
+    }
   }
 `;

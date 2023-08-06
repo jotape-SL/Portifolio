@@ -31,7 +31,6 @@ export default function FotoMinha() {
 const ProfileDiv = styled.div`
   cursor: grab;
   position: relative;
-  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
