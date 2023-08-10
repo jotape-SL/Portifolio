@@ -61,7 +61,6 @@ const GlobalStyle = createGlobalStyle`
 
 .no-scroll{
   overflow-y: hidden;
-  padding-right: 1rem;
 }
 
 .sr-only {

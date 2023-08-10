@@ -88,7 +88,6 @@ const MainDiv = styled.div`
   width: 100%;
   height: 100%;
   background-color: #75757573;
-  margin-left: 1rem;
 `;
 const ConfidentialDiv = styled.div`
   z-index: 903;
@@ -114,7 +113,7 @@ const ConfidentialDiv = styled.div`
       box-shadow: none;
     }
     50% {
-      box-shadow: 0px 0px 20px 5px rgba(255, 56, 56, 0.43);
+      box-shadow: 0px 0px 20px 5px snow;
     }
     100% {
       box-shadow: none;
@@ -142,6 +141,7 @@ const ConfidentialDiv = styled.div`
 const TxtDiv = styled.div`
   display: flex;
   flex-direction: row-reverse;
+  justify-content: space-around;
 `;
 const IconConf = styled.div`
   color: #fff854;

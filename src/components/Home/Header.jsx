@@ -31,7 +31,6 @@ export default function Header({ scrollPosition }) {
 const Nav = styled.nav`
   display: flex;
   text-align: center;
-  justify-content: space-around;
   align-items: center;
   justify-content: space-between;
   &.rel {
@@ -46,6 +45,9 @@ const Nav = styled.nav`
     top: 0;
     z-index: 900;
   }
+  @media (min-width: 1240px) {
+    justify-content: space-between;
+  }
 `;
 
 const IconeA = styled.a`
@@ -59,6 +61,9 @@ const NavContainer = styled.ul`
   align-items: center;
   display: flex;
   flex-direction: row;
+  @media (min-width: 1240px) {
+    width: 50vw;
+  }
 `;
 const NavLinks = styled.li`
   display: flex;
@@ -77,6 +82,10 @@ const NavLinks = styled.li`
     &:hover {
       opacity: 1;
     }
+  }
+  @media (min-width: 1240px) {
+    width: -webkit-fill-available;
+    justify-content: space-evenly;
   }
 `;
 const DropDown = styled.div`

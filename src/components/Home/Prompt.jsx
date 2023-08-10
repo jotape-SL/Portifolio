@@ -87,6 +87,9 @@ const TextoAp = styled.div`
   p {
     text-align: start;
   }
+  @media (min-width: 1240px) {
+    max-width: 50vw;
+  }
 `;
 
 const ScrollDiv = styled.div`

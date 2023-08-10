@@ -11,15 +11,18 @@ export default function Projects() {
       <FerramentasDiv>
         <FerramentasContent />
       </FerramentasDiv>
-      <h2>{isPtbr ? "Meus projetos" : "My Projects"}</h2>
-      <DivContainer>
-        <ProjectCard />
-      </DivContainer>
+      <ProjetosContainer>
+        <h2>{isPtbr ? "Meus projetos" : "My Projects"}</h2>
+        <DivContainer>
+          <ProjectCard />
+        </DivContainer>
+      </ProjetosContainer>
     </SectionProjetos>
   );
 }
 
 const SectionProjetos = styled.section`
+  padding-top: 5rem;
   color: white;
   overflow: hidden !important;
   background-color: ${cinzaBG};
@@ -42,10 +45,16 @@ const FerramentasDiv = styled.div`
   position: relative;
 `;
 const DivContainer = styled.div`
+  max-width: 1200px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 0 2rem;
   gap: 1.5rem 0;
+`;
+const ProjetosContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

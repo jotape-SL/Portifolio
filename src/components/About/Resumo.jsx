@@ -59,7 +59,11 @@ export default function Resumo() {
   );
 }
 
-const TextosDiv = styled.div``;
+const TextosDiv = styled.div`
+  @media (min-width: 900px) {
+    margin-left: 1rem;
+  }
+`;
 
 const TituloDiv = styled.div`
   text-align: center;
