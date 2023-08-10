@@ -30,8 +30,8 @@ export default function About() {
 }
 
 const AboutSection = styled.section`
+  justify-content: center;
   position: relative;
-  /* margin-top: 10rem; */
   font-family: "Azeret Mono", monospace;
   background-color: ${verdeBG};
   display: flex;
@@ -77,11 +77,11 @@ const ContentDiv = styled.div`
   flex-direction: row;
   color: white;
   padding: 0 2rem;
-  @media (max-width: 1216px) {
+  margin-top: 8rem;
+  @media (max-width: 900px) {
     flex-wrap: wrap;
     align-items: center;
     flex-direction: column;
-    margin-top: 8rem;
     align-content: center;
   }
 `;

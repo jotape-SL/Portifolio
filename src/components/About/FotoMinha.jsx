@@ -29,6 +29,8 @@ export default function FotoMinha() {
 }
 
 const ProfileDiv = styled.div`
+  --imgwd-ht_mb: 80vw;
+  --imgwd-ht_pc: 80vw;
   cursor: grab;
   position: relative;
   display: flex;
@@ -37,9 +39,15 @@ const ProfileDiv = styled.div`
   img {
     -webkit-user-drag: none;
     -webkit-user-select: none;
-    width: 80vw;
-    height: 80vw;
+    width: var(--imgwd-ht_mb);
+    height: var(--imgwd-ht_mb);
     overflow: hidden;
+  }
+  @media (min-width: 900px) {
+    img {
+      width: 50vw;
+      height: 50vw;
+    }
   }
   .animation-on {
     animation: flip-horizontal-top 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955)
@@ -89,4 +97,7 @@ const SenhaDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (min-width: 768px) {
+      width: 50vw;
+      height: 50vw;
 `;
