@@ -3,7 +3,7 @@ import styled from "styled-components";
 const PTextos = styled.p`
   font-size: 1.125rem;
   margin-bottom: 2rem;
-  min-height: 540px;
+  max-height: 540px;
 `;
 
 export const textos = {

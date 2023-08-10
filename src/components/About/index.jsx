@@ -37,6 +37,7 @@ const AboutSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 6rem;
   h2 {
     font-size: 1.875rem;
     margin: 30px 0;
@@ -45,9 +46,9 @@ const AboutSection = styled.section`
     position: absolute;
     z-index: 3;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     left: 0;
-    bottom: -8rem;
+    bottom: -9rem;
     content: "";
     background: ${verdeBG};
     transform: skewY(356deg);
@@ -57,7 +58,7 @@ const AboutSection = styled.section`
     position: absolute;
     z-index: 3;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     left: 0;
     top: -3rem;
     z-index: 3;
@@ -70,7 +71,7 @@ const AboutSection = styled.section`
 
 const ContentDiv = styled.div`
   z-index: 4;
-  width: 100%;
+  max-width: 1200px;
   display: flex;
   align-items: flex-start;
   justify-content: center;

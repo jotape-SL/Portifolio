@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { cinzaClaro } from "../../styles/UI/variaveis";
 
-export default function FotoMinha() {
+export default function Fotomaxha() {
   const [isClicado, setIsClicado] = useState(false);
   let contador = 0;
   return (
@@ -30,7 +30,8 @@ export default function FotoMinha() {
 
 const ProfileDiv = styled.div`
   --imgwd-ht_mb: 80vw;
-  --imgwd-ht_pc: 80vw;
+  --imgwd-ht_pc: 40vw;
+  --imgwd-ht_pcb: 25vw;
   cursor: grab;
   position: relative;
   display: flex;
@@ -45,8 +46,14 @@ const ProfileDiv = styled.div`
   }
   @media (min-width: 900px) {
     img {
-      width: 50vw;
-      height: 50vw;
+      width: var(--imgwd-ht_pc);
+      height: var(--imgwd-ht_pc);
+    }
+  }
+  @media (min-width: 1440px) {
+    img {
+      width: var(--imgwd-ht_pcb);
+      height: var(--imgwd-ht_pcb);
     }
   }
   .animation-on {
@@ -89,15 +96,24 @@ const ProfileDiv = styled.div`
 `;
 
 const SenhaDiv = styled.div`
+  --imgwd-ht_mb: 80vw;
+  --imgwd-ht_pc: 46vw;
+  --imgwd-ht_pcb: 25vw;
   user-select: none;
-  width: 80vw;
-  height: 80vw;
+  width: var(--imgwd-ht_mb);
+  height: var(--imgwd-ht_mb);
   background-color: black;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (min-width: 768px) {
-      width: 50vw;
-      height: 50vw;
+
+  @media (min-width: 900px) {
+    width: var(--imgwd-ht_pc);
+    height: var(--imgwd-ht_pc);
+  }
+  @media (min-width: 1440px) {
+    width: var(--imgwd-ht_pcb);
+    height: var(--imgwd-ht_pcb);
+  }
 `;
