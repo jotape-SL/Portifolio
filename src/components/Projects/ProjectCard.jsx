@@ -28,7 +28,7 @@ export default function ProjectCard() {
               alt={card.nome}
             />
             {isOverlayOpen && (
-              <ContentCard onClick={() => handleImageClick(card.id)}>
+              <ContentCard>
                 <TitleCard>{card.nome}</TitleCard>
                 <LinksCard>
                   <a
@@ -67,8 +67,8 @@ const DivCard = styled.div`
   z-index: 1;
   &:hover {
     img {
+      filter: grayscale(0.5);
       cursor: pointer;
-      filter: blur(1.5px);
     }
   }
 `;
@@ -93,7 +93,7 @@ const TitleCard = styled.p`
   z-index: 4;
 `;
 const ContentCard = styled.div`
-  background-color: #ffffff5a;
+  background-color: #ffffff96;
   border-radius: 10px;
   height: 12.5rem;
   width: 22.5rem;
