@@ -2,14 +2,20 @@ import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import { FaRegLightbulb } from "react-icons/fa";
 import { useGlobalContext } from "../Context";
+import { textos } from "./textosAbout";
 
 export default function ModalConfidencial() {
-  const { setPessResumo, setProfResumo, setConfidencialTxt } =
-    useGlobalContext();
   const [senhaErrada, setSenhaErrada] = useState(false);
   const senhaRef = useRef(null);
-  const { isAutenticado, setIsAutenticado, setConfidencialModal } =
-    useGlobalContext();
+  const {
+    isAutenticado,
+    setIsAutenticado,
+    setConfidencialModal,
+    isPtbr,
+    setPessResumo,
+    setProfResumo,
+    setConfidencialTxt,
+  } = useGlobalContext();
   const handleSubmit = (e) => {
     e.preventDefault();
     const senha = senhaRef.current.value;
@@ -32,12 +38,15 @@ export default function ModalConfidencial() {
       ></MainDiv>
       <ConfidentialDiv>
         <TxtDiv>
-          <IconConf onClick={() => alert("Talvez me fazer um cafuné ajude")}>
+          <IconConf
+            onClick={() =>
+              alert(isPtbr ? textos.alertMessage : textos.alertMessageEN)
+            }
+          >
             <FaRegLightbulb />
           </IconConf>
           <p>
-            Informação confidencial, digite a senha super confidendial para
-            acessá-la.
+            {isPtbr ? textos.confidencialModalP : textos.confidencialModalPEN}
           </p>
         </TxtDiv>
         <InputForm
@@ -45,7 +54,9 @@ export default function ModalConfidencial() {
           className={senhaErrada ? "wrong-senha" : ""}
         >
           <label className="visually-hidden" for="senha">
-            Digite sua senha
+            {isPtbr
+              ? textos.confidencialModalLabel
+              : textos.confidencialModalLabelEN}
           </label>
           <input
             ref={senhaRef}
@@ -101,6 +112,9 @@ const ConfidentialDiv = styled.div`
   color: white;
   top: 50%;
   animation: pulse 2s linear infinite;
+  @media (min-width: 768px) {
+    width: 50vw;
+  }
   svg {
     font-size: 1.5rem;
     margin-bottom: 1rem;

@@ -114,4 +114,18 @@ export const textos = {
       is valid, and cast a contemplative gaze beyond appearances.
     </PTextos>
   ),
+  imgAlt: "Um conjunto de átomos, comumente chamado de João!",
+  imgAltEN: "A bunch of Atoms, commonly called João!",
+  senhaTitle: "A senha super secreta é 1234,shhhhhh!",
+  senhaTitleEN: "The super confidendial password is 1234, shhhhh!",
+  alertMessage:
+    "Acerte minha imagem com alguns toques sutis, porém, seja precavido com meu semblante, por gentileza.",
+  alertMessageEN:
+    "Aim my image with gentle touches, but please be cautious of my countenance.",
+  confidencialModalP:
+    "Informação confidencial, digite a senha super confidendial para acessá-la.",
+  confidencialModalPEN:
+    "Confidential information, enter the super confidential password to access it.",
+  confidencialModalLabel: "Digite a senha",
+  confidencialModalLabelEN: "Enter the password",
 };
