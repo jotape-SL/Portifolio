@@ -41,12 +41,13 @@ export default function Contatos() {
           <p className="sr-only">Instagram</p>
         </span>
       </a>
-      <a href="#email">
+      <EmailA href="#email">
         <span>
           <AiOutlineMail />
           <p className="sr-only">Gmail</p>
+          <p>jotapesl.dev@gmail.com</p>
         </span>
-      </a>
+      </EmailA>
     </IconDiv>
   );
 }
@@ -66,5 +67,28 @@ const IconDiv = styled.div`
     &:hover {
       color: ${roxinhoIcones};
     }
+  }
+`;
+
+const EmailA = styled.a`
+  span {
+    position: relative;
+  }
+  p {
+    visibility: hidden;
+    width: 240px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -120px;
+  }
+  &:hover p {
+    visibility: visible;
   }
 `;
