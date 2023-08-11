@@ -1,26 +1,29 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { cinzaClaro } from "../../styles/UI/variaveis";
+import { textos } from "./textosAbout";
+import { useGlobalContext } from "../Context";
 
 export default function Fotomaxha() {
+  const { isPtbr } = useGlobalContext();
   const [isClicado, setIsClicado] = useState(false);
   let contador = 0;
   return (
     <ProfileDiv
-      onMouseMove={() => {
+      onClick={() => {
         contador++;
-        contador > 500 ? setIsClicado(!isClicado) & console.log(contador) : "";
+        contador > 5 ? setIsClicado(!isClicado) & console.log(contador) : "";
       }}
     >
       <img
         className={!isClicado ? "animation-on" : "animation-off"}
         src="./perfil.png"
-        alt="Um conjunto de átomos, comumente chamado de João!"
-        title="Um conjunto de átomos, comumente chamado de João!"
+        alt={isPtbr ? textos.imgAlt : textos.imgAltEN}
+        title={isPtbr ? textos.imgAlt : textos.imgAltEN}
       />
       <SenhaDiv
         className={!isClicado ? "animation-off" : "animation-on"}
-        title="Senha super secreta,shhhhhh!"
+        title={isPtbr ? textos.senhaTitle : textos.senhaTitleEN}
       >
         <p>1234</p>
       </SenhaDiv>
@@ -32,7 +35,7 @@ const ProfileDiv = styled.div`
   --imgwd-ht_mb: 80vw;
   --imgwd-ht_pc: 40vw;
   --imgwd-ht_pcb: 25vw;
-  cursor: grab;
+  cursor: crosshair;
   position: relative;
   display: flex;
   justify-content: center;
@@ -97,7 +100,7 @@ const ProfileDiv = styled.div`
 
 const SenhaDiv = styled.div`
   --imgwd-ht_mb: 80vw;
-  --imgwd-ht_pc: 46vw;
+  --imgwd-ht_pc: 40vw;
   --imgwd-ht_pcb: 25vw;
   user-select: none;
   width: var(--imgwd-ht_mb);

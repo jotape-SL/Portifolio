@@ -2,25 +2,52 @@ import projetinhos from "./projetosGitHub";
 import styled from "styled-components";
 import { begeBG, cinzaBG, roxinhoIcones } from "../../styles/UI/variaveis";
 import { AiOutlineLink, AiFillGithub } from "react-icons/ai";
+import { useState } from "react";
 
 export default function ProjectCard() {
+  const [openOverlayId, setOpenOverlayId] = useState(null);
+
+  const handleImageClick = (projectId) => {
+    if (openOverlayId === projectId) {
+      setOpenOverlayId(null);
+    } else {
+      setOpenOverlayId(projectId);
+    }
+  };
+
   return (
     <>
       {projetinhos.map((card) => {
+        const isOverlayOpen = openOverlayId === card.id;
+
         return (
           <DivCard key={card.id}>
-            <ImgCard src={card.imagem} alt={card.nome} />
-            <ContentCard>
-              <TitleCard>{card.nome} </TitleCard>
-              <LinksCard>
-                <a href={card.linkGH} rel="noreferrer noopener" target="_blank">
-                  <AiFillGithub />
-                </a>
-                <a href={card.linkDR} rel="noreferrer noopener" target="_blank">
-                  <AiOutlineLink />
-                </a>
-              </LinksCard>
-            </ContentCard>
+            <ImgCard
+              onClick={() => handleImageClick(card.id)}
+              src={card.imagem}
+              alt={card.nome}
+            />
+            {isOverlayOpen && (
+              <ContentCard>
+                <TitleCard>{card.nome}</TitleCard>
+                <LinksCard>
+                  <a
+                    href={card.linkGH}
+                    rel="noreferrer noopener"
+                    target="_blank"
+                  >
+                    <AiFillGithub />
+                  </a>
+                  <a
+                    href={card.linkDR}
+                    rel="noreferrer noopener"
+                    target="_blank"
+                  >
+                    <AiOutlineLink />
+                  </a>
+                </LinksCard>
+              </ContentCard>
+            )}
           </DivCard>
         );
       })}
@@ -40,19 +67,8 @@ const DivCard = styled.div`
   z-index: 1;
   &:hover {
     img {
-      filter: blur(1.5px);
-    }
-    > div {
-      background-color: #ffffff5a;
-    }
-    p {
-      opacity: 1;
-    }
-    svg {
-      opacity: 1;
-      &:hover {
-        color: ${roxinhoIcones};
-      }
+      filter: grayscale(0.5);
+      cursor: pointer;
     }
   }
 `;
@@ -74,10 +90,10 @@ const TitleCard = styled.p`
   font-size: 1.5rem;
   padding: 1rem;
   border-radius: 10px;
-  opacity: 0;
   z-index: 4;
 `;
 const ContentCard = styled.div`
+  background-color: #ffffff96;
   border-radius: 10px;
   height: 12.5rem;
   width: 22.5rem;
@@ -90,7 +106,6 @@ const LinksCard = styled.div`
   justify-content: space-evenly;
   svg {
     color: ${cinzaBG};
-    opacity: 0;
     font-size: 7.5rem;
   }
 `;

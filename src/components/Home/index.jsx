@@ -47,7 +47,5 @@ const HomeSection = styled.section`
   background-color: black;
   max-height: fit-content;
   padding-bottom: 3rem;
-  @media (min-width: 1240px) {
-    height: 100vh;
-  }
+  height: 100vh;
 `;
